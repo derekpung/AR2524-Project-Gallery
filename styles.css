@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+
+body {
+    background-color: #FAFAFB;
+    font-family: 'Ubuntu Mono', monospace;
+    white-space: nowrap;
+    margin: 0 2em 2em 2em;
+    min-width: calc(700px - 4em);
+}
+
+h1 {
+    padding-left: 0.5em;
+}
+
+.hide {
+    display: none;
+}
+
+nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.btn {
+    padding: 0.5em 1em;
+    cursor: pointer;
+    background-color: #B3B3B3;
+    width: calc(100% / 8);
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.selected {
+    background-color: #CCCCCC;
+}
+
+.short_text {
+    display: none;
+}
+
+@media (max-width: 1300px) {
+    .short_text { display: inline-block; }
+    .long_text { display: none; }
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    width: 100%;
+    background-color: #CCCCCC;
+}
+
+figure {
+    width: 300px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1em;
+}
+
+figure img {
+    width: 100%;
+}
+
+a {
+    box-sizing: border-box;
+    height: 100%;
+    width: calc(100% - 2em)
+}
+
+a div {
+    position: absolute;
+    width: calc(300px - 2em)
+}
+
+a div span {
+    display: none;
+    position: relative;
+    width: 100%;
+    bottom: 1.5em;
+    direction: rtl;
+    color: black;
+    padding-right: 0.5em;
+    box-sizing: border-box;
+}
+
+figure:hover a div span{
+    display: block;
+}
+
+figure:hover img {
+    opacity: 0.5;
+    filter: saturate(50%);
+}
+
+figure label {
+    display: block;
+    width: 100%;
+    padding: 0.25em;
+    box-sizing: border-box;
+}
+
+figure .slow {
+    background-color: #E94858
+}
+
+figure .error {
+    background-color: red
+}
+
+figure .medium {
+    background-color: #F3A32A
+}
+
+figure .fast {
+    background-color: rgb(130, 191, 110); 
+}
+
+figcaption {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
