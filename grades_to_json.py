@@ -30,7 +30,12 @@ grades_df.rename(columns={"Graded Items:": "STUDENT NAME",
 grades_df = grades_df[["STUDENT NUMBER", "NUSNET", "SCORE", "STUDENT NAME"]]
 grades_df["SCORE"] /= 4
 grades_df.insert(2,"GRADE", grades_df["SCORE"].map(lambda x: score_to_grade(x)))
-grades_df.set_index("STUDENT NUMBER", inplace=True)
-grades_df[["GRADE", "SCORE", "STUDENT NAME"]].to_json("ID_grade.json", orient="index")
-grades_df.set_index("NUSNET", inplace=True)
-grades_df[["GRADE", "SCORE", "STUDENT NAME"]].to_json("NET_grade.json", orient="index")
+grades_df["NUSNET"] = grades_df["NUSNET"].map(lambda x: x.upper())
+
+grades_df_cp = grades_df.copy(True)
+grades_df_cp.set_index("STUDENT NUMBER", inplace=True)
+grades_df_cp[["GRADE", "SCORE", "STUDENT NAME"]].to_json("ID_grade.json", orient="index")
+
+grades_df_cp = grades_df.copy(True)
+grades_df_cp.set_index("NUSNET", inplace=True)
+grades_df_cp[["STUDENT NUMBER", "GRADE", "SCORE", "STUDENT NAME"]].to_json("NET_grade.json", orient="index")

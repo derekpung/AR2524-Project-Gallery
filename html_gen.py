@@ -83,9 +83,16 @@ header_obj = HtmlEle("header")
 nav_obj = HtmlEle("nav")
 main_obj = HtmlEle("main")
 body_obj.add_child(header_obj).add_child(nav_obj).add_child(main_obj)
+btn_grp_obj = HtmlEle("div").extend_attr(["class='btn_grp'"])
+import_grp_obj = HtmlEle("div").extend_attr(["class='import_grp'"])
+nav_obj.add_child(btn_grp_obj)
+nav_obj.add_child(import_grp_obj)
 
 header_obj.add_child(HtmlEle("h1").update_text("AR2524 Project Gallery"))
-nav_obj.add_child(HtmlEle("div").extend_attr(["id='ALL'","onclick='filter_group(this)'","class='btn selected'"]).update_text("ALL"))
+btn_grp_obj.add_child(HtmlEle("div").extend_attr(["id='ALL'","onclick='filter_group(this)'","class='btn selected'"]).update_text("ALL"))
+
+import_grp_obj.add_child(HtmlEle("input").extend_attr(["type='file'", "id='selectFiles'", "value='Import'"]))
+import_grp_obj.add_child(HtmlEle("button").extend_attr(["id='import'", "onclick='import_json()'"]).update_text("Import"))
 
 with open(MOB_JSON, "r", encoding="utf-8") as json_f:
     mob_dict = json.load(json_f)
@@ -114,11 +121,11 @@ for f_name in mob_dict:
         grp_lst.append(group)
         group_number = re.search("\d",group).group(0)
         btn_obj = HtmlEle("div").extend_attr(["id='G%s_btn'" % group_number,"onclick='filter_group(this)'", "class='btn'"])
-        nav_obj.add_child(btn_obj)
-        btn_obj.add_child(HtmlEle("span").update_text(group).extend_attr(["class='long_text'"]))
-        btn_obj.add_child(HtmlEle("span").update_text("G%s" % group_number).extend_attr(["class='short_text'"]))
+        btn_grp_obj.add_child(btn_obj)
+        btn_obj.add_child(HtmlEle("span").update_text("G%s" % group_number).extend_attr(["class='long_text'"]))
+        btn_obj.add_child(HtmlEle("span").update_text(group_number).extend_attr(["class='short_text'"]))
     
-    figure_obj = HtmlEle("figure")
+    figure_obj = HtmlEle("figure").extend_attr(["id=%s" % proj_dict["student_id"]])
     main_obj.add_child(figure_obj)
     figure_obj.extend_attr(["class='G%s %s'" % (group_number, run_status)])
     run_time_div = HtmlEle("label").extend_attr(["class='%s'" % run_status])
@@ -129,8 +136,10 @@ for f_name in mob_dict:
 
     run_time_div.add_child(HtmlEle("span").update_text(run_status))
     img_link.add_child(HtmlEle("img").extend_attr(["src='%s'" % img_src]))
-    img_link.add_child(HtmlEle("div").add_child(HtmlEle("span").update_text("möb →")))
-    figure_obj.add_child(HtmlEle("figcaption").update_text(f_name))
+    overlay_obj = HtmlEle("div")
+    img_link.add_child(overlay_obj)
+    overlay_obj.add_child(HtmlEle("span").update_text("möb →"))
+    figure_obj.add_child(HtmlEle("figcaption").update_text(proj_dict["student_name"]))
 
 
 html_obj.to_html()

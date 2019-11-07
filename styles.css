@@ -12,10 +12,6 @@ h1 {
     padding-left: 0.5em;
 }
 
-.hide {
-    display: none;
-}
-
 nav {
     display: flex;
     flex-flow: row nowrap;
@@ -23,12 +19,25 @@ nav {
     width: 100%;
 }
 
+.btn_grp {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 70%;
+}
+
 .btn {
     padding: 0.5em 1em;
     cursor: pointer;
     background-color: #B3B3B3;
-    width: calc(100% / 8);
+    display: flex;
+    flex: 1;
+    margin: 0 0.75em 0 0;
     box-sizing: border-box;
+    overflow: hidden;
+}
+
+.btn span {
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -41,9 +50,14 @@ nav {
     display: none;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 700px) {
     .short_text { display: inline-block; }
     .long_text { display: none; }
+}
+
+#import {
+    margin: 0px 0px 3px 0px;
+    flex: 0.25;
 }
 
 main {
