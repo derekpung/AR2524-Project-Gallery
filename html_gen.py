@@ -120,12 +120,12 @@ for f_name in mob_dict:
     if group not in grp_lst:
         grp_lst.append(group)
         group_number = re.search("\d",group).group(0)
-        btn_obj = HtmlEle("div").extend_attr(["id='G%s_btn'" % group_number,"onclick='filter_group(this)'", "class='btn'"])
+        btn_obj = HtmlEle("div").extend_attr(["id='G%s_fbtn'" % group_number,"onclick='filter_group(this)'", "class='btn'"])
         btn_grp_obj.add_child(btn_obj)
         btn_obj.add_child(HtmlEle("span").update_text("G%s" % group_number).extend_attr(["class='long_text'"]))
         btn_obj.add_child(HtmlEle("span").update_text(group_number).extend_attr(["class='short_text'"]))
     
-    figure_obj = HtmlEle("figure").extend_attr(["id=%s" % proj_dict["student_id"]])
+    figure_obj = HtmlEle("figure").extend_attr(["id='%s'" % proj_dict["student_id"]])
     main_obj.add_child(figure_obj)
     figure_obj.extend_attr(["class='G%s %s'" % (group_number, run_status)])
     run_time_div = HtmlEle("label").extend_attr(["class='%s'" % run_status])
@@ -135,6 +135,8 @@ for f_name in mob_dict:
     figure_obj.add_child(img_link)
 
     run_time_div.add_child(HtmlEle("span").update_text(run_status))
+    run_time_div.add_child(HtmlEle("span").extend_attr(["id=%s_bdwn" % proj_dict["student_id"], "class='breakdown'"]))
+
     img_link.add_child(HtmlEle("img").extend_attr(["src='%s'" % img_src]))
     overlay_obj = HtmlEle("div")
     img_link.add_child(overlay_obj)

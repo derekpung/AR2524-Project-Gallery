@@ -1,4 +1,5 @@
-Project_Grades.xlsx
-GRADE_RANGE.py
+*.xlsx
+MODULE_CONSTS.py
 
 *.json
+*.ipynb

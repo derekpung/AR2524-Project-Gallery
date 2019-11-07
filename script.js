@@ -1,5 +1,5 @@
 let ALL_GRPS = ["G1", "G2", "G3", "G4", "G5", "G6"];
-const GRADES = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C"]
+const GRADES = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "U"]
 
 function filter_group(ele) {
     const id = ele.id;
@@ -11,7 +11,7 @@ function filter_group(ele) {
         btn.classList.remove("selected");
     }
     ele.classList.add("selected");
-    let filtered_grp = id.substring(0,2);
+    let filtered_grp = id.substring(0,2).replace("_","");
 
     for (let fig_i=0; fig_i < all_figs.length; fig_i++) {
         const fig = all_figs[fig_i];
@@ -41,10 +41,11 @@ function import_json() {
     ALL_GRPS = ALL_GRPS.concat(GRADES)
     for (let i=0; i<GRADES.length; i++) {
         let new_btn = document.createElement("div");
-        new_btn.setAttribute("id" , GRADES[i]);
+        new_btn.setAttribute("id" , GRADES[i]+'_fbtn');
         new_btn.setAttribute("onclick", "filter_group(this)");
         new_btn.className = "btn";
         new_btn.innerHTML = GRADES[i];
+        new_btn.style.display = "none";
         document.getElementsByClassName("btn_grp")[0].appendChild(new_btn);
     }
 
@@ -56,9 +57,16 @@ function import_json() {
         for (let i=0; i<id_keys.length; i++) {
             try {
                 const student_id = id_keys[i];
-                document.getElementById(student_id).classList.add(id_obj[id_keys[i]]["GRADE"]);
+                const student = id_obj[id_keys[i]];
+                const student_grade = student["GRADE"];
+                document.getElementById(student_grade+'_fbtn').style.display = "block";
+                let breakdown = "C:" + student["CODING"] + " P:" + student["PARAMETERISATION"] + " D:"+ student["DIFFERENTIATION"];
+                breakdown = breakdown.replace(/undefined/g, "U");
+
+                document.getElementById(student_id).classList.add(student_grade);
+                document.getElementById(student_id+'_bdwn').innerHTML = breakdown;
             } catch (error) {
-                console.log(id_keys[i] + " failed to import")
+                console.log("No submission: " + id_keys[i])
                 continue
             }
         }
