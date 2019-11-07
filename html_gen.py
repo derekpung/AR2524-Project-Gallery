@@ -82,7 +82,14 @@ head_obj.add_child(HtmlEle("script").extend_attr(["src='script.js'"]))
 header_obj = HtmlEle("header")
 nav_obj = HtmlEle("nav")
 main_obj = HtmlEle("main")
+banner_section = HtmlEle("section").extend_attr(["class='section__banner'"])
+fig_section = HtmlEle("section").extend_attr(["class='section__figs'"])
+fig_grid = HtmlEle("div").extend_attr(["class='container__figs'"])
 body_obj.add_child(header_obj).add_child(nav_obj).add_child(main_obj)
+main_obj.add_child(banner_section)
+main_obj.add_child(fig_section)
+fig_section.add_child(fig_grid)
+
 btn_grp_obj = HtmlEle("div").extend_attr(["class='btn_grp'"])
 import_grp_obj = HtmlEle("div").extend_attr(["class='import_grp'"])
 nav_obj.add_child(btn_grp_obj)
@@ -90,9 +97,21 @@ nav_obj.add_child(import_grp_obj)
 
 header_obj.add_child(HtmlEle("h1").update_text("AR2524 Project Gallery"))
 btn_grp_obj.add_child(HtmlEle("div").extend_attr(["id='ALL'","onclick='filter_group(this)'","class='btn selected'"]).update_text("ALL"))
-
 import_grp_obj.add_child(HtmlEle("input").extend_attr(["type='file'", "id='selectFiles'", "value='Import'"]))
 import_grp_obj.add_child(HtmlEle("button").extend_attr(["id='import'", "onclick='import_json()'"]).update_text("Import"))
+
+info_container = HtmlEle("div").extend_attr(["id='info'"])
+banner_section.add_child(info_container)
+info_container.add_child(HtmlEle("h3").extend_attr(["id='TA'"]))
+sort_container = HtmlEle("div")
+banner_section.add_child(sort_container)
+sort_drpdown = HtmlEle("select").extend_attr(["id='dropdown'", "onchange='sort_figures(this)'"])
+basic_options = HtmlEle("optgroup").extend_attr(["label='Basic'"])
+sort_container.add_child(HtmlEle("button").extend_attr(["id='sort_toggle_btn'", "onclick='toggle_asc(this)'"]).update_text("ASCENDING"))
+sort_container.add_child(sort_drpdown)
+sort_drpdown.add_child(basic_options)
+
+basic_options.add_child(HtmlEle("option").extend_attr(["value='byName'"]).update_text("Name")) # name grade
 
 with open(MOB_JSON, "r", encoding="utf-8") as json_f:
     mob_dict = json.load(json_f)
@@ -126,8 +145,8 @@ for f_name in mob_dict:
         btn_obj.add_child(HtmlEle("span").update_text(group_number).extend_attr(["class='short_text'"]))
     
     figure_obj = HtmlEle("figure").extend_attr(["id='%s'" % proj_dict["student_id"]])
-    main_obj.add_child(figure_obj)
-    figure_obj.extend_attr(["class='G%s %s'" % (group_number, run_status)])
+    fig_grid.add_child(figure_obj)
+    figure_obj.extend_attr(["class='G%s %s'" % (group_number, run_status)]).extend_attr(["data-name = '%s'" % proj_dict["student_name"]])
     run_time_div = HtmlEle("label").extend_attr(["class='%s'" % run_status])
     img_link = HtmlEle("a").extend_attr(["href='%s'" % mob_src, "target=_blank"])
 
@@ -138,10 +157,7 @@ for f_name in mob_dict:
     run_time_div.add_child(HtmlEle("span").extend_attr(["id=%s_bdwn" % proj_dict["student_id"], "class='breakdown'"]))
 
     img_link.add_child(HtmlEle("img").extend_attr(["src='%s'" % img_src]))
-    overlay_obj = HtmlEle("div")
-    img_link.add_child(overlay_obj)
-    overlay_obj.add_child(HtmlEle("span").update_text("möb →"))
-    figure_obj.add_child(HtmlEle("figcaption").update_text(proj_dict["student_name"]))
-
+    fig_cap_obj = HtmlEle("figcaption").update_text("G%s %s" % (group_number, proj_dict["student_name"]))
+    figure_obj.add_child(fig_cap_obj)
 
 html_obj.to_html()

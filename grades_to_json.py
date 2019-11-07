@@ -5,21 +5,21 @@ from MODULE_CONSTS import G_R
 
 def score_to_grade(score):
     if score >= G_R[0]:
-        return "A+"
+        return 0
     elif score >= G_R[1] and score < G_R[0]:
-        return "A"
+        return 1
     elif score >= G_R[2] and score < G_R[1]:
-        return "A-"
+        return 2
     elif score >= G_R[3] and score < G_R[2]:
-        return "B+"
+        return 3
     elif score >= G_R[4] and score < G_R[3]:
-        return "B"
+        return 4
     elif score >= G_R[5] and score < G_R[4]:
-        return "B-"
+        return 5
     elif score >= G_R[6] and score <G_R[5]:
-        return "C+"
+        return 6
     else:
-        return "C"
+        return 7
 
 def from_lumi():
     data_xls = pd.read_excel("Project_Grades.xlsx")

@@ -6,10 +6,12 @@ body {
     white-space: nowrap;
     margin: 0 2em 2em 2em;
     min-width: calc(700px - 4em);
+    overflow: hidden;
 }
 
 h1 {
     padding-left: 0.5em;
+    margin: 1em 0;
 }
 
 nav {
@@ -27,7 +29,7 @@ nav {
 }
 
 .btn {
-    padding: 0.5em 1em;
+    padding: 0.5em 0.25em  0.5em 1em;
     cursor: pointer;
     background-color: #B3B3B3;
     display: flex;
@@ -61,10 +63,36 @@ nav {
 }
 
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     width: 100%;
     background-color: #CCCCCC;
+}
+
+.section__banner {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+#info {
+    width: 70%;
+}
+
+#TA {
+    margin: 0;
+}
+
+.section__figs {
+    padding-right: 20px;
+    max-height: calc(100vh - 212px);
+    min-height: calc(100vh - 212px);
+    overflow: auto;
+}
+
+.container__figs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    overflow: hidden;
 }
 
 figure {
@@ -76,6 +104,8 @@ figure {
 
 figure img {
     width: 100%;
+    opacity: 0.75;
+    filter: saturate(80%);
 }
 
 a {
@@ -100,13 +130,13 @@ a div span {
     box-sizing: border-box;
 }
 
-figure:hover a div span{
-    display: block;
+figure:hover img {
+    opacity: 1;
+    filter: saturate(100%);
 }
 
-figure:hover img {
-    opacity: 0.5;
-    filter: saturate(50%);
+figure:hover figcaption {
+    font-weight: 600;
 }
 
 figure label {
@@ -136,4 +166,22 @@ figure .fast {
 figcaption {
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    margin-left: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #CCCCCC; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E6E6E6; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #B3B3B3; 
 }
