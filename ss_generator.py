@@ -14,7 +14,7 @@ import re
 import csv
 import json
 
-FOLDER_NAME = "FinalProject" # change to a folder with similar substructure for longer reruns
+FOLDER_NAME = "RebuildIMGs" # change to a folder with similar substructure for longer reruns
 LONG_PAUSE = 0 # change to 10 for long reruns
 
 FOLDERS = glob.glob("%s//*//" % FOLDER_NAME)
@@ -22,7 +22,8 @@ MOBIUS_LINK = "https://mobius.design-automation.net/gallery"
 MOB_JSON = "mob_files.json"
 MOB_DICT = {}
 if os.path.isfile(MOB_JSON): # retain previous data in reruns
-    MOB_DICT = json.load(MOB_JSON)
+    with open(MOB_JSON, "rt", encoding="utf-8") as json_f:
+        MOB_DICT = json.load(json_f)
 
 SHORT_TIMEOUT = 1 # give enough time for element to appear
 LONG_TIMEOUT = 300  # give enough time for loading to finish (Maximum wait time)
@@ -74,7 +75,7 @@ try:
             if error:
                 run_time = -1
             print("Time Elapsed: %s" % str(run_time))
-            # pyautogui.screenshot("%s.png" % (folder + file_name), region=SS_REGION)
+            pyautogui.screenshot("%s.png" % (folder + file_name), region=SS_REGION)
 
             MOB_DICT[file_name] = dict(
                 group=FDR_NAME,
