@@ -39,6 +39,10 @@ nav {
     overflow: hidden;
 }
 
+.grade_btn {
+    min-width: 4.5em;
+}
+
 .btn span {
     overflow: hidden;
     text-overflow: ellipsis;
