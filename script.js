@@ -103,7 +103,12 @@ function import_json() {
     let fr = new FileReader();
     fr.onload = function(e) { 
         console.log(e);
-        const id_obj = JSON.parse(e.target.result);
+        let id_obj;
+        try {
+            id_obj = JSON.parse(e.target.result);
+        } catch {
+            _show_notif("Invalid JSON file.");
+        }
         const id_keys = Object.keys(id_obj);
         for (let i=0; i<id_keys.length; i++) {
             try {
@@ -148,8 +153,7 @@ function import_json() {
                 fig.querySelector("figcaption").appendChild(bump_down_btn);
 
             } catch (error) {
-                console.log(error);
-                console.log("No submission: " + id_keys[i])
+                _show_notif("No submission: " + id_keys[i]);
                 continue
             }
         }
