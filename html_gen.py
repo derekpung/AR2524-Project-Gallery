@@ -97,8 +97,12 @@ nav_obj.add_child(import_grp_obj)
 
 header_obj.add_child(HtmlEle("h1").update_text("AR2524 Project Gallery"))
 btn_grp_obj.add_child(HtmlEle("div").extend_attr(["id='ALL'","onclick='filter_group(this)'","class='btn selected'"]).update_text("ALL"))
-import_grp_obj.add_child(HtmlEle("input").extend_attr(["type='file'", "id='selectFiles'", "value='Import'"]))
-import_grp_obj.add_child(HtmlEle("button").extend_attr(["id='import'", "onclick='import_json()'"]).update_text("Import"))
+import_obj = HtmlEle("label").extend_attr(["id='import'", "class='btn'"])
+import_grp_obj.add_child(import_obj)
+import_grp_obj.add_child(HtmlEle("span").extend_attr(["id='import__fileName'"]))
+import_obj.add_child(HtmlEle("input").extend_attr(["type='file'", "id='selectFiles'", "value='Import'", "style='display: none'", "onchange='import_json()'"]))
+import_obj.add_child(HtmlEle("span").update_text("&#8673; Grades").extend_attr(["class='long_text'"]))
+import_obj.add_child(HtmlEle("span").update_text('&#8673;').extend_attr(["class='short_text'"]))
 
 info_container = HtmlEle("div").extend_attr(["id='info'"])
 banner_section.add_child(info_container)
@@ -107,7 +111,7 @@ sort_container = HtmlEle("div")
 banner_section.add_child(sort_container)
 sort_drpdown = HtmlEle("select").extend_attr(["id='dropdown'", "onchange='sort_figures(this)'"])
 basic_options = HtmlEle("optgroup").extend_attr(["label='Basic'"])
-sort_container.add_child(HtmlEle("button").extend_attr(["id='sort_toggle_btn'", "onclick='toggle_asc(this)'"]).update_text("ASCENDING"))
+sort_container.add_child(HtmlEle("span").extend_attr(["id='sort_toggle_btn'", "onclick='toggle_asc(this)'"]).update_text("ASCENDING"))
 sort_container.add_child(sort_drpdown)
 sort_drpdown.add_child(basic_options)
 
@@ -146,7 +150,7 @@ for f_name in mob_dict:
     
     figure_obj = HtmlEle("figure").extend_attr(["id='%s'" % proj_dict["student_id"]])
     fig_grid.add_child(figure_obj)
-    figure_obj.extend_attr(["class='G%s %s'" % (group_number, run_status)]).extend_attr(["data-name = '%s'" % proj_dict["student_name"]])
+    figure_obj.extend_attr(["class='%s'" % run_status]).extend_attr(["data-name = '%s'" % proj_dict["student_name"], "data-group = 'G%s'" % group_number])
     run_time_div = HtmlEle("label").extend_attr(["class='%s'" % run_status])
     img_link = HtmlEle("a").extend_attr(["href='%s'" % mob_src, "target=_blank"])
 

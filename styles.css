@@ -57,10 +57,28 @@ nav {
     .long_text { display: none; }
 }
 
+.import_grp {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1;
+    direction: rtl;
+}
+
 #import {
     margin: 0px 0px 3px 0px;
     flex: 0.25;
+    background-color: #E6E6E6;
+    padding: 0.5em 1em;
+    text-align: center;
 }
+
+#import:hover {
+    background-color:#CCCCCC;
+}
+
+#import__fileName {
+    padding: 0.5em;
+} 
 
 main {
     width: 100%;
@@ -72,6 +90,9 @@ main {
     flex-flow: row nowrap;
     justify-content: space-between;
     padding: 1em;
+    border-bottom: 2px solid #B3B3B3;
+    height: 3em;
+    box-sizing: border-box;
 }
 
 #info {
@@ -82,8 +103,29 @@ main {
     margin: 0;
 }
 
+#sort_toggle_btn {
+    text-decoration: underline;
+    cursor: pointer;
+    text-transform: lowercase;
+    font-size: small;
+}
+
+#sort_toggle_btn:hover {
+    color: blue;
+}
+
+#dropdown {
+    font-family: 'Ubuntu Mono', monospace;
+    flex: 0.5;
+    background-color: #CCCCCC;
+    text-transform: lowercase;
+}
+
+#dropdown:hover {
+    background-color: #E6E6E6;
+}
 .section__figs {
-    padding-right: 20px;
+    padding-right: 1em;
     max-height: calc(100vh - 212px);
     min-height: calc(100vh - 212px);
     overflow: auto;
