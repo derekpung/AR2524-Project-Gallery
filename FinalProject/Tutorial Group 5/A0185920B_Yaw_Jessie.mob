@@ -1,5 +1,5 @@
 {
-    "name": "20191027_-_Yusuhara_Bridge_Musuem_6 (Final)",
+    "name": "20191025 - Yaw Jessie - Yusuhara Bridge Musuem",
     "author": "new_user",
     "flowchart": {
         "id": "01a9d8f6-d003-7870-03c4-e1e55c8c2c27",
@@ -14,7 +14,7 @@
         "nodes": [
             {
                 "name": "Start",
-                "id": "node_uaqrse8rnl",
+                "id": "node_2r6qg3uaj9z",
                 "position": {
                     "x": 5320,
                     "y": 4880
@@ -92,7 +92,7 @@
                             },
                             {
                                 "name": "__input__",
-                                "value": 10,
+                                "value": 8,
                                 "step": "1",
                                 "min": "1",
                                 "max": "10",
@@ -262,7 +262,7 @@
                                 },
                                 "parentNode": {
                                     "name": "Column\n",
-                                    "id": "node_be9msnm96v7",
+                                    "id": "node_63yjq8ovgv",
                                     "position": {
                                         "x": 5180,
                                         "y": 5040
@@ -902,7 +902,7 @@
                                                                 },
                                                                 "parentNode": {
                                                                     "name": "Make Polygons",
-                                                                    "id": "node_qjxzqtt5xae",
+                                                                    "id": "node_nwxyck1p4p",
                                                                     "position": {
                                                                         "x": 5320,
                                                                         "y": 5220
@@ -1827,7 +1827,7 @@
                                                                                                 },
                                                                                                 "parentNode": {
                                                                                                     "name": "Floor",
-                                                                                                    "id": "node_p3f3xxm8hh",
+                                                                                                    "id": "node_hqesmr7g2jp",
                                                                                                     "position": {
                                                                                                         "x": 5480,
                                                                                                         "y": 5040
@@ -2267,7 +2267,7 @@
                                                                                                                     },
                                                                                                                     "parentNode": {
                                                                                                                         "name": "Glass Wall",
-                                                                                                                        "id": "node_gh3fua3g1wu",
+                                                                                                                        "id": "node_bajl5rvlgfu",
                                                                                                                         "position": {
                                                                                                                             "x": 5480,
                                                                                                                             "y": 5160
@@ -3592,7 +3592,7 @@
                                                                                                                                         },
                                                                                                                                         "parentNode": {
                                                                                                                                             "name": "Roof",
-                                                                                                                                            "id": "node_cl5sisswhzs",
+                                                                                                                                            "id": "node_bfjdnmwaz7g",
                                                                                                                                             "position": {
                                                                                                                                                 "x": 5480,
                                                                                                                                                 "y": 5280
@@ -4729,10 +4729,10 @@
                                                                                                                     },
                                                                                                                     "parentNode": {
                                                                                                                         "name": "Roof",
-                                                                                                                        "id": "node_j3vqtvwxzk",
+                                                                                                                        "id": "node_6o0a9geiwmm",
                                                                                                                         "position": {
-                                                                                                                            "x": 5600,
-                                                                                                                            "y": 5180
+                                                                                                                            "x": 5640,
+                                                                                                                            "y": 5200
                                                                                                                         },
                                                                                                                         "enabled": true,
                                                                                                                         "type": "",
@@ -5572,7 +5572,13 @@
                                                                                                                         "output": {
                                                                                                                             "name": "output",
                                                                                                                             "type": 1,
-                                                                                                                            "edges": [],
+                                                                                                                            "edges": [
+                                                                                                                                {
+                                                                                                                                    "source": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~edges~1~source~parentNode~input~edges~0~source~edges~1~target~parentNode~output~edges~1~target~parentNode~output",
+                                                                                                                                    "target": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target",
+                                                                                                                                    "selected": false
+                                                                                                                                }
+                                                                                                                            ],
                                                                                                                             "meta": {
                                                                                                                                 "mode": 0
                                                                                                                             },
@@ -5604,7 +5610,7 @@
                                                                                     },
                                                                                     "parentNode": {
                                                                                         "name": "Timber Modules Grid",
-                                                                                        "id": "node_zyndiqytku",
+                                                                                        "id": "node_wy2g2nngnd",
                                                                                         "position": {
                                                                                             "x": 5320,
                                                                                             "y": 5040
@@ -7352,7 +7358,8 @@
                                                             "target": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target",
                                                             "selected": false
                                                         },
-                                                        "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~edges~1~source~parentNode~input~edges~0~source~edges~1~target~parentNode~output~edges~0~target~parentNode~output~edges~0~target~parentNode~output~edges~0"
+                                                        "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~edges~1~source~parentNode~input~edges~0~source~edges~1~target~parentNode~output~edges~0~target~parentNode~output~edges~0~target~parentNode~output~edges~0",
+                                                        "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~edges~1~source~parentNode~input~edges~0~source~edges~1~target~parentNode~output~edges~1~target~parentNode~output~edges~0"
                                                     ],
                                                     "meta": {
                                                         "mode": 0,
@@ -7360,9 +7367,9 @@
                                                     },
                                                     "parentNode": {
                                                         "name": "End",
-                                                        "id": "node_gk4tpxb8cnc",
+                                                        "id": "node_9z44dee5146",
                                                         "position": {
-                                                            "x": 5320,
+                                                            "x": 5300,
                                                             "y": 5440
                                                         },
                                                         "enabled": true,
@@ -7476,12 +7483,13 @@
             "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~edges~1~source~parentNode~input~edges~0~source~edges~1",
             "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~edges~1~source~parentNode~input~edges~0~source~edges~1~target~parentNode~output~edges~0~target~edges~1",
             "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~edges~1~source~parentNode~input~edges~0~source~edges~1~target~parentNode~output~edges~0~target~parentNode~output~edges~0~target~edges~1",
-            "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~edges~1~source~parentNode~input~edges~0~source~edges~1~target~parentNode~output~edges~1"
+            "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~edges~1~source~parentNode~input~edges~0~source~edges~1~target~parentNode~output~edges~1",
+            "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~edges~1~source~parentNode~input~edges~0~source~edges~1~target~parentNode~output~edges~1~target~parentNode~output~edges~0"
         ],
         "functions": [],
         "ordered": true,
-        "last_updated": "2019-10-27T09:58:59.506Z"
+        "last_updated": "2019-11-08T05:52:21.839Z"
     },
     "version": 1,
-    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":false,\"size\":50},\"grid\":{\"show\":false,\"size\":500,\"pos_x\":0,\"pos_y\":0,\"pos_z\":0,\"pos\":{\"x\":0,\"y\":0,\"z\":0}},\"positions\":{\"show\":true,\"size\":0.7},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":true},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":-83.37898774802619,\"y\":31.370073617806234,\"z\":56.55097597285584},\"pos_x\":-83.37898774802619,\"pos_y\":31.370073617806234,\"pos_z\":56.55097597285584,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#ffffff\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":1},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":1},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"azimuth\":90,\"altitude\":45,\"distance\":10,\"type\":\"directional\"},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":8,\"name\":\"Polygons\"},\"tab\":0},\"version\":\"0.5.11\"}"
+    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":false,\"size\":50},\"grid\":{\"show\":false,\"size\":500,\"pos_x\":0,\"pos_y\":0,\"pos_z\":0,\"pos\":{\"x\":0,\"y\":0,\"z\":0}},\"positions\":{\"show\":false,\"size\":0.5},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":false},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":-0.0005610637355567484,\"y\":-0.0006177717826858498,\"z\":834.3041987618552},\"pos_x\":-0.0005610637355567484,\"pos_y\":-0.0006177717826858498,\"pos_z\":834.3041987618552,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#ffffff\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.5},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.5},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"azimuth\":90,\"altitude\":45,\"distance\":10,\"type\":\"directional\"},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":7,\"name\":\"Polylines\"},\"tab\":\"0\"},\"version\":\"0.5.11\"}"
 }
