@@ -16,22 +16,25 @@ const SORT_STATES = ["DESCENDING", "ASCENDING"];
 
 function filter_group(ele) {
     const id = ele.id;
-
     if (id[0]=="G") {
         document.getElementById("TA").innerHTML = "TA: " + TAs[id.substring(0,2)];
     } else {
         document.getElementById("TA").innerHTML = "";
     }
-
-    const all_figs = document.getElementsByTagName("figure");
     const all_btns = document.getElementsByClassName("btn");
     for (let btn_i=0; btn_i < all_btns.length; btn_i++) {
         const btn = all_btns[btn_i];
         btn.classList.remove("selected");
     }
     ele.classList.add("selected");
+    _display_filtered();    
+}
+
+function _display_filtered() {
+    const id = document.getElementsByClassName("selected")[0].id;
     let filtered_grp = id.substring(0,2).replace("_","");
-    
+    const all_figs = document.getElementsByTagName("figure");
+
     for (let fig_i=0; fig_i < all_figs.length; fig_i++) {
         const fig = all_figs[fig_i];
         if (filtered_grp == "AL" || fig.getAttribute("data-grade") == filtered_grp || fig.getAttribute("data-group") == filtered_grp){
@@ -42,7 +45,7 @@ function filter_group(ele) {
     }
 }
 
-function create_grade_btns() {
+function _create_grade_btns() {
     GRADES.forEach(function(grd){
         let new_btn = document.createElement("div");
         new_btn.setAttribute("id" , grd+'_fbtn');
@@ -58,7 +61,7 @@ function create_grade_btns() {
     });
 }
 
-function append_dropdown() {
+function _append_dropdown() {
     let drop_down = document.getElementById("dropdown");
     let opt_group = document.createElement("optgroup");
     opt_group.setAttribute("label", "Grades");
@@ -94,8 +97,8 @@ function import_json() {
     const file_name = files.item(0).name;
     document.getElementById("import__fileName").innerHTML = file_name;
     ALL_GRPS = ALL_GRPS.concat(GRADES)
-    create_grade_btns();
-    if (!imported) {append_dropdown();}
+    _create_grade_btns();
+    if (!imported) {_append_dropdown();}
 
     let fr = new FileReader();
     fr.onload = function(e) { 
@@ -136,14 +139,16 @@ function import_json() {
     imported = true;
 }
 
-function toggle_asc(ele) {
+function toggle_asc() {
+    const ele =  document.getElementById("sort_toggle_btn")
     asc = !asc;
     const i = asc ? 1 : 0;
     ele.innerHTML = SORT_STATES[i];
-    sort_figures(document.getElementById("dropdown"));
+    sort_figures();
 }
 
-function sort_figures(ele) {
+function sort_figures() {
+    const ele = document.getElementById("dropdown");
     const method = "data-" + ele.options[ele.selectedIndex].text.toLowerCase();
     let all_figs = Array.from(document.getElementsByTagName("figure"));
     let container_fig = document.getElementsByClassName("container__figs")[0];
@@ -187,3 +192,6 @@ function _update_breakdown() {
         fig.getElementsByClassName("breakdown")[0].innerHTML = breakdown;
     });
 }
+
+window.addEventListener("load", sort_figures);
+window.addEventListener("load", _display_filtered);

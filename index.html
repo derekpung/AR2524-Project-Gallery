@@ -52,17 +52,18 @@
 					<h3 id='TA'></h3>
 				</div>
 				<div>
-					<span id='sort_toggle_btn' onclick='toggle_asc(this)'>ASCENDING</span>
-					<select id='dropdown' onchange='sort_figures(this)'>
+					<span id='sort_toggle_btn' onclick='toggle_asc()'>ASCENDING</span>
+					<select id='dropdown' onchange='sort_figures()'>
 						<optgroup label='Basic'>
 							<option value='byName'>Name</option>
+							<option value='byGroup'>Group</option>
 						</optgroup>
 					</select>
 				</div>
 			</section>
 			<section class='section__figs'>
 				<div class='container__figs'>
-					<figure id='A0166650A' class='fast' data-name = 'RAYNARD YU JUN KIAT' data-group = 'G1'>
+					<figure id='A0166650A' style='display: none' class='fast' data-name = 'RAYNARD YU JUN KIAT' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0166650A_bdwn class='breakdown'></span>
@@ -72,7 +73,7 @@
 						</a>
 						<figcaption>G1 RAYNARD YU JUN KIAT</figcaption>
 					</figure>
-					<figure id='A0182612L' class='fast' data-name = 'LIU TAO' data-group = 'G1'>
+					<figure id='A0182612L' style='display: none' class='fast' data-name = 'LIU TAO' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0182612L_bdwn class='breakdown'></span>
@@ -82,7 +83,7 @@
 						</a>
 						<figcaption>G1 LIU TAO</figcaption>
 					</figure>
-					<figure id='A0183121U' class='fast' data-name = 'LIM QILEI, DANIEL' data-group = 'G1'>
+					<figure id='A0183121U' style='display: none' class='fast' data-name = 'LIM QILEI, DANIEL' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183121U_bdwn class='breakdown'></span>
@@ -92,7 +93,7 @@
 						</a>
 						<figcaption>G1 LIM QILEI, DANIEL</figcaption>
 					</figure>
-					<figure id='A0183165A' class='fast' data-name = 'LIM GUAN JIE OLIVER' data-group = 'G1'>
+					<figure id='A0183165A' style='display: none' class='fast' data-name = 'LIM GUAN JIE OLIVER' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183165A_bdwn class='breakdown'></span>
@@ -102,7 +103,7 @@
 						</a>
 						<figcaption>G1 LIM GUAN JIE OLIVER</figcaption>
 					</figure>
-					<figure id='A0183179U' class='fast' data-name = 'KHOO CHEW SENG IAN' data-group = 'G1'>
+					<figure id='A0183179U' style='display: none' class='fast' data-name = 'KHOO CHEW SENG IAN' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183179U_bdwn class='breakdown'></span>
@@ -112,7 +113,7 @@
 						</a>
 						<figcaption>G1 KHOO CHEW SENG IAN</figcaption>
 					</figure>
-					<figure id='A0183523H' class='fast' data-name = 'GEORGE ZONG CHI HAU' data-group = 'G1'>
+					<figure id='A0183523H' style='display: none' class='fast' data-name = 'GEORGE ZONG CHI HAU' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183523H_bdwn class='breakdown'></span>
@@ -122,7 +123,7 @@
 						</a>
 						<figcaption>G1 GEORGE ZONG CHI HAU</figcaption>
 					</figure>
-					<figure id='A0183753X' class='fast' data-name = 'JOHAQQIS BIN JOHARI' data-group = 'G1'>
+					<figure id='A0183753X' style='display: none' class='fast' data-name = 'JOHAQQIS BIN JOHARI' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183753X_bdwn class='breakdown'></span>
@@ -132,7 +133,7 @@
 						</a>
 						<figcaption>G1 JOHAQQIS BIN JOHARI</figcaption>
 					</figure>
-					<figure id='A0185913X' class='fast' data-name = 'SHARLENE SOW YONG JUN' data-group = 'G1'>
+					<figure id='A0185913X' style='display: none' class='fast' data-name = 'SHARLENE SOW YONG JUN' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0185913X_bdwn class='breakdown'></span>
@@ -142,7 +143,7 @@
 						</a>
 						<figcaption>G1 SHARLENE SOW YONG JUN</figcaption>
 					</figure>
-					<figure id='A0187517U' class='fast' data-name = 'WANG XUEMAN' data-group = 'G1'>
+					<figure id='A0187517U' style='display: none' class='fast' data-name = 'WANG XUEMAN' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187517U_bdwn class='breakdown'></span>
@@ -152,7 +153,7 @@
 						</a>
 						<figcaption>G1 WANG XUEMAN</figcaption>
 					</figure>
-					<figure id='A0187634U' class='fast' data-name = 'TAN JING YI, GWEN' data-group = 'G1'>
+					<figure id='A0187634U' style='display: none' class='fast' data-name = 'TAN JING YI, GWEN' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187634U_bdwn class='breakdown'></span>
@@ -162,7 +163,7 @@
 						</a>
 						<figcaption>G1 TAN JING YI, GWEN</figcaption>
 					</figure>
-					<figure id='A0187716R' class='fast' data-name = 'TAN YU LIN' data-group = 'G1'>
+					<figure id='A0187716R' style='display: none' class='fast' data-name = 'TAN YU LIN' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187716R_bdwn class='breakdown'></span>
@@ -172,7 +173,7 @@
 						</a>
 						<figcaption>G1 TAN YU LIN</figcaption>
 					</figure>
-					<figure id='A0188454R' class='fast' data-name = 'CHEUNG KAI NING' data-group = 'G1'>
+					<figure id='A0188454R' style='display: none' class='fast' data-name = 'CHEUNG KAI NING' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188454R_bdwn class='breakdown'></span>
@@ -182,7 +183,7 @@
 						</a>
 						<figcaption>G1 CHEUNG KAI NING</figcaption>
 					</figure>
-					<figure id='A0188651U' class='fast' data-name = 'CHELSEA HO JIA XUAN' data-group = 'G1'>
+					<figure id='A0188651U' style='display: none' class='fast' data-name = 'CHELSEA HO JIA XUAN' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188651U_bdwn class='breakdown'></span>
@@ -192,7 +193,7 @@
 						</a>
 						<figcaption>G1 CHELSEA HO JIA XUAN</figcaption>
 					</figure>
-					<figure id='A0188755J' class='fast' data-name = 'HAU WEN HUI' data-group = 'G1'>
+					<figure id='A0188755J' style='display: none' class='fast' data-name = 'HAU WEN HUI' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188755J_bdwn class='breakdown'></span>
@@ -202,7 +203,7 @@
 						</a>
 						<figcaption>G1 HAU WEN HUI</figcaption>
 					</figure>
-					<figure id='A0189548H' class='fast' data-name = 'CHAN SHAO KAYE' data-group = 'G1'>
+					<figure id='A0189548H' style='display: none' class='fast' data-name = 'CHAN SHAO KAYE' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0189548H_bdwn class='breakdown'></span>
@@ -212,7 +213,7 @@
 						</a>
 						<figcaption>G1 CHAN SHAO KAYE</figcaption>
 					</figure>
-					<figure id='A0189625N' class='fast' data-name = 'AW YOU EN' data-group = 'G1'>
+					<figure id='A0189625N' style='display: none' class='fast' data-name = 'AW YOU EN' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0189625N_bdwn class='breakdown'></span>
@@ -222,7 +223,7 @@
 						</a>
 						<figcaption>G1 AW YOU EN</figcaption>
 					</figure>
-					<figure id='A0191119H' class='fast' data-name = 'TAN EE JOO, KELLY' data-group = 'G1'>
+					<figure id='A0191119H' style='display: none' class='fast' data-name = 'TAN EE JOO, KELLY' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0191119H_bdwn class='breakdown'></span>
@@ -232,7 +233,7 @@
 						</a>
 						<figcaption>G1 TAN EE JOO, KELLY</figcaption>
 					</figure>
-					<figure id='A0200372X' class='fast' data-name = 'JERRY KUEK SONG HUA' data-group = 'G1'>
+					<figure id='A0200372X' style='display: none' class='fast' data-name = 'JERRY KUEK SONG HUA' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0200372X_bdwn class='breakdown'></span>
@@ -242,7 +243,7 @@
 						</a>
 						<figcaption>G1 JERRY KUEK SONG HUA</figcaption>
 					</figure>
-					<figure id='A0201523Y' class='fast' data-name = 'JASPER PHANG WEE KEAT' data-group = 'G1'>
+					<figure id='A0201523Y' style='display: none' class='fast' data-name = 'JASPER PHANG WEE KEAT' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0201523Y_bdwn class='breakdown'></span>
@@ -252,7 +253,7 @@
 						</a>
 						<figcaption>G1 JASPER PHANG WEE KEAT</figcaption>
 					</figure>
-					<figure id='A0202139R' class='fast' data-name = 'JANINA KWAN YIN MAN' data-group = 'G1'>
+					<figure id='A0202139R' style='display: none' class='fast' data-name = 'JANINA KWAN YIN MAN' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202139R_bdwn class='breakdown'></span>
@@ -262,7 +263,7 @@
 						</a>
 						<figcaption>G1 JANINA KWAN YIN MAN</figcaption>
 					</figure>
-					<figure id='A0202307X' class='fast' data-name = 'TAY YU JIE KENNETH' data-group = 'G1'>
+					<figure id='A0202307X' style='display: none' class='fast' data-name = 'TAY YU JIE KENNETH' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202307X_bdwn class='breakdown'></span>
@@ -272,7 +273,7 @@
 						</a>
 						<figcaption>G1 TAY YU JIE KENNETH</figcaption>
 					</figure>
-					<figure id='A0202610A' class='fast' data-name = 'IRINA MA. LUISA PADILLO CARTALLA' data-group = 'G1'>
+					<figure id='A0202610A' style='display: none' class='fast' data-name = 'IRINA MA. LUISA PADILLO CARTALLA' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202610A_bdwn class='breakdown'></span>
@@ -282,7 +283,7 @@
 						</a>
 						<figcaption>G1 IRINA MA. LUISA PADILLO CARTALLA</figcaption>
 					</figure>
-					<figure id='A0209231R' class='fast' data-name = 'MUHAMMAD SYAFIQ BIN MUHAMAD AYYOOB' data-group = 'G1'>
+					<figure id='A0209231R' style='display: none' class='fast' data-name = 'MUHAMMAD SYAFIQ BIN MUHAMAD AYYOOB' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0209231R_bdwn class='breakdown'></span>
@@ -292,7 +293,7 @@
 						</a>
 						<figcaption>G1 MUHAMMAD SYAFIQ BIN MUHAMAD AYYOOB</figcaption>
 					</figure>
-					<figure id='A0209262J' class='fast' data-name = 'TAY YU JIE' data-group = 'G1'>
+					<figure id='A0209262J' style='display: none' class='fast' data-name = 'TAY YU JIE' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0209262J_bdwn class='breakdown'></span>
@@ -302,7 +303,7 @@
 						</a>
 						<figcaption>G1 TAY YU JIE</figcaption>
 					</figure>
-					<figure id='A0187227X' class='fast' data-name = 'CELINE HO' data-group = 'G1'>
+					<figure id='A0187227X' style='display: none' class='fast' data-name = 'CELINE HO' data-group = 'G1'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187227X_bdwn class='breakdown'></span>
@@ -312,7 +313,7 @@
 						</a>
 						<figcaption>G1 CELINE HO</figcaption>
 					</figure>
-					<figure id='A0168034H' class='fast' data-name = 'ZHU SHENGBUWEI' data-group = 'G2'>
+					<figure id='A0168034H' style='display: none' class='fast' data-name = 'ZHU SHENGBUWEI' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0168034H_bdwn class='breakdown'></span>
@@ -322,7 +323,7 @@
 						</a>
 						<figcaption>G2 ZHU SHENGBUWEI</figcaption>
 					</figure>
-					<figure id='A0169821X' class='fast' data-name = 'IAN TAY ZHE JUN' data-group = 'G2'>
+					<figure id='A0169821X' style='display: none' class='fast' data-name = 'IAN TAY ZHE JUN' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0169821X_bdwn class='breakdown'></span>
@@ -332,7 +333,7 @@
 						</a>
 						<figcaption>G2 IAN TAY ZHE JUN</figcaption>
 					</figure>
-					<figure id='A0182591Y' class='medium' data-name = 'LIU YIJIANG' data-group = 'G2'>
+					<figure id='A0182591Y' style='display: none' class='medium' data-name = 'LIU YIJIANG' data-group = 'G2'>
 						<label class='medium'>
 							<span>medium</span>
 							<span id=A0182591Y_bdwn class='breakdown'></span>
@@ -342,7 +343,7 @@
 						</a>
 						<figcaption>G2 LIU YIJIANG</figcaption>
 					</figure>
-					<figure id='A0183321N' class='fast' data-name = 'GERRELL CHEE YI LUN' data-group = 'G2'>
+					<figure id='A0183321N' style='display: none' class='fast' data-name = 'GERRELL CHEE YI LUN' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183321N_bdwn class='breakdown'></span>
@@ -352,7 +353,7 @@
 						</a>
 						<figcaption>G2 GERRELL CHEE YI LUN</figcaption>
 					</figure>
-					<figure id='A0183485U' class='fast' data-name = 'KOH JIN QI' data-group = 'G2'>
+					<figure id='A0183485U' style='display: none' class='fast' data-name = 'KOH JIN QI' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183485U_bdwn class='breakdown'></span>
@@ -362,7 +363,7 @@
 						</a>
 						<figcaption>G2 KOH JIN QI</figcaption>
 					</figure>
-					<figure id='A0183492X' class='fast' data-name = 'MAO QINGHUA EDDIE' data-group = 'G2'>
+					<figure id='A0183492X' style='display: none' class='fast' data-name = 'MAO QINGHUA EDDIE' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183492X_bdwn class='breakdown'></span>
@@ -372,7 +373,7 @@
 						</a>
 						<figcaption>G2 MAO QINGHUA EDDIE</figcaption>
 					</figure>
-					<figure id='A0183829N' class='fast' data-name = 'PUAR YUE HONG' data-group = 'G2'>
+					<figure id='A0183829N' style='display: none' class='fast' data-name = 'PUAR YUE HONG' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183829N_bdwn class='breakdown'></span>
@@ -382,7 +383,7 @@
 						</a>
 						<figcaption>G2 PUAR YUE HONG</figcaption>
 					</figure>
-					<figure id='A0184244E' class='fast' data-name = 'AHMAD AMIRUL BIN AHMAD PURNOMO AMINUL HAFIT' data-group = 'G2'>
+					<figure id='A0184244E' style='display: none' class='fast' data-name = 'AHMAD AMIRUL BIN AHMAD PURNOMO AMINUL HAFIT' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0184244E_bdwn class='breakdown'></span>
@@ -392,7 +393,7 @@
 						</a>
 						<figcaption>G2 AHMAD AMIRUL BIN AHMAD PURNOMO AMINUL HAFIT</figcaption>
 					</figure>
-					<figure id='A0184461A' class='fast' data-name = 'LIU LINXIN' data-group = 'G2'>
+					<figure id='A0184461A' style='display: none' class='fast' data-name = 'LIU LINXIN' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0184461A_bdwn class='breakdown'></span>
@@ -402,7 +403,7 @@
 						</a>
 						<figcaption>G2 LIU LINXIN</figcaption>
 					</figure>
-					<figure id='A0187118Y' class='fast' data-name = 'GUAN QIN' data-group = 'G2'>
+					<figure id='A0187118Y' style='display: none' class='fast' data-name = 'GUAN QIN' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187118Y_bdwn class='breakdown'></span>
@@ -412,7 +413,7 @@
 						</a>
 						<figcaption>G2 GUAN QIN</figcaption>
 					</figure>
-					<figure id='A0187731X' class='fast' data-name = 'XIONG JIAXI' data-group = 'G2'>
+					<figure id='A0187731X' style='display: none' class='fast' data-name = 'XIONG JIAXI' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187731X_bdwn class='breakdown'></span>
@@ -422,7 +423,7 @@
 						</a>
 						<figcaption>G2 XIONG JIAXI</figcaption>
 					</figure>
-					<figure id='A0188315Y' class='fast' data-name = 'YAP PEI LI BEVERLY' data-group = 'G2'>
+					<figure id='A0188315Y' style='display: none' class='fast' data-name = 'YAP PEI LI BEVERLY' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188315Y_bdwn class='breakdown'></span>
@@ -432,7 +433,7 @@
 						</a>
 						<figcaption>G2 YAP PEI LI BEVERLY</figcaption>
 					</figure>
-					<figure id='A0188370X' class='fast' data-name = 'ZHANG JINGHAN' data-group = 'G2'>
+					<figure id='A0188370X' style='display: none' class='fast' data-name = 'ZHANG JINGHAN' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188370X_bdwn class='breakdown'></span>
@@ -442,7 +443,7 @@
 						</a>
 						<figcaption>G2 ZHANG JINGHAN</figcaption>
 					</figure>
-					<figure id='A0188787Y' class='fast' data-name = 'CHAN SIEW EE, SARAH' data-group = 'G2'>
+					<figure id='A0188787Y' style='display: none' class='fast' data-name = 'CHAN SIEW EE, SARAH' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188787Y_bdwn class='breakdown'></span>
@@ -452,7 +453,7 @@
 						</a>
 						<figcaption>G2 CHAN SIEW EE, SARAH</figcaption>
 					</figure>
-					<figure id='A0188917J' class='fast' data-name = 'ABIGAIL LEONG SONG NING' data-group = 'G2'>
+					<figure id='A0188917J' style='display: none' class='fast' data-name = 'ABIGAIL LEONG SONG NING' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188917J_bdwn class='breakdown'></span>
@@ -462,7 +463,7 @@
 						</a>
 						<figcaption>G2 ABIGAIL LEONG SONG NING</figcaption>
 					</figure>
-					<figure id='A0188951M' class='fast' data-name = 'DONG YU' data-group = 'G2'>
+					<figure id='A0188951M' style='display: none' class='fast' data-name = 'DONG YU' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188951M_bdwn class='breakdown'></span>
@@ -472,7 +473,7 @@
 						</a>
 						<figcaption>G2 DONG YU</figcaption>
 					</figure>
-					<figure id='A0189124B' class='fast' data-name = 'VANESSA TAN XIAO XUAN' data-group = 'G2'>
+					<figure id='A0189124B' style='display: none' class='fast' data-name = 'VANESSA TAN XIAO XUAN' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0189124B_bdwn class='breakdown'></span>
@@ -482,7 +483,7 @@
 						</a>
 						<figcaption>G2 VANESSA TAN XIAO XUAN</figcaption>
 					</figure>
-					<figure id='A0190074J' class='fast' data-name = 'EVE LEE SHI' data-group = 'G2'>
+					<figure id='A0190074J' style='display: none' class='fast' data-name = 'EVE LEE SHI' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0190074J_bdwn class='breakdown'></span>
@@ -492,7 +493,7 @@
 						</a>
 						<figcaption>G2 EVE LEE SHI</figcaption>
 					</figure>
-					<figure id='A0191121W' class='fast' data-name = 'WONG HUI EN, GRACE' data-group = 'G2'>
+					<figure id='A0191121W' style='display: none' class='fast' data-name = 'WONG HUI EN, GRACE' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0191121W_bdwn class='breakdown'></span>
@@ -502,7 +503,7 @@
 						</a>
 						<figcaption>G2 WONG HUI EN, GRACE</figcaption>
 					</figure>
-					<figure id='A0191177Y' class='fast' data-name = 'MUHAMMAD IS'MAILL BIN AZMAN' data-group = 'G2'>
+					<figure id='A0191177Y' style='display: none' class='fast' data-name = 'MUHAMMAD IS'MAILL BIN AZMAN' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0191177Y_bdwn class='breakdown'></span>
@@ -512,7 +513,7 @@
 						</a>
 						<figcaption>G2 MUHAMMAD IS'MAILL BIN AZMAN</figcaption>
 					</figure>
-					<figure id='A0200311L' class='fast' data-name = 'TAN HAO EN SAMUEL' data-group = 'G2'>
+					<figure id='A0200311L' style='display: none' class='fast' data-name = 'TAN HAO EN SAMUEL' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0200311L_bdwn class='breakdown'></span>
@@ -522,7 +523,7 @@
 						</a>
 						<figcaption>G2 TAN HAO EN SAMUEL</figcaption>
 					</figure>
-					<figure id='A0200338U' class='fast' data-name = 'SEAH U JIN' data-group = 'G2'>
+					<figure id='A0200338U' style='display: none' class='fast' data-name = 'SEAH U JIN' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0200338U_bdwn class='breakdown'></span>
@@ -532,7 +533,7 @@
 						</a>
 						<figcaption>G2 SEAH U JIN</figcaption>
 					</figure>
-					<figure id='A0202221H' class='fast' data-name = 'LIM WEN TING' data-group = 'G2'>
+					<figure id='A0202221H' style='display: none' class='fast' data-name = 'LIM WEN TING' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202221H_bdwn class='breakdown'></span>
@@ -542,7 +543,7 @@
 						</a>
 						<figcaption>G2 LIM WEN TING</figcaption>
 					</figure>
-					<figure id='A0202721X' class='fast' data-name = 'YE THU' data-group = 'G2'>
+					<figure id='A0202721X' style='display: none' class='fast' data-name = 'YE THU' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202721X_bdwn class='breakdown'></span>
@@ -552,7 +553,7 @@
 						</a>
 						<figcaption>G2 YE THU</figcaption>
 					</figure>
-					<figure id='A0202752N' class='fast' data-name = 'NG JING HAO, ALOYSIUS' data-group = 'G2'>
+					<figure id='A0202752N' style='display: none' class='fast' data-name = 'NG JING HAO, ALOYSIUS' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202752N_bdwn class='breakdown'></span>
@@ -562,7 +563,7 @@
 						</a>
 						<figcaption>G2 NG JING HAO, ALOYSIUS</figcaption>
 					</figure>
-					<figure id='A0209267Y' class='fast' data-name = 'TENG FANG HUI' data-group = 'G2'>
+					<figure id='A0209267Y' style='display: none' class='fast' data-name = 'TENG FANG HUI' data-group = 'G2'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0209267Y_bdwn class='breakdown'></span>
@@ -572,7 +573,7 @@
 						</a>
 						<figcaption>G2 TENG FANG HUI</figcaption>
 					</figure>
-					<figure id='A0181524J' class='fast' data-name = 'RYAN NEO' data-group = 'G3'>
+					<figure id='A0181524J' style='display: none' class='fast' data-name = 'RYAN NEO' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0181524J_bdwn class='breakdown'></span>
@@ -582,7 +583,7 @@
 						</a>
 						<figcaption>G3 RYAN NEO</figcaption>
 					</figure>
-					<figure id='A0182696M' class='fast' data-name = 'LEE YIN SHIN' data-group = 'G3'>
+					<figure id='A0182696M' style='display: none' class='fast' data-name = 'LEE YIN SHIN' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0182696M_bdwn class='breakdown'></span>
@@ -592,7 +593,7 @@
 						</a>
 						<figcaption>G3 LEE YIN SHIN</figcaption>
 					</figure>
-					<figure id='A0183169W' class='fast' data-name = 'LIM KUN YI JAMES' data-group = 'G3'>
+					<figure id='A0183169W' style='display: none' class='fast' data-name = 'LIM KUN YI JAMES' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183169W_bdwn class='breakdown'></span>
@@ -602,7 +603,7 @@
 						</a>
 						<figcaption>G3 LIM KUN YI JAMES</figcaption>
 					</figure>
-					<figure id='A0183255A' class='fast' data-name = 'LEE YONG SOON' data-group = 'G3'>
+					<figure id='A0183255A' style='display: none' class='fast' data-name = 'LEE YONG SOON' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183255A_bdwn class='breakdown'></span>
@@ -612,7 +613,7 @@
 						</a>
 						<figcaption>G3 LEE YONG SOON</figcaption>
 					</figure>
-					<figure id='A0183744X' class='medium' data-name = 'GOH YI FAN' data-group = 'G3'>
+					<figure id='A0183744X' style='display: none' class='medium' data-name = 'GOH YI FAN' data-group = 'G3'>
 						<label class='medium'>
 							<span>medium</span>
 							<span id=A0183744X_bdwn class='breakdown'></span>
@@ -622,7 +623,7 @@
 						</a>
 						<figcaption>G3 GOH YI FAN</figcaption>
 					</figure>
-					<figure id='A0184512J' class='fast' data-name = 'PENNIE KWAN JIA WEN' data-group = 'G3'>
+					<figure id='A0184512J' style='display: none' class='fast' data-name = 'PENNIE KWAN JIA WEN' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0184512J_bdwn class='breakdown'></span>
@@ -632,7 +633,7 @@
 						</a>
 						<figcaption>G3 PENNIE KWAN JIA WEN</figcaption>
 					</figure>
-					<figure id='A0184519W' class='fast' data-name = 'HUANG YAO YAO GRACE' data-group = 'G3'>
+					<figure id='A0184519W' style='display: none' class='fast' data-name = 'HUANG YAO YAO GRACE' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0184519W_bdwn class='breakdown'></span>
@@ -642,7 +643,7 @@
 						</a>
 						<figcaption>G3 HUANG YAO YAO GRACE</figcaption>
 					</figure>
-					<figure id='A0184887E' class='fast' data-name = 'REBECCA CHONG SHU WEN' data-group = 'G3'>
+					<figure id='A0184887E' style='display: none' class='fast' data-name = 'REBECCA CHONG SHU WEN' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0184887E_bdwn class='breakdown'></span>
@@ -652,7 +653,7 @@
 						</a>
 						<figcaption>G3 REBECCA CHONG SHU WEN</figcaption>
 					</figure>
-					<figure id='A0185027E' class='medium' data-name = 'WAN NABILAH BINTE WAN IMRAN WOOJDY' data-group = 'G3'>
+					<figure id='A0185027E' style='display: none' class='medium' data-name = 'WAN NABILAH BINTE WAN IMRAN WOOJDY' data-group = 'G3'>
 						<label class='medium'>
 							<span>medium</span>
 							<span id=A0185027E_bdwn class='breakdown'></span>
@@ -662,7 +663,7 @@
 						</a>
 						<figcaption>G3 WAN NABILAH BINTE WAN IMRAN WOOJDY</figcaption>
 					</figure>
-					<figure id='A0187181Y' class='fast' data-name = 'MICHELLE VANIA TANDJUNG' data-group = 'G3'>
+					<figure id='A0187181Y' style='display: none' class='fast' data-name = 'MICHELLE VANIA TANDJUNG' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187181Y_bdwn class='breakdown'></span>
@@ -672,7 +673,7 @@
 						</a>
 						<figcaption>G3 MICHELLE VANIA TANDJUNG</figcaption>
 					</figure>
-					<figure id='A0187239R' class='fast' data-name = 'MENG ZIXI' data-group = 'G3'>
+					<figure id='A0187239R' style='display: none' class='fast' data-name = 'MENG ZIXI' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187239R_bdwn class='breakdown'></span>
@@ -682,7 +683,7 @@
 						</a>
 						<figcaption>G3 MENG ZIXI</figcaption>
 					</figure>
-					<figure id='A0188822U' class='fast' data-name = 'LEONG YUE QI' data-group = 'G3'>
+					<figure id='A0188822U' style='display: none' class='fast' data-name = 'LEONG YUE QI' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188822U_bdwn class='breakdown'></span>
@@ -692,7 +693,7 @@
 						</a>
 						<figcaption>G3 LEONG YUE QI</figcaption>
 					</figure>
-					<figure id='A0189284M' class='fast' data-name = 'XING ZHIYAN' data-group = 'G3'>
+					<figure id='A0189284M' style='display: none' class='fast' data-name = 'XING ZHIYAN' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0189284M_bdwn class='breakdown'></span>
@@ -702,7 +703,7 @@
 						</a>
 						<figcaption>G3 XING ZHIYAN</figcaption>
 					</figure>
-					<figure id='A0190266A' class='fast' data-name = 'SITI HAZIRAH BINTE HASSAN' data-group = 'G3'>
+					<figure id='A0190266A' style='display: none' class='fast' data-name = 'SITI HAZIRAH BINTE HASSAN' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0190266A_bdwn class='breakdown'></span>
@@ -712,7 +713,7 @@
 						</a>
 						<figcaption>G3 SITI HAZIRAH BINTE HASSAN</figcaption>
 					</figure>
-					<figure id='A0194627U' class='fast' data-name = 'KOH ELENE' data-group = 'G3'>
+					<figure id='A0194627U' style='display: none' class='fast' data-name = 'KOH ELENE' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0194627U_bdwn class='breakdown'></span>
@@ -722,7 +723,7 @@
 						</a>
 						<figcaption>G3 KOH ELENE</figcaption>
 					</figure>
-					<figure id='A0200391W' class='fast' data-name = 'HAN JIAJUN, ADRIAN' data-group = 'G3'>
+					<figure id='A0200391W' style='display: none' class='fast' data-name = 'HAN JIAJUN, ADRIAN' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0200391W_bdwn class='breakdown'></span>
@@ -732,7 +733,7 @@
 						</a>
 						<figcaption>G3 HAN JIAJUN, ADRIAN</figcaption>
 					</figure>
-					<figure id='A0200397J' class='fast' data-name = 'LIM HAO YANG' data-group = 'G3'>
+					<figure id='A0200397J' style='display: none' class='fast' data-name = 'LIM HAO YANG' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0200397J_bdwn class='breakdown'></span>
@@ -742,7 +743,7 @@
 						</a>
 						<figcaption>G3 LIM HAO YANG</figcaption>
 					</figure>
-					<figure id='A0202040J' class='slow' data-name = 'HONG JIT SEAN BRANDON' data-group = 'G3'>
+					<figure id='A0202040J' style='display: none' class='slow' data-name = 'HONG JIT SEAN BRANDON' data-group = 'G3'>
 						<label class='slow'>
 							<span>slow</span>
 							<span id=A0202040J_bdwn class='breakdown'></span>
@@ -752,7 +753,7 @@
 						</a>
 						<figcaption>G3 HONG JIT SEAN BRANDON</figcaption>
 					</figure>
-					<figure id='A0202590N' class='fast' data-name = 'ISWARYA CANDASSAMY' data-group = 'G3'>
+					<figure id='A0202590N' style='display: none' class='fast' data-name = 'ISWARYA CANDASSAMY' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202590N_bdwn class='breakdown'></span>
@@ -762,7 +763,7 @@
 						</a>
 						<figcaption>G3 ISWARYA CANDASSAMY</figcaption>
 					</figure>
-					<figure id='A0202620B' class='fast' data-name = 'SUBASH S/O SATAPHA' data-group = 'G3'>
+					<figure id='A0202620B' style='display: none' class='fast' data-name = 'SUBASH S/O SATAPHA' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202620B_bdwn class='breakdown'></span>
@@ -772,7 +773,7 @@
 						</a>
 						<figcaption>G3 SUBASH S/O SATAPHA</figcaption>
 					</figure>
-					<figure id='A0202654M' class='fast' data-name = 'JOY NG' data-group = 'G3'>
+					<figure id='A0202654M' style='display: none' class='fast' data-name = 'JOY NG' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202654M_bdwn class='breakdown'></span>
@@ -782,7 +783,7 @@
 						</a>
 						<figcaption>G3 JOY NG</figcaption>
 					</figure>
-					<figure id='A0202763L' class='fast' data-name = 'JANELLE TAN XUE YING' data-group = 'G3'>
+					<figure id='A0202763L' style='display: none' class='fast' data-name = 'JANELLE TAN XUE YING' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202763L_bdwn class='breakdown'></span>
@@ -792,7 +793,7 @@
 						</a>
 						<figcaption>G3 JANELLE TAN XUE YING</figcaption>
 					</figure>
-					<figure id='A0209229A' class='medium' data-name = 'LEE WEN JUINN, CHRISTOPHER' data-group = 'G3'>
+					<figure id='A0209229A' style='display: none' class='medium' data-name = 'LEE WEN JUINN, CHRISTOPHER' data-group = 'G3'>
 						<label class='medium'>
 							<span>medium</span>
 							<span id=A0209229A_bdwn class='breakdown'></span>
@@ -802,7 +803,7 @@
 						</a>
 						<figcaption>G3 LEE WEN JUINN, CHRISTOPHER</figcaption>
 					</figure>
-					<figure id='A0210343Y' class='fast' data-name = 'LYON LER YUE' data-group = 'G3'>
+					<figure id='A0210343Y' style='display: none' class='fast' data-name = 'LYON LER YUE' data-group = 'G3'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0210343Y_bdwn class='breakdown'></span>
@@ -812,7 +813,7 @@
 						</a>
 						<figcaption>G3 LYON LER YUE</figcaption>
 					</figure>
-					<figure id='A0173434H' class='fast' data-name = 'NUR RUWAIDAH ADIBAH BTE RAZALI' data-group = 'G4'>
+					<figure id='A0173434H' style='display: none' class='fast' data-name = 'NUR RUWAIDAH ADIBAH BTE RAZALI' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0173434H_bdwn class='breakdown'></span>
@@ -822,7 +823,7 @@
 						</a>
 						<figcaption>G4 NUR RUWAIDAH ADIBAH BTE RAZALI</figcaption>
 					</figure>
-					<figure id='A0182627Y' class='fast' data-name = 'KEE CHEOW YAN' data-group = 'G4'>
+					<figure id='A0182627Y' style='display: none' class='fast' data-name = 'KEE CHEOW YAN' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0182627Y_bdwn class='breakdown'></span>
@@ -832,7 +833,7 @@
 						</a>
 						<figcaption>G4 KEE CHEOW YAN</figcaption>
 					</figure>
-					<figure id='A0182967L' class='fast' data-name = 'SHANDON PHUA YAN QUAN' data-group = 'G4'>
+					<figure id='A0182967L' style='display: none' class='fast' data-name = 'SHANDON PHUA YAN QUAN' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0182967L_bdwn class='breakdown'></span>
@@ -842,7 +843,7 @@
 						</a>
 						<figcaption>G4 SHANDON PHUA YAN QUAN</figcaption>
 					</figure>
-					<figure id='A0183101X' class='fast' data-name = 'YEW MUN HING' data-group = 'G4'>
+					<figure id='A0183101X' style='display: none' class='fast' data-name = 'YEW MUN HING' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183101X_bdwn class='breakdown'></span>
@@ -852,7 +853,7 @@
 						</a>
 						<figcaption>G4 YEW MUN HING</figcaption>
 					</figure>
-					<figure id='A0183253H' class='fast' data-name = 'ZHOU ZHEFANG' data-group = 'G4'>
+					<figure id='A0183253H' style='display: none' class='fast' data-name = 'ZHOU ZHEFANG' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183253H_bdwn class='breakdown'></span>
@@ -862,7 +863,7 @@
 						</a>
 						<figcaption>G4 ZHOU ZHEFANG</figcaption>
 					</figure>
-					<figure id='A0183253H' class='fast' data-name = 'ZHOU ZHEFANG' data-group = 'G4'>
+					<figure id='A0183253H' style='display: none' class='fast' data-name = 'ZHOU ZHEFANG' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183253H_bdwn class='breakdown'></span>
@@ -872,7 +873,7 @@
 						</a>
 						<figcaption>G4 ZHOU ZHEFANG</figcaption>
 					</figure>
-					<figure id='A0183430M' class='fast' data-name = 'LEE YIK HENG' data-group = 'G4'>
+					<figure id='A0183430M' style='display: none' class='fast' data-name = 'LEE YIK HENG' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183430M_bdwn class='breakdown'></span>
@@ -882,7 +883,7 @@
 						</a>
 						<figcaption>G4 LEE YIK HENG</figcaption>
 					</figure>
-					<figure id='A0183499J' class='fast' data-name = 'CHUA YAN JUN, CHRISTOPHER' data-group = 'G4'>
+					<figure id='A0183499J' style='display: none' class='fast' data-name = 'CHUA YAN JUN, CHRISTOPHER' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183499J_bdwn class='breakdown'></span>
@@ -892,7 +893,7 @@
 						</a>
 						<figcaption>G4 CHUA YAN JUN, CHRISTOPHER</figcaption>
 					</figure>
-					<figure id='A0183764U' class='slow' data-name = 'EUGENE SIM JIN SIANG' data-group = 'G4'>
+					<figure id='A0183764U' style='display: none' class='slow' data-name = 'EUGENE SIM JIN SIANG' data-group = 'G4'>
 						<label class='slow'>
 							<span>slow</span>
 							<span id=A0183764U_bdwn class='breakdown'></span>
@@ -902,7 +903,7 @@
 						</a>
 						<figcaption>G4 EUGENE SIM JIN SIANG</figcaption>
 					</figure>
-					<figure id='A0183820H' class='fast' data-name = 'CRISPUS TAN ZHI HAN' data-group = 'G4'>
+					<figure id='A0183820H' style='display: none' class='fast' data-name = 'CRISPUS TAN ZHI HAN' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183820H_bdwn class='breakdown'></span>
@@ -912,7 +913,7 @@
 						</a>
 						<figcaption>G4 CRISPUS TAN ZHI HAN</figcaption>
 					</figure>
-					<figure id='A0183944U' class='fast' data-name = 'MUHAMMAD ASHRAFF BIN ABDUL ALEEM' data-group = 'G4'>
+					<figure id='A0183944U' style='display: none' class='fast' data-name = 'MUHAMMAD ASHRAFF BIN ABDUL ALEEM' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183944U_bdwn class='breakdown'></span>
@@ -922,7 +923,7 @@
 						</a>
 						<figcaption>G4 MUHAMMAD ASHRAFF BIN ABDUL ALEEM</figcaption>
 					</figure>
-					<figure id='A0184341J' class='fast' data-name = 'DARRYL TAN SHAOLE' data-group = 'G4'>
+					<figure id='A0184341J' style='display: none' class='fast' data-name = 'DARRYL TAN SHAOLE' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0184341J_bdwn class='breakdown'></span>
@@ -932,7 +933,7 @@
 						</a>
 						<figcaption>G4 DARRYL TAN SHAOLE</figcaption>
 					</figure>
-					<figure id='A0184348W' class='fast' data-name = 'RYAN CHIAM YIAK JIN' data-group = 'G4'>
+					<figure id='A0184348W' style='display: none' class='fast' data-name = 'RYAN CHIAM YIAK JIN' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0184348W_bdwn class='breakdown'></span>
@@ -942,7 +943,7 @@
 						</a>
 						<figcaption>G4 RYAN CHIAM YIAK JIN</figcaption>
 					</figure>
-					<figure id='A0185051L' class='fast' data-name = 'CHONG EN NING RUTH' data-group = 'G4'>
+					<figure id='A0185051L' style='display: none' class='fast' data-name = 'CHONG EN NING RUTH' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0185051L_bdwn class='breakdown'></span>
@@ -952,7 +953,7 @@
 						</a>
 						<figcaption>G4 CHONG EN NING RUTH</figcaption>
 					</figure>
-					<figure id='A0185093Y' class='medium' data-name = 'ER WEN XUAN' data-group = 'G4'>
+					<figure id='A0185093Y' style='display: none' class='medium' data-name = 'ER WEN XUAN' data-group = 'G4'>
 						<label class='medium'>
 							<span>medium</span>
 							<span id=A0185093Y_bdwn class='breakdown'></span>
@@ -962,7 +963,7 @@
 						</a>
 						<figcaption>G4 ER WEN XUAN</figcaption>
 					</figure>
-					<figure id='A0187786A' class='fast' data-name = 'NG HUEI YING' data-group = 'G4'>
+					<figure id='A0187786A' style='display: none' class='fast' data-name = 'NG HUEI YING' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187786A_bdwn class='breakdown'></span>
@@ -972,7 +973,7 @@
 						</a>
 						<figcaption>G4 NG HUEI YING</figcaption>
 					</figure>
-					<figure id='A0188940R' class='fast' data-name = 'DONG TAIGE KAREN' data-group = 'G4'>
+					<figure id='A0188940R' style='display: none' class='fast' data-name = 'DONG TAIGE KAREN' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188940R_bdwn class='breakdown'></span>
@@ -982,7 +983,7 @@
 						</a>
 						<figcaption>G4 DONG TAIGE KAREN</figcaption>
 					</figure>
-					<figure id='A0190041W' class='fast' data-name = 'LIM SHI-YI MATTHEW' data-group = 'G4'>
+					<figure id='A0190041W' style='display: none' class='fast' data-name = 'LIM SHI-YI MATTHEW' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0190041W_bdwn class='breakdown'></span>
@@ -992,7 +993,7 @@
 						</a>
 						<figcaption>G4 LIM SHI-YI MATTHEW</figcaption>
 					</figure>
-					<figure id='A0191145J' class='fast' data-name = 'VANESSA LOW SI YING' data-group = 'G4'>
+					<figure id='A0191145J' style='display: none' class='fast' data-name = 'VANESSA LOW SI YING' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0191145J_bdwn class='breakdown'></span>
@@ -1002,7 +1003,7 @@
 						</a>
 						<figcaption>G4 VANESSA LOW SI YING</figcaption>
 					</figure>
-					<figure id='A0191201X' class='fast' data-name = 'SHARIFAH NADIAH BINTE ABDUL KADIR' data-group = 'G4'>
+					<figure id='A0191201X' style='display: none' class='fast' data-name = 'SHARIFAH NADIAH BINTE ABDUL KADIR' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0191201X_bdwn class='breakdown'></span>
@@ -1012,7 +1013,7 @@
 						</a>
 						<figcaption>G4 SHARIFAH NADIAH BINTE ABDUL KADIR</figcaption>
 					</figure>
-					<figure id='A0200322H' class='fast' data-name = 'ELTON NEO HWEE ZHAN' data-group = 'G4'>
+					<figure id='A0200322H' style='display: none' class='fast' data-name = 'ELTON NEO HWEE ZHAN' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0200322H_bdwn class='breakdown'></span>
@@ -1022,7 +1023,7 @@
 						</a>
 						<figcaption>G4 ELTON NEO HWEE ZHAN</figcaption>
 					</figure>
-					<figure id='A0200456R' class='fast' data-name = 'SAW TIAN AIK' data-group = 'G4'>
+					<figure id='A0200456R' style='display: none' class='fast' data-name = 'SAW TIAN AIK' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0200456R_bdwn class='breakdown'></span>
@@ -1032,7 +1033,7 @@
 						</a>
 						<figcaption>G4 SAW TIAN AIK</figcaption>
 					</figure>
-					<figure id='A0202379E' class='fast' data-name = 'LING MIN YI' data-group = 'G4'>
+					<figure id='A0202379E' style='display: none' class='fast' data-name = 'LING MIN YI' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202379E_bdwn class='breakdown'></span>
@@ -1042,7 +1043,7 @@
 						</a>
 						<figcaption>G4 LING MIN YI</figcaption>
 					</figure>
-					<figure id='A0202432Y' class='fast' data-name = 'TAN YONG JIE ALVIN' data-group = 'G4'>
+					<figure id='A0202432Y' style='display: none' class='fast' data-name = 'TAN YONG JIE ALVIN' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202432Y_bdwn class='breakdown'></span>
@@ -1052,7 +1053,7 @@
 						</a>
 						<figcaption>G4 TAN YONG JIE ALVIN</figcaption>
 					</figure>
-					<figure id='A0204456J' class='fast' data-name = 'BEN BRIAN BARRIESES FERNANDEZ' data-group = 'G4'>
+					<figure id='A0204456J' style='display: none' class='fast' data-name = 'BEN BRIAN BARRIESES FERNANDEZ' data-group = 'G4'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0204456J_bdwn class='breakdown'></span>
@@ -1062,7 +1063,7 @@
 						</a>
 						<figcaption>G4 BEN BRIAN BARRIESES FERNANDEZ</figcaption>
 					</figure>
-					<figure id='A0211971J' class='error' data-name = 'GARCHER MORGANE' data-group = 'G4'>
+					<figure id='A0211971J' style='display: none' class='error' data-name = 'GARCHER MORGANE' data-group = 'G4'>
 						<label class='error'>
 							<span>error</span>
 							<span id=A0211971J_bdwn class='breakdown'></span>
@@ -1072,7 +1073,7 @@
 						</a>
 						<figcaption>G4 GARCHER MORGANE</figcaption>
 					</figure>
-					<figure id='A0164648U' class='medium' data-name = 'CHAO KEANG YIN' data-group = 'G5'>
+					<figure id='A0164648U' style='display: none' class='medium' data-name = 'CHAO KEANG YIN' data-group = 'G5'>
 						<label class='medium'>
 							<span>medium</span>
 							<span id=A0164648U_bdwn class='breakdown'></span>
@@ -1082,7 +1083,7 @@
 						</a>
 						<figcaption>G5 CHAO KEANG YIN</figcaption>
 					</figure>
-					<figure id='A0182451J' class='fast' data-name = 'ELDON NG YEW KEONG' data-group = 'G5'>
+					<figure id='A0182451J' style='display: none' class='fast' data-name = 'ELDON NG YEW KEONG' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0182451J_bdwn class='breakdown'></span>
@@ -1092,7 +1093,7 @@
 						</a>
 						<figcaption>G5 ELDON NG YEW KEONG</figcaption>
 					</figure>
-					<figure id='A0182869J' class='medium' data-name = 'C ABHILASH MOHAN' data-group = 'G5'>
+					<figure id='A0182869J' style='display: none' class='medium' data-name = 'C ABHILASH MOHAN' data-group = 'G5'>
 						<label class='medium'>
 							<span>medium</span>
 							<span id=A0182869J_bdwn class='breakdown'></span>
@@ -1102,7 +1103,7 @@
 						</a>
 						<figcaption>G5 C ABHILASH MOHAN</figcaption>
 					</figure>
-					<figure id='A0182909U' class='fast' data-name = 'MARTIN PUNG MING EN' data-group = 'G5'>
+					<figure id='A0182909U' style='display: none' class='fast' data-name = 'MARTIN PUNG MING EN' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0182909U_bdwn class='breakdown'></span>
@@ -1112,7 +1113,7 @@
 						</a>
 						<figcaption>G5 MARTIN PUNG MING EN</figcaption>
 					</figure>
-					<figure id='A0182953W' class='fast' data-name = 'WONG YI JIE' data-group = 'G5'>
+					<figure id='A0182953W' style='display: none' class='fast' data-name = 'WONG YI JIE' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0182953W_bdwn class='breakdown'></span>
@@ -1122,7 +1123,7 @@
 						</a>
 						<figcaption>G5 WONG YI JIE</figcaption>
 					</figure>
-					<figure id='A0182996H' class='fast' data-name = 'LIM WEN JIE' data-group = 'G5'>
+					<figure id='A0182996H' style='display: none' class='fast' data-name = 'LIM WEN JIE' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0182996H_bdwn class='breakdown'></span>
@@ -1132,7 +1133,7 @@
 						</a>
 						<figcaption>G5 LIM WEN JIE</figcaption>
 					</figure>
-					<figure id='A0183231N' class='fast' data-name = 'CHEN BO HAN' data-group = 'G5'>
+					<figure id='A0183231N' style='display: none' class='fast' data-name = 'CHEN BO HAN' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183231N_bdwn class='breakdown'></span>
@@ -1142,7 +1143,7 @@
 						</a>
 						<figcaption>G5 CHEN BO HAN</figcaption>
 					</figure>
-					<figure id='A0183480A' class='fast' data-name = 'SU YUNG EN' data-group = 'G5'>
+					<figure id='A0183480A' style='display: none' class='fast' data-name = 'SU YUNG EN' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183480A_bdwn class='breakdown'></span>
@@ -1152,7 +1153,7 @@
 						</a>
 						<figcaption>G5 SU YUNG EN</figcaption>
 					</figure>
-					<figure id='A0183828R' class='fast' data-name = 'KOH ZHE WEI' data-group = 'G5'>
+					<figure id='A0183828R' style='display: none' class='fast' data-name = 'KOH ZHE WEI' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0183828R_bdwn class='breakdown'></span>
@@ -1162,7 +1163,7 @@
 						</a>
 						<figcaption>G5 KOH ZHE WEI</figcaption>
 					</figure>
-					<figure id='A0184233J' class='fast' data-name = 'YAP HAO AARON' data-group = 'G5'>
+					<figure id='A0184233J' style='display: none' class='fast' data-name = 'YAP HAO AARON' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0184233J_bdwn class='breakdown'></span>
@@ -1172,7 +1173,7 @@
 						</a>
 						<figcaption>G5 YAP HAO AARON</figcaption>
 					</figure>
-					<figure id='A0185043J' class='medium' data-name = 'HAZEL PHUA XIN YI' data-group = 'G5'>
+					<figure id='A0185043J' style='display: none' class='medium' data-name = 'HAZEL PHUA XIN YI' data-group = 'G5'>
 						<label class='medium'>
 							<span>medium</span>
 							<span id=A0185043J_bdwn class='breakdown'></span>
@@ -1182,7 +1183,7 @@
 						</a>
 						<figcaption>G5 HAZEL PHUA XIN YI</figcaption>
 					</figure>
-					<figure id='A0185920B' class='fast' data-name = 'YAW JESSIE' data-group = 'G5'>
+					<figure id='A0185920B' style='display: none' class='fast' data-name = 'YAW JESSIE' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0185920B_bdwn class='breakdown'></span>
@@ -1192,7 +1193,7 @@
 						</a>
 						<figcaption>G5 YAW JESSIE</figcaption>
 					</figure>
-					<figure id='A0187409U' class='fast' data-name = 'TASYA GRACIELA' data-group = 'G5'>
+					<figure id='A0187409U' style='display: none' class='fast' data-name = 'TASYA GRACIELA' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187409U_bdwn class='breakdown'></span>
@@ -1202,17 +1203,17 @@
 						</a>
 						<figcaption>G5 TASYA GRACIELA</figcaption>
 					</figure>
-					<figure id='A0188472R' class='fast' data-name = 'NABILA FATHARANI AZKA' data-group = 'G5'>
+					<figure id='A0188472R' style='display: none' class='fast' data-name = 'NABILA FATHARANI AZKA' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188472R_bdwn class='breakdown'></span>
 						</label>
-						<a href='https://mobius.design-automation.net/dashboard?file=_aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3BrZXJlZC9BUjI1MjQtUHJvamVjdC1HYWxsZXJ5L21hc3Rlci9SZWJ1aWxkSU1Hcy9UdXRvcmlhbCUyMEdyb3VwJTIwNS9BMDE4ODQ3MlJfTmFiaWxhX0ZhdGhhcmFuaV9BemthLm1vYg==' target=_blank>
-							<img src='RebuildIMGs/Tutorial Group 5/A0188472R_Nabila_Fatharani_Azka.png'></img>
+						<a href='https://mobius.design-automation.net/dashboard?file=_aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3BrZXJlZC9BUjI1MjQtUHJvamVjdC1HYWxsZXJ5L21hc3Rlci9GaW5hbFByb2plY3QvVHV0b3JpYWwlMjBHcm91cCUyMDUvQTAxODg0NzJSX05hYmlsYV9GYXRoYXJhbmlfQXprYS5tb2I=' target=_blank>
+							<img src='FinalProject/Tutorial Group 5/A0188472R_Nabila_Fatharani_Azka.png'></img>
 						</a>
 						<figcaption>G5 NABILA FATHARANI AZKA</figcaption>
 					</figure>
-					<figure id='A0188809J' class='fast' data-name = 'PE CHING YEE (PENG JINGYI)' data-group = 'G5'>
+					<figure id='A0188809J' style='display: none' class='fast' data-name = 'PE CHING YEE (PENG JINGYI)' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188809J_bdwn class='breakdown'></span>
@@ -1222,7 +1223,7 @@
 						</a>
 						<figcaption>G5 PE CHING YEE (PENG JINGYI)</figcaption>
 					</figure>
-					<figure id='A0189566H' class='fast' data-name = 'WONG XIAO TONG' data-group = 'G5'>
+					<figure id='A0189566H' style='display: none' class='fast' data-name = 'WONG XIAO TONG' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0189566H_bdwn class='breakdown'></span>
@@ -1232,7 +1233,7 @@
 						</a>
 						<figcaption>G5 WONG XIAO TONG</figcaption>
 					</figure>
-					<figure id='A0190152N' class='fast' data-name = 'THAM ZHI YIK' data-group = 'G5'>
+					<figure id='A0190152N' style='display: none' class='fast' data-name = 'THAM ZHI YIK' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0190152N_bdwn class='breakdown'></span>
@@ -1242,7 +1243,7 @@
 						</a>
 						<figcaption>G5 THAM ZHI YIK</figcaption>
 					</figure>
-					<figure id='A0191163J' class='fast' data-name = 'TAN YU JIA' data-group = 'G5'>
+					<figure id='A0191163J' style='display: none' class='fast' data-name = 'TAN YU JIA' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0191163J_bdwn class='breakdown'></span>
@@ -1252,7 +1253,7 @@
 						</a>
 						<figcaption>G5 TAN YU JIA</figcaption>
 					</figure>
-					<figure id='A0200345X' class='fast' data-name = 'ALEXANDER TEOH JIE HAO' data-group = 'G5'>
+					<figure id='A0200345X' style='display: none' class='fast' data-name = 'ALEXANDER TEOH JIE HAO' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0200345X_bdwn class='breakdown'></span>
@@ -1262,7 +1263,7 @@
 						</a>
 						<figcaption>G5 ALEXANDER TEOH JIE HAO</figcaption>
 					</figure>
-					<figure id='A0200380Y' class='medium' data-name = 'ISAAC TAN HUNG' data-group = 'G5'>
+					<figure id='A0200380Y' style='display: none' class='medium' data-name = 'ISAAC TAN HUNG' data-group = 'G5'>
 						<label class='medium'>
 							<span>medium</span>
 							<span id=A0200380Y_bdwn class='breakdown'></span>
@@ -1272,7 +1273,7 @@
 						</a>
 						<figcaption>G5 ISAAC TAN HUNG</figcaption>
 					</figure>
-					<figure id='A0202778Y' class='fast' data-name = 'NUR SABRINA BINTE SHAFARI' data-group = 'G5'>
+					<figure id='A0202778Y' style='display: none' class='fast' data-name = 'NUR SABRINA BINTE SHAFARI' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202778Y_bdwn class='breakdown'></span>
@@ -1282,7 +1283,7 @@
 						</a>
 						<figcaption>G5 NUR SABRINA BINTE SHAFARI</figcaption>
 					</figure>
-					<figure id='A0209230U' class='fast' data-name = 'DELA CRUZ JOHN ANTHONY BORLONGAN' data-group = 'G5'>
+					<figure id='A0209230U' style='display: none' class='fast' data-name = 'DELA CRUZ JOHN ANTHONY BORLONGAN' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0209230U_bdwn class='breakdown'></span>
@@ -1292,7 +1293,7 @@
 						</a>
 						<figcaption>G5 DELA CRUZ JOHN ANTHONY BORLONGAN</figcaption>
 					</figure>
-					<figure id='A0164670A' class='fast' data-name = 'CHLOE LAU JIA YEE' data-group = 'G5'>
+					<figure id='A0164670A' style='display: none' class='fast' data-name = 'CHLOE LAU JIA YEE' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0164670A_bdwn class='breakdown'></span>
@@ -1302,7 +1303,7 @@
 						</a>
 						<figcaption>G5 CHLOE LAU JIA YEE</figcaption>
 					</figure>
-					<figure id='A0189010M' class='fast' data-name = 'ZHANG CHUWEI' data-group = 'G5'>
+					<figure id='A0189010M' style='display: none' class='fast' data-name = 'ZHANG CHUWEI' data-group = 'G5'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0189010M_bdwn class='breakdown'></span>
@@ -1312,7 +1313,7 @@
 						</a>
 						<figcaption>G5 ZHANG CHUWEI</figcaption>
 					</figure>
-					<figure id='A0166822B' class='medium' data-name = 'LIM TZI KUN, MATTHEW' data-group = 'G6'>
+					<figure id='A0166822B' style='display: none' class='medium' data-name = 'LIM TZI KUN, MATTHEW' data-group = 'G6'>
 						<label class='medium'>
 							<span>medium</span>
 							<span id=A0166822B_bdwn class='breakdown'></span>
@@ -1322,7 +1323,7 @@
 						</a>
 						<figcaption>G6 LIM TZI KUN, MATTHEW</figcaption>
 					</figure>
-					<figure id='A0166862U' class='fast' data-name = 'HO JUN XUAN, BENEDICT' data-group = 'G6'>
+					<figure id='A0166862U' style='display: none' class='fast' data-name = 'HO JUN XUAN, BENEDICT' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0166862U_bdwn class='breakdown'></span>
@@ -1332,7 +1333,7 @@
 						</a>
 						<figcaption>G6 HO JUN XUAN, BENEDICT</figcaption>
 					</figure>
-					<figure id='A0181319E' class='slow' data-name = 'MAK JIA JING SHAUN' data-group = 'G6'>
+					<figure id='A0181319E' style='display: none' class='slow' data-name = 'MAK JIA JING SHAUN' data-group = 'G6'>
 						<label class='slow'>
 							<span>slow</span>
 							<span id=A0181319E_bdwn class='breakdown'></span>
@@ -1342,7 +1343,7 @@
 						</a>
 						<figcaption>G6 MAK JIA JING SHAUN</figcaption>
 					</figure>
-					<figure id='A0182405L' class='fast' data-name = 'KOH ZHI HAO' data-group = 'G6'>
+					<figure id='A0182405L' style='display: none' class='fast' data-name = 'KOH ZHI HAO' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0182405L_bdwn class='breakdown'></span>
@@ -1352,7 +1353,7 @@
 						</a>
 						<figcaption>G6 KOH ZHI HAO</figcaption>
 					</figure>
-					<figure id='A0182882U' class='fast' data-name = 'NGA ZHI YUAN' data-group = 'G6'>
+					<figure id='A0182882U' style='display: none' class='fast' data-name = 'NGA ZHI YUAN' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0182882U_bdwn class='breakdown'></span>
@@ -1362,7 +1363,7 @@
 						</a>
 						<figcaption>G6 NGA ZHI YUAN</figcaption>
 					</figure>
-					<figure id='A0185322J' class='medium' data-name = 'CYNTHIA WEE SU YI' data-group = 'G6'>
+					<figure id='A0185322J' style='display: none' class='medium' data-name = 'CYNTHIA WEE SU YI' data-group = 'G6'>
 						<label class='medium'>
 							<span>medium</span>
 							<span id=A0185322J_bdwn class='breakdown'></span>
@@ -1372,7 +1373,7 @@
 						</a>
 						<figcaption>G6 CYNTHIA WEE SU YI</figcaption>
 					</figure>
-					<figure id='A0185954M' class='fast' data-name = 'YAP YEE CHEN' data-group = 'G6'>
+					<figure id='A0185954M' style='display: none' class='fast' data-name = 'YAP YEE CHEN' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0185954M_bdwn class='breakdown'></span>
@@ -1382,7 +1383,7 @@
 						</a>
 						<figcaption>G6 YAP YEE CHEN</figcaption>
 					</figure>
-					<figure id='A0187297J' class='fast' data-name = 'ZHOU ZIJUN' data-group = 'G6'>
+					<figure id='A0187297J' style='display: none' class='fast' data-name = 'ZHOU ZIJUN' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187297J_bdwn class='breakdown'></span>
@@ -1392,7 +1393,7 @@
 						</a>
 						<figcaption>G6 ZHOU ZIJUN</figcaption>
 					</figure>
-					<figure id='A0187898W' class='fast' data-name = 'EDNA YEAP XIN QI' data-group = 'G6'>
+					<figure id='A0187898W' style='display: none' class='fast' data-name = 'EDNA YEAP XIN QI' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187898W_bdwn class='breakdown'></span>
@@ -1402,7 +1403,7 @@
 						</a>
 						<figcaption>G6 EDNA YEAP XIN QI</figcaption>
 					</figure>
-					<figure id='A0187929E' class='fast' data-name = 'JESSICA ANN LEE YU' data-group = 'G6'>
+					<figure id='A0187929E' style='display: none' class='fast' data-name = 'JESSICA ANN LEE YU' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187929E_bdwn class='breakdown'></span>
@@ -1412,7 +1413,7 @@
 						</a>
 						<figcaption>G6 JESSICA ANN LEE YU</figcaption>
 					</figure>
-					<figure id='A0188269J' class='fast' data-name = 'AUDRIS JEAN TAN YING ZHENG' data-group = 'G6'>
+					<figure id='A0188269J' style='display: none' class='fast' data-name = 'AUDRIS JEAN TAN YING ZHENG' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0188269J_bdwn class='breakdown'></span>
@@ -1422,7 +1423,7 @@
 						</a>
 						<figcaption>G6 AUDRIS JEAN TAN YING ZHENG</figcaption>
 					</figure>
-					<figure id='A0189102J' class='fast' data-name = 'CHUNG ZHIWEI' data-group = 'G6'>
+					<figure id='A0189102J' style='display: none' class='fast' data-name = 'CHUNG ZHIWEI' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0189102J_bdwn class='breakdown'></span>
@@ -1432,7 +1433,7 @@
 						</a>
 						<figcaption>G6 CHUNG ZHIWEI</figcaption>
 					</figure>
-					<figure id='A0189394J' class='fast' data-name = 'MEGUMI CHUA HUI MEI' data-group = 'G6'>
+					<figure id='A0189394J' style='display: none' class='fast' data-name = 'MEGUMI CHUA HUI MEI' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0189394J_bdwn class='breakdown'></span>
@@ -1442,7 +1443,7 @@
 						</a>
 						<figcaption>G6 MEGUMI CHUA HUI MEI</figcaption>
 					</figure>
-					<figure id='A0189435R' class='fast' data-name = 'TRACY TAI' data-group = 'G6'>
+					<figure id='A0189435R' style='display: none' class='fast' data-name = 'TRACY TAI' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0189435R_bdwn class='breakdown'></span>
@@ -1452,7 +1453,7 @@
 						</a>
 						<figcaption>G6 TRACY TAI</figcaption>
 					</figure>
-					<figure id='A0191168Y' class='fast' data-name = 'YIP FENG' data-group = 'G6'>
+					<figure id='A0191168Y' style='display: none' class='fast' data-name = 'YIP FENG' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0191168Y_bdwn class='breakdown'></span>
@@ -1462,7 +1463,7 @@
 						</a>
 						<figcaption>G6 YIP FENG</figcaption>
 					</figure>
-					<figure id='A0200335Y' class='fast' data-name = 'JOSHUA SIEW HAO GUANG' data-group = 'G6'>
+					<figure id='A0200335Y' style='display: none' class='fast' data-name = 'JOSHUA SIEW HAO GUANG' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0200335Y_bdwn class='breakdown'></span>
@@ -1472,7 +1473,7 @@
 						</a>
 						<figcaption>G6 JOSHUA SIEW HAO GUANG</figcaption>
 					</figure>
-					<figure id='A0200351A' class='fast' data-name = 'NG JIAN YUAN' data-group = 'G6'>
+					<figure id='A0200351A' style='display: none' class='fast' data-name = 'NG JIAN YUAN' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0200351A_bdwn class='breakdown'></span>
@@ -1482,7 +1483,7 @@
 						</a>
 						<figcaption>G6 NG JIAN YUAN</figcaption>
 					</figure>
-					<figure id='A0200389H' class='fast' data-name = 'WONG YU CHUN TIMOTHY' data-group = 'G6'>
+					<figure id='A0200389H' style='display: none' class='fast' data-name = 'WONG YU CHUN TIMOTHY' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0200389H_bdwn class='breakdown'></span>
@@ -1492,7 +1493,7 @@
 						</a>
 						<figcaption>G6 WONG YU CHUN TIMOTHY</figcaption>
 					</figure>
-					<figure id='A0202756H' class='fast' data-name = 'WOO MUNG YEE VALENTINE' data-group = 'G6'>
+					<figure id='A0202756H' style='display: none' class='fast' data-name = 'WOO MUNG YEE VALENTINE' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0202756H_bdwn class='breakdown'></span>
@@ -1502,7 +1503,7 @@
 						</a>
 						<figcaption>G6 WOO MUNG YEE VALENTINE</figcaption>
 					</figure>
-					<figure id='A0209234L' class='fast' data-name = 'FONG SHEAN HUI' data-group = 'G6'>
+					<figure id='A0209234L' style='display: none' class='fast' data-name = 'FONG SHEAN HUI' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0209234L_bdwn class='breakdown'></span>
@@ -1512,7 +1513,7 @@
 						</a>
 						<figcaption>G6 FONG SHEAN HUI</figcaption>
 					</figure>
-					<figure id='A0209249Y' class='fast' data-name = 'ATHEERAH BINTE DEHYAL KAMAL' data-group = 'G6'>
+					<figure id='A0209249Y' style='display: none' class='fast' data-name = 'ATHEERAH BINTE DEHYAL KAMAL' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0209249Y_bdwn class='breakdown'></span>
@@ -1522,7 +1523,7 @@
 						</a>
 						<figcaption>G6 ATHEERAH BINTE DEHYAL KAMAL</figcaption>
 					</figure>
-					<figure id='A0209251M' class='fast' data-name = 'KOM HUI JING' data-group = 'G6'>
+					<figure id='A0209251M' style='display: none' class='fast' data-name = 'KOM HUI JING' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0209251M_bdwn class='breakdown'></span>
@@ -1532,7 +1533,7 @@
 						</a>
 						<figcaption>G6 KOM HUI JING</figcaption>
 					</figure>
-					<figure id='A0211071B' class='fast' data-name = 'LEE WEI JIAN' data-group = 'G6'>
+					<figure id='A0211071B' style='display: none' class='fast' data-name = 'LEE WEI JIAN' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0211071B_bdwn class='breakdown'></span>
@@ -1542,7 +1543,7 @@
 						</a>
 						<figcaption>G6 LEE WEI JIAN</figcaption>
 					</figure>
-					<figure id='A0187640Y' class='fast' data-name = 'WANG ANXIN' data-group = 'G6'>
+					<figure id='A0187640Y' style='display: none' class='fast' data-name = 'WANG ANXIN' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0187640Y_bdwn class='breakdown'></span>
@@ -1552,7 +1553,7 @@
 						</a>
 						<figcaption>G6 WANG ANXIN</figcaption>
 					</figure>
-					<figure id='A0200304H' class='fast' data-name = 'KOH DAI YUAN, SHOKI' data-group = 'G6'>
+					<figure id='A0200304H' style='display: none' class='fast' data-name = 'KOH DAI YUAN, SHOKI' data-group = 'G6'>
 						<label class='fast'>
 							<span>fast</span>
 							<span id=A0200304H_bdwn class='breakdown'></span>

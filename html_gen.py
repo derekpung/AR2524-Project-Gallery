@@ -109,13 +109,14 @@ banner_section.add_child(info_container)
 info_container.add_child(HtmlEle("h3").extend_attr(["id='TA'"]))
 sort_container = HtmlEle("div")
 banner_section.add_child(sort_container)
-sort_drpdown = HtmlEle("select").extend_attr(["id='dropdown'", "onchange='sort_figures(this)'"])
+sort_drpdown = HtmlEle("select").extend_attr(["id='dropdown'", "onchange='sort_figures()'"])
 basic_options = HtmlEle("optgroup").extend_attr(["label='Basic'"])
-sort_container.add_child(HtmlEle("span").extend_attr(["id='sort_toggle_btn'", "onclick='toggle_asc(this)'"]).update_text("ASCENDING"))
+sort_container.add_child(HtmlEle("span").extend_attr(["id='sort_toggle_btn'", "onclick='toggle_asc()'"]).update_text("ASCENDING"))
 sort_container.add_child(sort_drpdown)
 sort_drpdown.add_child(basic_options)
 
 basic_options.add_child(HtmlEle("option").extend_attr(["value='byName'"]).update_text("Name")) # name grade
+basic_options.add_child(HtmlEle("option").extend_attr(["value='byGroup'"]).update_text("Group"))
 
 with open(MOB_JSON, "r", encoding="utf-8") as json_f:
     mob_dict = json.load(json_f)
@@ -148,7 +149,7 @@ for f_name in mob_dict:
         btn_obj.add_child(HtmlEle("span").update_text("G%s" % group_number).extend_attr(["class='long_text'"]))
         btn_obj.add_child(HtmlEle("span").update_text(group_number).extend_attr(["class='short_text'"]))
     
-    figure_obj = HtmlEle("figure").extend_attr(["id='%s'" % proj_dict["student_id"]])
+    figure_obj = HtmlEle("figure").extend_attr(["id='%s'" % proj_dict["student_id"], "style='display: none'"])
     fig_grid.add_child(figure_obj)
     figure_obj.extend_attr(["class='%s'" % run_status]).extend_attr(["data-name = '%s'" % proj_dict["student_name"], "data-group = 'G%s'" % group_number])
     run_time_div = HtmlEle("label").extend_attr(["class='%s'" % run_status])
