@@ -39,6 +39,10 @@ nav {
     overflow: hidden;
 }
 
+.btn:hover {
+    font-weight: 600;
+}
+
 .grade_btn {
     min-width: 4.5em;
 }
@@ -101,10 +105,17 @@ main {
 
 #info {
     width: 70%;
+    overflow: hidden;
 }
 
 #TA {
     margin: 0;
+}
+
+.temp_msg {
+    font-size: small;
+    margin-right: 2em;
+    text-overflow: ellipsis;
 }
 
 #sort_toggle_btn {
@@ -210,8 +221,42 @@ figure .fast {
 }
 
 figcaption {
+    display: flex;
+    flex: row nowrap;
+    justify-content: space-between;
+    flex: 1;
+}
+
+figcaption span{
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 80%;
+}
+
+.bump {
+    height: 1em;
+    margin: 0 0 0 0.25em;
+    background-color: #FAFAFB;
+}
+
+.arrow {
+    z-index: 10;
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 2px;
+    position: relative;
+    right: 0.4em;
+}
+
+.up {
+    transform: rotate(-135deg);
+    bottom: 0.6em;
+}
+
+.down {
+    transform: rotate(45deg);
+    bottom: 0.8em;
 }
 
 ::-webkit-scrollbar {

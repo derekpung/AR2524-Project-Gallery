@@ -162,7 +162,8 @@ for f_name in mob_dict:
     run_time_div.add_child(HtmlEle("span").extend_attr(["id=%s_bdwn" % proj_dict["student_id"], "class='breakdown'"]))
 
     img_link.add_child(HtmlEle("img").extend_attr(["src='%s'" % img_src]))
-    fig_cap_obj = HtmlEle("figcaption").update_text("G%s %s" % (group_number, proj_dict["student_name"]))
+    fig_cap_obj = HtmlEle("figcaption")
     figure_obj.add_child(fig_cap_obj)
+    fig_cap_obj.add_child(HtmlEle("span").update_text("G%s %s" % (group_number, proj_dict["student_name"])))
 
 html_obj.to_html()

@@ -126,6 +126,27 @@ function import_json() {
                 fig.setAttribute("data-parameterisation", para_grade);
                 fig.setAttribute("data-differentiation", diff_grade);
 
+                let bump_up_btn = document.createElement('label')
+                bump_up_btn.setAttribute("onclick","bump_up(this)");
+                bump_up_btn.dataset.figParent = student_id;
+                bump_up_btn.dataset.bump = "up";
+                let arrow = document.createElement("i");
+                arrow.setAttribute("class", "arrow up");
+                bump_up_btn.appendChild(arrow);
+                bump_up_btn.className = "btn bump";
+
+                let bump_down_btn = document.createElement('label')
+                bump_down_btn.setAttribute("onclick","bump_down(this)");
+                bump_down_btn.dataset.figParent = student_id;
+                bump_down_btn.dataset.bump = "down";
+                arrow = document.createElement("i");
+                arrow.setAttribute("class", "arrow down");
+                bump_down_btn.appendChild(arrow);
+                bump_down_btn.className = "btn bump";
+
+                fig.querySelector("figcaption").appendChild(bump_up_btn);
+                fig.querySelector("figcaption").appendChild(bump_down_btn);
+
             } catch (error) {
                 console.log(error);
                 console.log("No submission: " + id_keys[i])
@@ -134,6 +155,7 @@ function import_json() {
         }
         _number_grade();
         _update_breakdown();
+        _display_bumps();
     }
     fr.readAsText(files.item(0));
     imported = true;
@@ -155,6 +177,7 @@ function sort_figures() {
     _sort_figures_by(all_figs, method, asc).forEach(function(ele) {
         container_fig.appendChild(ele);
     });
+    _display_bumps();
 }
 
 function _sort_figures_by(arr, meth, ascd) {
@@ -188,10 +211,101 @@ function _clear_attributes() {
 function _update_breakdown() {
     let all_figs = Array.from(document.getElementsByTagName("figure"));
     all_figs.forEach(function(fig) {
-        let breakdown = "C:" + fig.dataset.coding + " P:" + fig.dataset.parameterisation + " D:"+ fig.dataset.differentiation;
-        fig.getElementsByClassName("breakdown")[0].innerHTML = breakdown;
+        _update_fig_breakdown(fig);
     });
 }
 
+function _update_fig_breakdown(fig) {
+    let breakdown = "C:" + fig.dataset.coding + " P:" + fig.dataset.parameterisation + " D:"+ fig.dataset.differentiation;
+        fig.querySelector(".breakdown").innerHTML = breakdown;
+}
+
+function _display_bumps() {
+    const ele = document.getElementById("dropdown");
+    const method = ele.options[ele.selectedIndex].getAttribute("value");
+    let disp = "none";
+    if (method == "byOverall") {
+        disp = "block"
+    }
+    Array.from(document.getElementsByClassName("bump")).forEach(function(bump_btn) {
+        bump_btn.style.display = disp;
+    });
+}
+
+function _swap_attribs(ele1, ele2, attrib) {
+    const store_ele1 = ele1.getAttribute(attrib);
+    ele1.setAttribute(attrib, ele2.getAttribute(attrib));
+    ele2.setAttribute(attrib, store_ele1);
+}
+
+function _swap_grades(fig, tar) {
+    let message = _attr_to_str(fig) + " <> " + _attr_to_str(tar);
+    _show_notif(message);
+    _swap_attribs(fig, tar, "data-grade");
+    _swap_attribs(fig, tar, "data-overall");
+    _swap_attribs(fig, tar, "data-coding");
+    _swap_attribs(fig, tar, "data-parameterisation");
+    _swap_attribs(fig, tar, "data-differentiation");
+    _update_fig_breakdown(fig);
+    _update_fig_breakdown(tar);
+}
+
+function _attr_to_str(fig) {
+    return fig.dataset.group + " " +
+           fig.dataset.name + " (" +
+           fig.dataset.grade + ")";
+}
+
+function bump_up(btn) {
+    const fig = document.getElementById(btn.dataset.figParent);
+    let target;
+    try {
+        target = fig.previousElementSibling;
+        _swap_grades(fig, target);
+        fig.parentNode.insertBefore(fig,target);
+        _display_filtered();
+    } catch {
+        let bound_typ = "lower";
+        if (!asc) {bound_typ = "upper";}
+        _show_notif("Error: " + bound_typ + " bound reached");
+    }
+}
+
+function bump_down(btn) {
+    const fig = document.getElementById(btn.dataset.figParent);
+    let target;
+    try {
+        target = fig.nextElementSibling;
+        _swap_grades(fig, target);
+        fig.parentNode.insertBefore(target,fig);
+        _display_filtered();
+    }  catch {
+        let bound_typ = "lower";
+        if (asc) {bound_typ = "upper";}
+        _show_notif("Error: " + bound_typ + " bound reached");
+    }
+}
+
+function _show_notif(message) {
+    const info_box = document.getElementById("info");
+    const TA_h = document.getElementById("TA");
+    TA_h.style.display = "none";
+    const temp = document.createElement("span")
+    temp.innerHTML = message;
+    temp.className = "temp_msg";
+    info_box.appendChild(temp);
+    setTimeout(function() {
+        temp.parentNode.removeChild(temp);
+        if (!_temp_exists()) {TA_h.style.display = "block";}},2000);
+}
+
+function _temp_exists() {
+    const arr = Array.from(document.getElementsByClassName("temp_msg"));
+    if (arr.length > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 window.addEventListener("load", sort_figures);
 window.addEventListener("load", _display_filtered);
