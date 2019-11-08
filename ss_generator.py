@@ -16,6 +16,7 @@ import json
 
 FOLDER_NAME = "RebuildIMGs" # change to a folder with similar substructure for longer reruns
 LONG_PAUSE = 0 # change to 10 for long reruns
+FDR_OVERWRITE = "FinalProject"
 
 FOLDERS = glob.glob("%s//*//" % FOLDER_NAME)
 MOBIUS_LINK = "https://mobius.design-automation.net/gallery"
@@ -77,10 +78,11 @@ try:
             print("Time Elapsed: %s" % str(run_time))
             pyautogui.screenshot("%s.png" % (folder + file_name), region=SS_REGION)
 
+            published_mob_path = re.sub(FOLDER_NAME, FDR_OVERWRITE,mob_file)
             MOB_DICT[file_name] = dict(
                 group=FDR_NAME,
-                mob_path=mob_file,
-                img_path=re.sub("\.mob",".png",mob_file),
+                mob_path=published_mob_path,
+                img_path=re.sub("\.mob",".png",published_mob_path),
                 run_time=run_time
             ) 
         driver.close()
