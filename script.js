@@ -1,4 +1,5 @@
 const GRADES = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "U"];
+
 const CRITERIA = ["Overall", "Coding", "Parameterisation", "Differentiation"];
 
 const TAs = {
@@ -12,6 +13,7 @@ const TAs = {
 let ALL_GRPS = Object.keys(TAs);
 let imported = false;
 let asc = true;
+let settings_tog = false;
 const SORT_STATES = ["DESCENDING", "ASCENDING"];
 
 function filter_group(ele) {
@@ -76,8 +78,10 @@ function _append_dropdown() {
 
 function _number_grade() {
     const grade_btns = Array.from(document.getElementsByClassName("grade_btn"));
+    const ret_arr = []
     grade_btns.forEach(function(btn) {
         const n_grade = btn.children[0].getAttribute("data-numberGr");
+        ret_arr.push(n_grade)
         btn.children[0].innerHTML = btn.children[0].dataset.grade + ("(" + n_grade + ")");
         if (n_grade > 0) {
             btn.style.display = "flex";
@@ -85,6 +89,7 @@ function _number_grade() {
             btn.style.display = "none";
         }
     });
+    return ret_arr;
 }
 
 function import_json() {
@@ -103,17 +108,19 @@ function import_json() {
     let fr = new FileReader();
     fr.onload = function(e) { 
         console.log(e);
-        let id_obj;
+        let im_grade_json;
+        let cut_off;
         try {
-            id_obj = JSON.parse(e.target.result);
+            im_grade_json = JSON.parse(e.target.result);
         } catch {
             _show_notif("Invalid JSON file.");
         }
-        const id_keys = Object.keys(id_obj);
+        const id_keys = Object.keys(im_grade_json["projects"]);
+        grade_range = im_grade_json["G_R"];
         for (let i=0; i<id_keys.length; i++) {
             try {
                 const student_id = id_keys[i];
-                const student = id_obj[id_keys[i]];
+                const student = im_grade_json["projects"][id_keys[i]];
                 const student_grade = GRADES[student["GRADE"]];
                 const code_grade = student["CODING"];
                 const para_grade = student["PARAMETERISATION"];
@@ -138,7 +145,7 @@ function import_json() {
                 let arrow = document.createElement("i");
                 arrow.setAttribute("class", "arrow up");
                 bump_up_btn.appendChild(arrow);
-                bump_up_btn.className = "btn bump";
+                bump_up_btn.className = "bump";
 
                 let bump_down_btn = document.createElement('label')
                 bump_down_btn.setAttribute("onclick","bump_down(this)");
@@ -147,7 +154,7 @@ function import_json() {
                 arrow = document.createElement("i");
                 arrow.setAttribute("class", "arrow down");
                 bump_down_btn.appendChild(arrow);
-                bump_down_btn.className = "btn bump";
+                bump_down_btn.className = "bump";
 
                 fig.querySelector("figcaption").appendChild(bump_up_btn);
                 fig.querySelector("figcaption").appendChild(bump_down_btn);
@@ -157,9 +164,10 @@ function import_json() {
                 continue
             }
         }
-        _number_grade();
+        const n_grade_arr = _number_grade();
         _update_breakdown();
         _display_bumps();
+        _create_table(grade_range,n_grade_arr);
     }
     fr.readAsText(files.item(0));
     imported = true;
@@ -177,7 +185,7 @@ function sort_figures() {
     const ele = document.getElementById("dropdown");
     const method = "data-" + ele.options[ele.selectedIndex].text.toLowerCase();
     let all_figs = Array.from(document.getElementsByTagName("figure"));
-    let container_fig = document.getElementsByClassName("container__figs")[0];
+    let container_fig = document.querySelector(".container__figs");
     _sort_figures_by(all_figs, method, asc).forEach(function(ele) {
         container_fig.appendChild(ele);
     });
@@ -311,5 +319,70 @@ function _temp_exists() {
         return false;
     }
 }
+
+function clk_settings() {
+    settings_tog = !settings_tog;
+    _vis_settings();
+}
+
+function _vis_settings() {
+    if (settings_tog) {
+        document.querySelector(".aside__settings").style.maxWidth = "100%";
+        document.querySelector(".aside__settings").style.minWidth = "20%";
+        document.querySelector(".aside__section").style.display = "flex";
+        document.querySelector(".main__article").style.maxWidth = "80%";
+        document.querySelector("body").style.marginRight = 0;
+    } else {
+        document.querySelector(".aside__settings").style.maxWidth = "0";
+        document.querySelector(".aside__settings").style.minWidth = "0";
+        document.querySelector(".aside__section").style.display = "none";
+        document.querySelector(".main__article").style.maxWidth = "100%";
+        document.querySelector("body").style.marginRight = "2em";
+    }
+}
+
+function _create_table(grade_range, n_grades) {
+    let TBL = document.createElement("table");
+    TBL.className = "table__grade"
+    let TBL_COLUMNS = ["grade", "", "cut-off", "quantity"];
+    let TBL_HEAD = TBL.createTHead();
+    let TBL_BODY = TBL.createTBody();
+    let HEADER_ROW = TBL_HEAD.insertRow(0);
+    let TBL_DATA = [GRADES, grade_range[0], grade_range[1], n_grades];
+    for (let i=0; i<TBL_DATA[0].length; i++) {
+        let curr_row = HEADER_ROW;
+        if (i > 0) {
+            curr_row = TBL_BODY.insertRow(i-1);
+        }  
+        for (let j = 0; j<TBL_COLUMNS.length; j++) {
+            let cell = curr_row.insertCell(j);
+            if (i==0) {
+                cell.innerHTML = TBL_COLUMNS[j];
+            } else {
+                let ins_data = TBL_DATA[j][i-1];
+                if (GRADES[i-1] == "C") {
+                    switch (j) {
+                        case 1:
+                            ins_data = "<"
+                            break;
+                        case 2:
+                            ins_data = TBL_DATA[j][i-2];
+                            break;
+                    }
+                } else {
+                    if (j > 1) {
+                        cell.setAttribute("contenteditable", true);
+                        cell.className = "editable";
+                    }
+                }
+                cell.innerHTML = ins_data;
+                cell.id = GRADES[i-1] + "_" + j;
+                cell.className += " cell"
+            }
+        }
+    }  
+    document.querySelector(".aside__footer").appendChild(TBL);
+}
+
 window.addEventListener("load", sort_figures);
 window.addEventListener("load", _display_filtered);

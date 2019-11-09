@@ -4,7 +4,8 @@ body {
     background-color: #FAFAFB;
     font-family: 'Ubuntu Mono', monospace;
     white-space: nowrap;
-    margin: 0 2em 2em 2em;
+    margin: 0 0 2em 2em;
+    margin-right: 2em;
     min-width: calc(700px - 4em);
     overflow: hidden;
 }
@@ -12,6 +13,79 @@ body {
 h1 {
     padding-left: 0.5em;
     margin: 1em 0;
+}
+
+main {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+
+article {
+    flex: 1;
+    max-width: 100%;
+}
+
+.aside__settings {
+    flex: 0.2;
+    box-sizing: border-box;
+    margin: 2em 0;
+    max-width: 0;
+}
+
+.aside__section {
+    height: calc(100% + 2em);
+    padding-left: 1em;
+    display: none;
+    flex-flow: column nowrap;
+    background-color: #FAFAFB;
+    box-sizing: border-box;
+}
+
+.aside__settings nav{
+    max-width: inherit;
+}
+
+.aside__header {
+    min-height: 3em;
+    max-height: 3em;
+    background-color: #CCCCCC;
+    box-sizing: border-box;
+    border-bottom: 2px solid #B3B3B3;
+}
+
+.aside__footer {
+    padding: 1em;
+    flex: 1;
+    background-color: #CCCCCC;
+}
+
+.import_grp {
+    padding: 1em;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.import_grp span {
+    width: 100%;
+    font-size: small;
+}
+
+#import {
+    border: 1px solid rgb(169, 169, 169);
+    background-color: #CCCCCC;
+    font-size: small;
+    margin: auto;
+    padding: 0;
+    max-width: 7em;
+    min-width: 7em;
+    height: 17px;
+    text-align: center;
+    font-size: small;
+}
+
+#import:hover {
+    background-color:#E6E6E6;
 }
 
 nav {
@@ -24,16 +98,14 @@ nav {
 .btn_grp {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    width: 70%;
 }
 
 .btn {
-    padding: 0.5em 0.25em  0.5em 1em;
+    padding: 0.5em 0;
     cursor: pointer;
     background-color: #B3B3B3;
     display: flex;
-    flex: 1;
+    min-width: 4em;
     margin: 0 0.75em 0 0;
     box-sizing: border-box;
     overflow: hidden;
@@ -43,52 +115,36 @@ nav {
     font-weight: 600;
 }
 
-.grade_btn {
-    min-width: 4.5em;
-}
-
 .btn span {
     overflow: hidden;
     text-overflow: ellipsis;
+    margin: 0 0.5em;
 }
 
 .selected {
     background-color: #CCCCCC;
 }
 
-.short_text {
-    display: none;
-}
-
-@media (max-width: 700px) {
-    .short_text { display: inline-block; }
-    .long_text { display: none; }
-}
-
-.import_grp {
-    display: flex;
-    flex-flow: row nowrap;
-    flex: 1;
-    direction: rtl;
-}
-
-#import {
+.btn_settings {
     margin: 0px 0px 3px 0px;
-    flex: 0.25;
+    display: inline-block;
+    max-width: 7em;
+    min-width: 7em;
     background-color: #E6E6E6;
     padding: 0.5em 1em;
     text-align: center;
+    direction: rtl;
+    font-size: small;
+    position: absolute;
+    top: 2.5em;
+    right: 2.5em;
 }
 
-#import:hover {
+.btn_settings:hover {
     background-color:#CCCCCC;
 }
 
-#import__fileName {
-    padding: 0.5em;
-} 
-
-main {
+section {
     width: 100%;
     background-color: #CCCCCC;
 }
@@ -142,14 +198,16 @@ main {
 }
 .section__figs {
     padding-right: 1em;
-    max-height: calc(100vh - 212px);
-    min-height: calc(100vh - 212px);
+    max-height: calc(100vh - 11em);
+    min-height: calc(100vh - 11em);
+    padding-bottom: 3em;
+    box-sizing: border-box;
     overflow: auto;
 }
 
 .container__figs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(316px,1fr));
     overflow: hidden;
 }
 
@@ -157,7 +215,8 @@ figure {
     width: 300px;
     box-sizing: border-box;
     margin: 0;
-    padding: 1em;
+    margin: 1em;
+    border: 3px solid #E6E6E6;
 }
 
 figure img {
@@ -186,6 +245,9 @@ a div span {
     color: black;
     padding-right: 0.5em;
     box-sizing: border-box;
+}
+figure:hover {
+    box-shadow: 2.5px 5px #888888;
 }
 
 figure:hover img {
@@ -238,26 +300,55 @@ figcaption span{
     height: 1em;
     margin: 0 0 0 0.25em;
     background-color: #FAFAFB;
+    max-width: 1.5em;
+    position: relative;
+}
+
+.bump:hover {
+    cursor: pointer;
+}
+
+.bump:hover .arrow {
+    border-color: black;
 }
 
 .arrow {
     z-index: 10;
-    border: solid black;
+    border: solid #888888;
     border-width: 0 1px 1px 0;
     display: inline-block;
-    padding: 2px;
+    padding: 3px;
     position: relative;
-    right: 0.4em;
+    left: 0.4em;
 }
 
 .up {
     transform: rotate(-135deg);
-    bottom: 0.6em;
+    bottom: 0.2em;
 }
 
 .down {
     transform: rotate(45deg);
-    bottom: 0.8em;
+    bottom: 0.4em;
+}
+
+.table__grade {
+    width: 100%;
+    margin-top: 0.5em;
+    color: #484848;
+}
+
+.cell:hover {
+    cursor: default;
+}
+
+.editable {
+    background-color: #E6E6E6;
+    color: black;
+}
+
+.editable:hover {
+    cursor: text;
 }
 
 ::-webkit-scrollbar {

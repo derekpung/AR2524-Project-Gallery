@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 import argparse
-from MODULE_CONSTS import G_R
+from MODULE_CONSTS import G_R, SIGNS
 
 def score_to_grade(score):
     if score >= G_R[0]:
@@ -45,6 +45,15 @@ def from_lumi():
     grades_df_cp = grades_df.copy(True)
     grades_df_cp.set_index("NUSNET", inplace=True)
     grades_df_cp[["STUDENT NUMBER", "GRADE", "SCORE", "STUDENT NAME"]].to_json("NET_grade.json", orient="index")
+
+    with open ("ID_grade.json", "rt", encoding="utf-8") as json_f:
+        id_dict = json.load(json_f)
+    new_dict = dict(
+        G_R = [SIGNS,G_R],
+        projects = id_dict
+    )
+    with open ("ID_grade.json", "wt", encoding="utf-8") as json_f:
+        json.dump(new_dict, json_f, ensure_ascii=False, indent=4)
 
 # def moderated():
 #     GRADES = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "U"]
