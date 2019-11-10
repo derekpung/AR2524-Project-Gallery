@@ -177,7 +177,7 @@ function _toggle_asc() {
 }
 
 function toggle_asc() {
-    _toggle_asc();s
+    _toggle_asc();
     sort_figures();
 }
 
