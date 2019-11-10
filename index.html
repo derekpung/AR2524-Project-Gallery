@@ -13,25 +13,25 @@
 			<article class='main__article'>
 				<nav>
 					<div class='btn_grp'>
-						<div id='ALL' onclick='filter_group(this)' class='btn selected'>
+						<div id='ALL' onclick='filter_group(this)' class='btn selected__grp filter__btn'>
 							<span>ALL</span>
 						</div>
-						<div id='G1_fbtn' onclick='filter_group(this)' class='btn'>
+						<div id='G1_fbtn' onclick='filter_group(this)' class='btn filter__btn'>
 							<span>G1</span>
 						</div>
-						<div id='G2_fbtn' onclick='filter_group(this)' class='btn'>
+						<div id='G2_fbtn' onclick='filter_group(this)' class='btn filter__btn'>
 							<span>G2</span>
 						</div>
-						<div id='G3_fbtn' onclick='filter_group(this)' class='btn'>
+						<div id='G3_fbtn' onclick='filter_group(this)' class='btn filter__btn'>
 							<span>G3</span>
 						</div>
-						<div id='G4_fbtn' onclick='filter_group(this)' class='btn'>
+						<div id='G4_fbtn' onclick='filter_group(this)' class='btn filter__btn'>
 							<span>G4</span>
 						</div>
-						<div id='G5_fbtn' onclick='filter_group(this)' class='btn'>
+						<div id='G5_fbtn' onclick='filter_group(this)' class='btn filter__btn'>
 							<span>G5</span>
 						</div>
-						<div id='G6_fbtn' onclick='filter_group(this)' class='btn'>
+						<div id='G6_fbtn' onclick='filter_group(this)' class='btn filter__btn'>
 							<span>G6</span>
 						</div>
 					</div>
@@ -1852,14 +1852,14 @@
 				<section class='aside__section'>
 					<header class='aside__header'>
 						<div class='import_grp'>
-							<label id='import' class='btn'>
-								<input type='file' id='selectFiles' value='Import' style='display: none' onchange='import_json()'></input>
-								<span>&#8673; Grades</span>
+							<label id='import' class='aside__btn'>
+								<input type='file' id='selectFiles' value='Import' style='display: none' onchange='load_json()'></input>
+								<span>Grades &#8673;</span>
 							</label>
 						</div>
 					</header>
 					<footer class='aside__footer'>
-						<span id='import__fileName'></span>
+						<span id='import__fileName'>No File Loaded</span>
 					</footer>
 				</section>
 			</aside>

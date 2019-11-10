@@ -52,6 +52,7 @@ article {
     background-color: #CCCCCC;
     box-sizing: border-box;
     border-bottom: 2px solid #B3B3B3;
+    padding: 1em;
 }
 
 .aside__footer {
@@ -61,8 +62,6 @@ article {
 }
 
 .import_grp {
-    padding: 1em;
-    box-sizing: border-box;
     text-align: center;
 }
 
@@ -71,21 +70,27 @@ article {
     font-size: small;
 }
 
-#import {
+.file__loaded__name:hover {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+.aside__btn {
     border: 1px solid rgb(169, 169, 169);
     background-color: #CCCCCC;
     font-size: small;
     margin: auto;
-    padding: 0;
-    max-width: 7em;
-    min-width: 7em;
-    height: 17px;
+    padding: 1px 1em;
+    height: 100%;
     text-align: center;
     font-size: small;
+    box-sizing: border-box;
 }
 
-#import:hover {
+.aside__btn:hover {
     background-color:#E6E6E6;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 nav {
@@ -121,7 +126,7 @@ nav {
     margin: 0 0.5em;
 }
 
-.selected {
+.selected__grp {
     background-color: #CCCCCC;
 }
 
@@ -267,16 +272,16 @@ figure label {
     box-sizing: border-box;
 }
 
-figure .slow {
-    background-color: #E94858
+figure .slow, .error {
+    background-color: #E94858 !important;
 }
 
 figure .error {
-    background-color: red
+    background-color: red !important;
 }
 
-figure .medium {
-    background-color: #F3A32A
+figure .medium, .warning {
+    background-color: #F3A32A !important;
 }
 
 figure .fast {
@@ -334,12 +339,34 @@ figcaption span{
 
 .table__grade {
     width: 100%;
-    margin-top: 0.5em;
+    margin: 0.5em 0 1em 0;
     color: #484848;
 }
 
-.cell:hover {
+#To_3:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.default__editable {
+    background-color: #d6d6d6;
+}
+
+.default__editable:hover {
+    cursor: text;
+}
+
+.selected__column.tbl__header{
+    text-decoration: underline;
+}
+
+.cell {
     cursor: default;
+}
+
+.header__selectable:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .editable {

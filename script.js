@@ -1,4 +1,4 @@
-const GRADES = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "U"];
+const GRADES = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "To"];
 
 const CRITERIA = ["Overall", "Coding", "Parameterisation", "Differentiation"];
 
@@ -11,7 +11,6 @@ const TAs = {
     G6:"MUHAMMAD SYUKRI"
 };
 let ALL_GRPS = Object.keys(TAs);
-let imported = false;
 let asc = true;
 let settings_tog = false;
 const SORT_STATES = ["DESCENDING", "ASCENDING"];
@@ -23,17 +22,17 @@ function filter_group(ele) {
     } else {
         document.getElementById("TA").innerHTML = "";
     }
-    const all_btns = document.getElementsByClassName("btn");
+    const all_btns = document.getElementsByClassName("filter__btn");
     for (let btn_i=0; btn_i < all_btns.length; btn_i++) {
         const btn = all_btns[btn_i];
-        btn.classList.remove("selected");
+        btn.classList.remove("selected__grp");
     }
-    ele.classList.add("selected");
+    ele.classList.add("selected__grp");
     _display_filtered();    
 }
 
 function _display_filtered() {
-    const id = document.getElementsByClassName("selected")[0].id;
+    const id = document.getElementsByClassName("selected__grp")[0].id;
     let filtered_grp = id.substring(0,2).replace("_","");
     const all_figs = document.getElementsByTagName("figure");
 
@@ -48,17 +47,16 @@ function _display_filtered() {
 }
 
 function _create_grade_btns() {
-    GRADES.forEach(function(grd){
+    const grade_arr = Array.from(document.querySelectorAll(".grades__column__0"));
+    grade_arr.slice(1,grade_arr.length - 1).forEach(function (cell) {
+        const grd = cell.innerHTML;
         let new_btn = document.createElement("div");
         new_btn.setAttribute("id" , grd+'_fbtn');
         new_btn.setAttribute("onclick", "filter_group(this)");
-        new_btn.className = "btn grade_btn";
+        new_btn.className = "btn grade_btn imp_created filter__btn";
         let new_btn_span = document.createElement("span");
         new_btn_span.innerHTML = grd;
-        new_btn_span.setAttribute("data-numberGr", 0);
-        new_btn_span.setAttribute("data-grade", grd);
         new_btn.appendChild(new_btn_span);
-        new_btn.style.display = "none";
         document.getElementsByClassName("btn_grp")[0].appendChild(new_btn);
     });
 }
@@ -66,6 +64,7 @@ function _create_grade_btns() {
 function _append_dropdown() {
     let drop_down = document.getElementById("dropdown");
     let opt_group = document.createElement("optgroup");
+    opt_group.classList.add("imp_created");
     opt_group.setAttribute("label", "Grades");
     drop_down.appendChild(opt_group);
     CRITERIA.forEach(function(opt) {
@@ -76,108 +75,109 @@ function _append_dropdown() {
     });
 }
 
-function _number_grade() {
-    const grade_btns = Array.from(document.getElementsByClassName("grade_btn"));
-    const ret_arr = []
-    grade_btns.forEach(function(btn) {
-        const n_grade = btn.children[0].getAttribute("data-numberGr");
-        ret_arr.push(n_grade)
-        btn.children[0].innerHTML = btn.children[0].dataset.grade + ("(" + n_grade + ")");
-        if (n_grade > 0) {
-            btn.style.display = "flex";
-        } else {
-            btn.style.display = "none";
-        }
-    });
-    return ret_arr;
-}
-
-function import_json() {
+function load_json() {
     let files = document.getElementById('selectFiles').files;
-    console.log(files);
+    const imp_file_name = document.getElementById("import__fileName")
+    _clear_attributes();
+    _clear_created();
     if (files.length <= 0) {
+        _update_breakdown();
+        imp_file_name.onmouseenter = null;
+        imp_file_name.onmouseleave = null;
+        imp_file_name.onclick = null;
+        imp_file_name.innerHTML = "No File Loaded";
+        imp_file_name.classList.remove("file__loaded__name");
         return false;
     }
-    _clear_attributes();
+    imp_file_name.classList.add("file__loaded__name");
     const file_name = files.item(0).name;
-    document.getElementById("import__fileName").innerHTML = file_name;
+    imp_file_name.innerHTML = file_name;
+    imp_file_name.onclick = function() {
+        _show_notif("<b>RESET</b>", "normal");
+        load_json();
+    }
+    imp_file_name.onmouseenter = function(e) {e.target.innerHTML = "(reset changes)"}
+    imp_file_name.onmouseleave = function(e) {e.target.innerHTML = file_name}
     ALL_GRPS = ALL_GRPS.concat(GRADES)
-    _create_grade_btns();
-    if (!imported) {_append_dropdown();}
+    _append_dropdown();
 
     let fr = new FileReader();
     fr.onload = function(e) { 
-        console.log(e);
         let im_grade_json;
-        let cut_off;
+        let id_keys;
         try {
             im_grade_json = JSON.parse(e.target.result);
-        } catch {
-            _show_notif("Invalid JSON file.");
-        }
-        const id_keys = Object.keys(im_grade_json["projects"]);
-        grade_range = im_grade_json["G_R"];
-        for (let i=0; i<id_keys.length; i++) {
-            try {
-                const student_id = id_keys[i];
-                const student = im_grade_json["projects"][id_keys[i]];
-                const student_grade = GRADES[student["GRADE"]];
-                const code_grade = student["CODING"];
-                const para_grade = student["PARAMETERISATION"];
-                const diff_grade = student["DIFFERENTIATION"];
-                const overall_grade = student["SCORE"];
+            id_keys = Object.keys(im_grade_json["projects"]);
+            grade_range = im_grade_json["G_R"];       
+            for (let i=0; i<id_keys.length; i++) {
+                try {
+                    const student_id = id_keys[i];
+                    const student = im_grade_json["projects"][id_keys[i]];
+                    const student_grade = GRADES[student["GRADE"]];
+                    const code_grade = student["CODING"];
+                    const para_grade = student["PARAMETERISATION"];
+                    const diff_grade = student["DIFFERENTIATION"];
+                    const overall_grade = student["SCORE"];
 
-                const grade_span = document.getElementById(student_grade+'_fbtn').children[0];
-                grade_span.setAttribute("data-numberGr", Number(grade_span.getAttribute("data-numberGr")) + 1);
-                
-                let fig = document.getElementById(student_id)
+                    // const grade_span = document.getElementById(student_grade+'_fbtn').children[0];
+                    
+                    let fig = document.getElementById(student_id)
 
-                fig.setAttribute("data-grade", student_grade);
-                fig.setAttribute("data-overall", overall_grade)
-                fig.setAttribute("data-coding", code_grade);
-                fig.setAttribute("data-parameterisation", para_grade);
-                fig.setAttribute("data-differentiation", diff_grade);
+                    fig.setAttribute("data-grade", student_grade);
+                    fig.setAttribute("data-overall", overall_grade)
+                    fig.setAttribute("data-coding", code_grade);
+                    fig.setAttribute("data-parameterisation", para_grade);
+                    fig.setAttribute("data-differentiation", diff_grade);
 
-                let bump_up_btn = document.createElement('label')
-                bump_up_btn.setAttribute("onclick","bump_up(this)");
-                bump_up_btn.dataset.figParent = student_id;
-                bump_up_btn.dataset.bump = "up";
-                let arrow = document.createElement("i");
-                arrow.setAttribute("class", "arrow up");
-                bump_up_btn.appendChild(arrow);
-                bump_up_btn.className = "bump";
+                    let bump_up_btn = document.createElement('label')
+                    bump_up_btn.setAttribute("onclick","bump_up(this)");
+                    bump_up_btn.dataset.figParent = student_id;
+                    bump_up_btn.dataset.bump = "up";
+                    let arrow = document.createElement("i");
+                    arrow.setAttribute("class", "arrow up");
+                    bump_up_btn.appendChild(arrow);
+                    bump_up_btn.className = "bump imp_created";
 
-                let bump_down_btn = document.createElement('label')
-                bump_down_btn.setAttribute("onclick","bump_down(this)");
-                bump_down_btn.dataset.figParent = student_id;
-                bump_down_btn.dataset.bump = "down";
-                arrow = document.createElement("i");
-                arrow.setAttribute("class", "arrow down");
-                bump_down_btn.appendChild(arrow);
-                bump_down_btn.className = "bump";
+                    let bump_down_btn = document.createElement('label')
+                    bump_down_btn.setAttribute("onclick","bump_down(this)");
+                    bump_down_btn.dataset.figParent = student_id;
+                    bump_down_btn.dataset.bump = "down";
+                    arrow = document.createElement("i");
+                    arrow.setAttribute("class", "arrow down");
+                    bump_down_btn.appendChild(arrow);
+                    bump_down_btn.className = "bump imp_created";
 
-                fig.querySelector("figcaption").appendChild(bump_up_btn);
-                fig.querySelector("figcaption").appendChild(bump_down_btn);
+                    fig.querySelector("figcaption").appendChild(bump_up_btn);
+                    fig.querySelector("figcaption").appendChild(bump_down_btn);
 
-            } catch (error) {
-                _show_notif("No submission: " + id_keys[i]);
-                continue
+                } catch (error) {
+                    _show_notif("No submission: " + id_keys[i], "warning");
+                    grade_range[2][grade_range[2].length-1] = grade_range[2][grade_range[2].length-1] -1;
+                    continue
+                }
             }
+            _display_bumps();
+            _create_table(grade_range);
+        } catch (error){
+            document.getElementById("import__fileName").innerHTML = "ERROR";
+            _show_notif("Invalid JSON file.", "error");
+            console.log(error);
         }
-        const n_grade_arr = _number_grade();
+        _create_grade_btns();
         _update_breakdown();
-        _display_bumps();
-        _create_table(grade_range,n_grade_arr);
     }
     fr.readAsText(files.item(0));
     imported = true;
 }
-
-function toggle_asc() {
+function _toggle_asc() {
     const ele =  document.getElementById("sort_toggle_btn")
     asc = !asc;
     const i = asc ? 1 : 0;
     ele.innerHTML = SORT_STATES[i];
+}
+
+function toggle_asc() {
+    _toggle_asc();s
     sort_figures();
 }
 
@@ -214,10 +214,6 @@ function _clear_attributes() {
         fig.setAttribute("data-parameterisation", "U");
         fig.setAttribute("data-differentiation", "U");
     });
-    const grade_btns = Array.from(document.getElementsByClassName("grade_btn"));
-    grade_btns.forEach(function(btn) {
-        btn.children[0].setAttribute("data-numberGr", 0);
-    });
 }
 
 function _update_breakdown() {
@@ -252,7 +248,7 @@ function _swap_attribs(ele1, ele2, attrib) {
 
 function _swap_grades(fig, tar) {
     let message = _attr_to_str(fig) + " <> " + _attr_to_str(tar);
-    _show_notif(message);
+    _show_notif(message, "normal");
     _swap_attribs(fig, tar, "data-grade");
     _swap_attribs(fig, tar, "data-overall");
     _swap_attribs(fig, tar, "data-coding");
@@ -279,7 +275,7 @@ function bump_up(btn) {
     } catch {
         let bound_typ = "lower";
         if (!asc) {bound_typ = "upper";}
-        _show_notif("Error: " + bound_typ + " bound reached");
+        _show_notif(bound_typ + " bound reached", "error");
     }
 }
 
@@ -294,30 +290,38 @@ function bump_down(btn) {
     }  catch {
         let bound_typ = "lower";
         if (asc) {bound_typ = "upper";}
-        _show_notif("Error: " + bound_typ + " bound reached");
+        _show_notif(bound_typ + " bound reached", "error");
     }
 }
 
-function _show_notif(message) {
+function _show_notif(message, error) {
+    let append_front = "";
+    if (error=="error" || error=="warning") {
+        append_front = "<b>" + error.toUpperCase() + ": </b>";
+    }
     const info_box = document.getElementById("info");
     const TA_h = document.getElementById("TA");
     TA_h.style.display = "none";
     const temp = document.createElement("span")
-    temp.innerHTML = message;
+    temp.innerHTML = append_front + message;
     temp.className = "temp_msg";
+    info_box.parentNode.classList.add(error);
     info_box.appendChild(temp);
+    const _n_temps = _n_temp_exists();
     setTimeout(function() {
         temp.parentNode.removeChild(temp);
-        if (!_temp_exists()) {TA_h.style.display = "block";}},2000);
+        info_box.parentNode.classList.remove(error);
+        setTimeout(function() {
+            if (_n_temp_exists() == 0) {
+                TA_h.style.display = "block"
+            }
+        }, 1000);
+    }, 1000 * (_n_temps+1));
 }
 
-function _temp_exists() {
+function _n_temp_exists() {
     const arr = Array.from(document.getElementsByClassName("temp_msg"));
-    if (arr.length > 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return arr.length;
 }
 
 function clk_settings() {
@@ -341,26 +345,46 @@ function _vis_settings() {
     }
 }
 
-function _create_table(grade_range, n_grades) {
+function _clear_created() {
+    const created_eles = document.getElementsByClassName("imp_created");
+    while (created_eles.length > 0) {
+        created_eles[0].remove();
+    }
+}
+
+function _create_table(grade_range) {
     let TBL = document.createElement("table");
-    TBL.className = "table__grade"
+    TBL.className = "table__grade imp_created"
     let TBL_COLUMNS = ["grade", "", "cut-off", "quantity"];
     let TBL_HEAD = TBL.createTHead();
     let TBL_BODY = TBL.createTBody();
     let HEADER_ROW = TBL_HEAD.insertRow(0);
-    let TBL_DATA = [GRADES, grade_range[0], grade_range[1], n_grades];
-    for (let i=0; i<TBL_DATA[0].length; i++) {
+    let TBL_DATA = [GRADES, grade_range[0], grade_range[1], grade_range[2]];
+    for (let i=0; i<TBL_DATA[0].length + 1; i++) {
         let curr_row = HEADER_ROW;
         if (i > 0) {
             curr_row = TBL_BODY.insertRow(i-1);
         }  
         for (let j = 0; j<TBL_COLUMNS.length; j++) {
             let cell = curr_row.insertCell(j);
+            let editable = false;
             if (i==0) {
                 cell.innerHTML = TBL_COLUMNS[j];
+                if (j > 1) {
+                    cell.onclick = function() {select_column(j);}
+                    cell.classList.add("header__selectable");
+                }
+            } else if (i == TBL_DATA[3].length + 1) {
+                let ins_data = "";
+                if (j==3) {
+                    ins_data = _sum_arr(grade_range[2]);
+                    cell.onclick = function() {re_sum()};
+                    cell.setAttribute("data-maxquantity", ins_data);
+                }
+                cell.innerHTML = ins_data;
             } else {
                 let ins_data = TBL_DATA[j][i-1];
-                if (GRADES[i-1] == "C") {
+                if (GRADES[i-1] == "C" && j!= 3) {
                     switch (j) {
                         case 1:
                             ins_data = "<"
@@ -371,17 +395,323 @@ function _create_table(grade_range, n_grades) {
                     }
                 } else {
                     if (j > 1) {
-                        cell.setAttribute("contenteditable", true);
+                        editable = true;
                         cell.className = "editable";
+                        cell.onclick = function() {select_column(j);}
+                        cell.classList.add("default__editable");
+                        cell.onmouseenter = function() {document.getElementById("header_" + j).style.textDecoration = "underline";}
+                        cell.onmouseleave = function() {document.getElementById("header_" + j).removeAttribute("style");}
+                    }
+                    if (i-1 == 6 && j==2) {
+                        cell.oninput = function() {
+                            document.getElementById("C_2").innerHTML = cell.innerHTML;
+                        }
                     }
                 }
                 cell.innerHTML = ins_data;
-                cell.id = GRADES[i-1] + "_" + j;
-                cell.className += " cell"
             }
+            cell.setAttribute("contenteditable", editable);
+            cell.dataset.defaultedit = editable;
+            let id_append = GRADES[i-1];
+            if (id_append == undefined) {
+                id_append = "header";
+                cell.classList.add("tbl__header");
+            }
+            cell.id = id_append + "_" + j;
+            cell.classList.add("cell");
+            cell.classList.add("grades__column__" + j);
+            cell.dataset.row = i-1;
+            cell.dataset.col = j;
         }
     }  
-    document.querySelector(".aside__footer").appendChild(TBL);
+    const aside_footer = document.querySelector(".aside__footer");
+    aside_footer.appendChild(TBL);
+    const aside_btn_div = document.createElement("div");
+    const table_btn_div = document.createElement("div");
+    const update_btn = _create_btn("Update");
+    const rebuild_btn = _create_btn("Rebuild");
+    const download_btn = _create_btn("&#8675; JSON");
+    aside_footer.appendChild(aside_btn_div);
+    aside_btn_div.appendChild(table_btn_div);
+    aside_btn_div.appendChild(download_btn);
+    table_btn_div.appendChild(update_btn);
+    table_btn_div.appendChild(rebuild_btn);
+
+    update_btn.classList.add("aside__btn");
+    update_btn.id = "aside__update";
+    update_btn.onclick = function() {update_grade_range();}
+
+    rebuild_btn.classList.add("aside__btn");
+    rebuild_btn.id = "aside__rebuild";
+    rebuild_btn.onclick = function() {
+        _show_notif("not implemented", "warning");
+    }
+
+    download_btn.classList.add("aside__btn");
+    download_btn.id = "aside__dl_json";
+    download_btn.onclick = function() {export_json()}
+}
+
+function _create_btn(inner_span_txt) {
+    const ret_btn = document.createElement("label");
+    const btn_span = document.createElement("span");
+    btn_span.innerHTML = inner_span_txt;
+    ret_btn.appendChild(btn_span);
+    ret_btn.className = "imp_created";
+    return ret_btn;
+}
+
+function select_column(col_number) {
+    let col_to_disable;
+    switch (col_number) {
+        case 2:
+            col_to_disable = 3;
+            break;
+        case 3:
+            col_to_disable = 2;
+            break;
+    }
+    _enable_column(col_number);
+    _disable_column(col_to_disable);
+}
+
+function _enable_column(col_number) {
+    const all_col_cells = document.getElementsByClassName("cell grades__column__" + col_number);
+    for (let i=0; i<all_col_cells.length; i++) {
+        const cell = all_col_cells[i];
+        const defaultedit = cell.dataset.defaultedit;
+        cell.classList.add("selected__column");
+        if (defaultedit == "true") {
+            cell.classList.add("editable");
+            cell.setAttribute("contenteditable", true);
+        }
+    }  
+}
+
+function _disable_column(col_number) {
+    while(document.getElementsByClassName("editable cell grades__column__" + col_number)[0]) {
+        to_d_cell = document.getElementsByClassName("editable cell grades__column__" + col_number)[0];
+        to_d_cell.classList.remove("editable");
+        to_d_cell.setAttribute("contenteditable", false);
+        to_d_cell.classList.remove("selected__column");
+    }
+    const d_column_header = document.getElementById("header_" + to_d_cell.dataset.col);
+    d_column_header.classList.remove("selected__column");
+}
+
+function re_sum() {
+    const prev_sum = document.getElementById("To_3").innerHTML;
+    const new_sum = _sum_arr(Array.from(
+        document.getElementsByClassName("grades__column__3 default__editable")).map(ele => Number(ele.innerHTML))
+        );
+    document.getElementById("To_3").innerHTML = new_sum;
+    document.getElementById("To_3").classList.remove("warning");
+    _show_notif("Recomputed Total: " + prev_sum + " -> " + new_sum, "normal");
+}
+
+function _sum_arr(arr) {
+    return arr.reduce((total, num) => total + num, 0);
+}
+
+function update_grade_range() {
+    const quant_chk = _is_quantity_equal()
+    const cutoff_chk = _is_legal_cutoff();
+    if (quant_chk && cutoff_chk) {
+        const selected_col = _get_selected_column();
+        if (!selected_col) {return;}
+        const col_header = document.getElementById("header_" + selected_col).innerHTML;
+        _show_notif("<b>RULE</b>: " + col_header, "normal");
+        switch (selected_col) {
+            case 2:
+                _update_by_cutoff();
+                break;
+            case 3:
+                _update_by_quantity();
+                break;
+        }
+    }
+    _display_filtered();
+}
+
+function _update_by_cutoff() {
+    const qty_arr = _update_figs_grade();    
+    _update_quantity(qty_arr);
+}
+
+function _update_figs_grade() {
+    const qty_arr = GRADES.slice(0,GRADES.length-1).map(grade => 0);
+    const all_figs = Array.from(document.getElementsByTagName("figure"));
+    all_figs.forEach(function(fig) {
+        const curr_grade = fig.dataset.grade;
+        const new_grade_idx = _score_to_gradeIdx(fig.dataset.overall);
+        qty_arr[new_grade_idx] += 1;
+        const new_grade = GRADES[new_grade_idx];
+        if (new_grade != curr_grade) {
+            fig.dataset.grade = new_grade;
+            _show_notif(fig.id + ": " + curr_grade + " -> " + new_grade);
+        }
+    });
+    return qty_arr;
+}
+
+function _update_quantity(arr) {
+    const quant_col_cells = document.querySelectorAll(".default__editable.grades__column__3");
+    for (let i=0; i<arr.length; i++) {
+        quant_col_cells[i].innerHTML = arr[Number(quant_col_cells[i].dataset.row)];
+    }
+}
+
+function _update_by_quantity() {
+    _descending_overall_sort();
+    const all_figs = Array.from(document.getElementsByTagName("figure"));
+    const quants_cells = Array.from(document.getElementsByClassName("grades__column__3 default__editable"));
+    const quants_arr = quants_cells.slice(0,quants_cells.length-1).map(ele => Number(ele.innerHTML));
+    const cutoff_arr = [];
+    let prev_qty = 0;
+    quants_arr.forEach(function(qty) {
+        prev_qty += qty;
+        cutoff_arr.push(all_figs[prev_qty].dataset.overall);
+    });    
+    _update_cutoff(cutoff_arr);
+    _update_figs_grade();
+}
+
+function _update_cutoff(arr) {
+    const cutoff_col_cells = document.querySelectorAll(".default__editable.grades__column__2");
+    for (let i=0; i<arr.length; i++) {
+        cutoff_col_cells[i].innerHTML = Math.round(arr[Number(cutoff_col_cells[i].dataset.row)] * 10)/10;
+    }
+}
+
+function _descending_overall_sort() {
+    if (asc) {_toggle_asc();}
+    document.querySelector('#dropdown [value="byOverall"]').selected = true;
+    sort_figures();
+}
+
+function _is_quantity_equal() {
+    const check_sum = _sum_arr(Array.from(
+        document.getElementsByClassName("grades__column__3 default__editable")).map(ele => Number(ele.innerHTML))
+        );
+    if (check_sum != Number(document.getElementById("To_3").innerHTML)) {
+        _show_notif("Quantity do not sum up. Click on Total Sum to recompute", "warning");
+        document.getElementById("To_3").classList.add("warning");
+        return false;
+    }
+    const max_qty = document.getElementById("To_3").dataset.maxquantity
+    if (check_sum > max_qty) {
+        _show_notif("Specified quantity is larger than total submissions (" + max_qty + ")", "error");
+        document.getElementById("To_3").classList.add("error");
+        return false;
+    }
+    document.getElementById("To_3").classList.remove("warning");
+    return true;
+}
+
+function _is_legal_cutoff() {
+    let cut_offs = document.getElementsByClassName("grades__column__2 default__editable");
+    let is_legal = true;
+    for (let i=0; i<cut_offs.length; i++) {
+        const cell = cut_offs[i]
+        is_legal = _is_legal_cutoff_cell(cell) && is_legal;
+    }
+    return is_legal;
+}
+
+function _is_legal_cutoff_cell(cell) {
+    const curr_val = Number(cell.innerHTML);
+    const curr_row = Number(cell.dataset.row);
+    if (curr_row!=6) {
+        const next_val = Number(document.getElementById(GRADES[curr_row+1] + "_2").innerHTML);
+        if (curr_val <= next_val) {
+            _show_notif("Cut-off for " + GRADES[curr_row] + " <= " + GRADES[curr_row+1], "warning");
+            cell.classList.add("warning");
+            return false;
+        }
+    }
+    if (curr_row!=0) {
+        const prev_val = Number(document.getElementById(GRADES[curr_row-1] + "_2").innerHTML);
+        if (curr_val >= prev_val) {
+            _show_notif("Cut-off for " + GRADES[curr_row] + " >= " + GRADES[curr_row-1], "warning");
+            cell.classList.add("warning");
+            return false;
+        }
+    }
+    cell.classList.remove("warning");
+    return true;
+}
+
+function _get_selected_column() {
+    let ret =  document.querySelector(".selected__column")
+    if (ret == null) {
+        _show_notif("No Column Selected", "warning");
+        return false;
+    } else {
+        return Number(ret.dataset.col);
+    }
+}
+
+function _score_to_gradeIdx(score) {
+    const G_R = Array.from(document.querySelectorAll(".default__editable.grades__column__2")).map(cell => Number(cell.innerHTML));
+    if (score >= G_R[0]) {
+        return 0;
+    } else if (score >= G_R[1] && score < G_R[0]) {
+        return 1;
+    } else if (score >= G_R[2] && score < G_R[1]) {
+        return 2;
+    } else if (score >= G_R[3] && score < G_R[2]) {
+        return 3;
+    } else if (score >= G_R[4] && score < G_R[3]) {
+        return 4;
+    } else if (score >= G_R[5] && score < G_R[4]) {
+        return 5;
+    } else if (score >= G_R[6] && score < G_R[5]) {
+        return 6;
+    } else {
+        return 7;
+    }
+}
+
+function export_json() {
+    // create object data from all figures
+    let export_obj = {
+        G_R: [],
+        projects: {}
+    };
+    const cut_off_data = Array.from(document.querySelectorAll(".default__editable.grades__column__2")).map(ele => Number(ele.innerHTML));
+    const qty_data = Array.from(document.querySelectorAll(".default__editable.grades__column__3")).map(ele => Number(ele.innerHTML));
+    const signs_data = cut_off_data.map(n => ">=");
+    export_obj.G_R = [signs_data, cut_off_data, qty_data];
+
+    let proj_obj = {};
+    const all_figs = Array.from(document.getElementsByTagName("figure"));
+    all_figs.forEach(function(fig) {
+        const stud_obj = {}
+        stud_obj.GRADE = GRADES.indexOf(fig.dataset.grade);
+        stud_obj.CODING = fig.dataset.coding;
+        stud_obj.PARAMETERISATION = fig.dataset.parameterisation;
+        stud_obj.DIFFERENTIATION = fig.dataset.differentiation;
+        stud_obj.SCORE = fig.dataset.overall;
+        stud_obj["STUDENT NAME"] = fig.dataset.name;
+        proj_obj[fig.id] = stud_obj;
+    });
+
+    export_obj.projects = proj_obj;
+
+    const file_name = document.getElementById("import__fileName").innerHTML;
+    const content = JSON.stringify(export_obj);
+    const a = document.createElement("a");
+    const file = new Blob([content], {type: 'text/plain'});
+    a.href = URL.createObjectURL(file);
+    a.download = file_name;
+    a.click();
+
+    _show_notif("<b>File Downloaded.</b>", "normal");
+}
+
+function _is_number() {
+    // for checking of editable inputs.
+    console.log("not implemented");
 }
 
 window.addEventListener("load", sort_figures);

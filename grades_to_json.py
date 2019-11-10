@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 import argparse
-from MODULE_CONSTS import G_R, SIGNS
+from MODULE_CONSTS import G_R, SIGNS, GRADES
 
 def score_to_grade(score):
     if score >= G_R[0]:
@@ -37,6 +37,9 @@ def from_lumi():
     grades_df["SCORE"] /= 3
     grades_df.insert(2,"GRADE", grades_df["SCORE"].map(lambda x: score_to_grade(x)))
     grades_df["NUSNET"] = grades_df["NUSNET"].map(lambda x: x.upper())
+    freq_df = grades_df.groupby("GRADE").count()
+    freq_df.reindex(GRADES[:-1])
+    frequencies = freq_df["SCORE"].tolist()
 
     grades_df_cp = grades_df.copy(True)
     grades_df_cp.set_index("STUDENT NUMBER", inplace=True)
@@ -49,7 +52,7 @@ def from_lumi():
     with open ("ID_grade.json", "rt", encoding="utf-8") as json_f:
         id_dict = json.load(json_f)
     new_dict = dict(
-        G_R = [SIGNS,G_R],
+        G_R = [SIGNS,G_R,frequencies],
         projects = id_dict
     )
     with open ("ID_grade.json", "wt", encoding="utf-8") as json_f:

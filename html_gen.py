@@ -97,11 +97,11 @@ aside_section.add_child(aside_header).add_child(aside_footer)
 settings_btn = HtmlEle("div").extend_attr(["class='btn btn_settings'", "onclick='clk_settings()'"]).update_text("Settings")
 aside_nav.add_child(settings_btn)
 aside_header.add_child(import_grp_obj)
-aside_footer.add_child(HtmlEle("span").extend_attr(["id='import__fileName'"]))
+aside_footer.add_child(HtmlEle("span").extend_attr(["id='import__fileName'"]).update_text("No File Loaded"))
 
-import_obj = HtmlEle("label").extend_attr(["id='import'", "class='btn'"])
+import_obj = HtmlEle("label").extend_attr(["id='import'", "class='aside__btn'"])
 import_grp_obj.add_child(import_obj)
-import_obj.add_child(HtmlEle("input").extend_attr(["type='file'", "id='selectFiles'", "value='Import'", "style='display: none'", "onchange='import_json()'"]))
+import_obj.add_child(HtmlEle("input").extend_attr(["type='file'", "id='selectFiles'", "value='Import'", "style='display: none'", "onchange='load_json()'"]))
 import_obj.add_child(HtmlEle("span").update_text("Grades &#8673;"))
 
 article_nav = HtmlEle("nav")
@@ -113,7 +113,7 @@ section_obj.add_child(section_header).add_child(section_footer)
 
 btn_grp_obj = HtmlEle("div").extend_attr(["class='btn_grp'"])
 article_nav.add_child(btn_grp_obj)
-all_btn = HtmlEle("div").extend_attr(["id='ALL'","onclick='filter_group(this)'","class='btn selected'"])
+all_btn = HtmlEle("div").extend_attr(["id='ALL'","onclick='filter_group(this)'","class='btn selected__grp filter__btn'"])
 btn_grp_obj.add_child(all_btn)
 all_btn.add_child(HtmlEle("span").update_text("ALL"))
 
@@ -160,11 +160,11 @@ for f_name in mob_dict:
     if group not in grp_lst:
         grp_lst.append(group)
         group_number = re.search("\d",group).group(0)
-        btn_obj = HtmlEle("div").extend_attr(["id='G%s_fbtn'" % group_number,"onclick='filter_group(this)'", "class='btn'"])
+        btn_obj = HtmlEle("div").extend_attr(["id='G%s_fbtn'" % group_number,"onclick='filter_group(this)'", "class='btn filter__btn'"])
         btn_grp_obj.add_child(btn_obj)
         btn_obj.add_child(HtmlEle("span").update_text("G%s" % group_number))
     
-    figure_obj = HtmlEle("figure").extend_attr(["id='%s'" % proj_dict["student_id"], "style='display: none'"])
+    figure_obj = HtmlEle("figure").extend_attr(["id='%s'" % proj_dict["student_id"], "style='display: none'"]) 
     fig_grid.add_child(figure_obj)
     figure_obj.extend_attr(["class='%s'" % run_status]).extend_attr(["data-name = '%s'" % proj_dict["student_name"], "data-group = 'G%s'" % group_number])
     run_time_div = HtmlEle("label").extend_attr(["class='%s'" % run_status])
