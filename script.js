@@ -533,6 +533,7 @@ function update_grade_range() {
         }
     }
     _display_filtered();
+    document.getElementById("C_2").innerHTML = document.getElementById("C+_2").innerHTML;
 }
 
 function _update_by_cutoff() {
