@@ -75,11 +75,15 @@ article {
     cursor:pointer;
 }
 
+.table__btn_div {
+    margin-bottom: 1em;
+}
+
 .aside__btn {
     border: 1px solid rgb(169, 169, 169);
     background-color: #CCCCCC;
     font-size: small;
-    margin: auto;
+    margin-right: 1em;
     padding: 1px 1em;
     height: 100%;
     text-align: center;

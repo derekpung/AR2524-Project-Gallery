@@ -436,6 +436,8 @@ function _create_table(grade_range) {
     aside_btn_div.appendChild(download_btn);
     table_btn_div.appendChild(update_btn);
     table_btn_div.appendChild(rebuild_btn);
+    aside_btn_div.classList.add("aside__btn_div");
+    table_btn_div.classList.add("table__btn_div");
 
     update_btn.classList.add("aside__btn");
     update_btn.id = "aside__update";
