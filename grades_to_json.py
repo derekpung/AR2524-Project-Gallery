@@ -58,22 +58,17 @@ def from_lumi():
     with open ("ID_grade.json", "wt", encoding="utf-8") as json_f:
         json.dump(new_dict, json_f, ensure_ascii=False, indent=4)
 
-# def moderated():
-#     GRADES = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "U"]
+def to_lumi():
+    with open("ID_grade.json", "rt", encoding="utf-8") as json_f:
+        res_dict = json.load(json_f)
+    proj_dict = res_dict["projects"]
+    ORDER = ["STUDENT_NUMBER", "MARKS", "MODERATION", "REMARKS"]
+    for cat in ["CODING", "PARAMETERISATION", "DIFFERENTIATION"]:
+        out_lst = []
+        for student in proj_dict:
+            out_lst.append([student, proj_dict[student][cat], "", ""])
+        df = pd.DataFrame(out_lst, columns=ORDER)
+        df.to_excel("_%s.xlsx" % cat, index=False)
 
-#     data_xls = pd.read_excel("MODERATED.xlsx")
-#     grades_df = data_xls[1:]
-#     grades_df.rename(columns={"Graded Items:": "STUDENT NAME",
-#                             "Unnamed: 1": "NUSNET",
-#                             "Unnamed: 2": "STUDENT NUMBER",
-#                             "Unnamed: 15": "GRADE"}
-#                             ,inplace=True)
-#     grades_df = grades_df[["STUDENT NUMBER", "NUSNET", "GRADE", "STUDENT NAME"]]
-#     grades_df["GRADE"] = grades_df["GRADE"].map(lambda x: "U" if x not in GRADES else x)
-
-#     grades_df_cp = grades_df.copy(True)
-#     grades_df_cp.set_index("STUDENT NUMBER", inplace=True)
-#     grades_df_cp[["GRADE", "STUDENT NAME"]].to_json("MOD_ID_grade.json", orient="index")
-
-from_lumi()
-# moderated()
+# from_lumi()
+to_lumi()
