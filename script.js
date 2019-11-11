@@ -249,11 +249,16 @@ function _swap_attribs(ele1, ele2, attrib) {
 function _swap_grades(fig, tar) {
     let message = _attr_to_str(fig) + " <> " + _attr_to_str(tar);
     _show_notif(message, "normal");
+    const tar_overall = tar.dataset.overall;
+    const fig_overall = fig.dataset.overall; 
+    ["data-coding", "data-parameterisation", "data-differentiation"].forEach(function(grade_component) {
+        const fig_component = fig.getAttribute(grade_component);
+        const tar_component = tar.getAttribute(grade_component);
+        fig.setAttribute(grade_component, round_decimal(fig_component/fig_overall * tar_overall, 1));
+        tar.setAttribute(grade_component, round_decimal(tar_component/tar_overall * fig_overall, 1));
+    });
     _swap_attribs(fig, tar, "data-grade");
     _swap_attribs(fig, tar, "data-overall");
-    _swap_attribs(fig, tar, "data-coding");
-    _swap_attribs(fig, tar, "data-parameterisation");
-    _swap_attribs(fig, tar, "data-differentiation");
     _update_fig_breakdown(fig);
     _update_fig_breakdown(tar);
 }
