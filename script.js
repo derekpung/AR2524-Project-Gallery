@@ -573,10 +573,10 @@ function _update_by_quantity() {
     let prev_qty = 0;
     quants_arr.forEach(function(qty) {
         prev_qty += qty;
-        cutoff_arr.push(all_figs[prev_qty].dataset.overall);
+        cutoff_arr.push(all_figs[prev_qty-1].dataset.overall);
     });    
     _update_cutoff(cutoff_arr);
-    _update_figs_grade();
+    _update_quantity(_update_figs_grade());
 }
 
 function _update_cutoff(arr) {
