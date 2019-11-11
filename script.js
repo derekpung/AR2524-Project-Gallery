@@ -446,7 +446,7 @@ function _create_table(grade_range) {
     rebuild_btn.classList.add("aside__btn");
     rebuild_btn.id = "aside__rebuild";
     rebuild_btn.onclick = function() {
-        _show_notif("not implemented", "warning");
+        rebuild_grades();
     }
 
     download_btn.classList.add("aside__btn");
@@ -475,6 +475,16 @@ function select_column(col_number) {
     }
     _enable_column(col_number);
     _disable_column(col_to_disable);
+}
+
+function _get_selected_column() {
+    let ret =  document.querySelector(".selected__column")
+    if (ret == null) {
+        _show_notif("No Column Selected", "warning");
+        return false;
+    } else {
+        return Number(ret.dataset.col);
+    }
 }
 
 function _enable_column(col_number) {
@@ -592,6 +602,74 @@ function _descending_overall_sort() {
     sort_figures();
 }
 
+function rebuild_grades() {
+    // alert and confirm (warning);
+    if (confirm("Rebuild redistributes students based on the current ranking in the viewer. All grades will be modified.")) {
+        _descending_overall_sort();
+        const all_figs = Array.from(document.getElementsByTagName("figure"));
+        const quants_cells = Array.from(document.getElementsByClassName("grades__column__3 default__editable"));
+        const quants_arr = quants_cells.slice(0,quants_cells.length).map(ele => Number(ele.innerHTML));
+        const cutoff_cells = Array.from(document.querySelectorAll(".default__editable.grades__column__2"));
+        const cutoff_arr = cutoff_cells.slice(0,cutoff_cells.length).map(ele => Number(ele.innerHTML));
+        
+        let upp_cutoff = 100;
+        let lower_cutoff = 0;
+        let prev_i = 0;
+        for (let i=0; i<quants_arr.length; i++) {
+            const qty = quants_arr[i]
+            const curr_i = prev_i + qty;
+            
+            if (i==quants_arr.length-1) {
+                lower_cutoff = 40;
+            } else {
+                lower_cutoff = cutoff_arr[i];
+            }
+            const distribution_unit = (upp_cutoff - lower_cutoff)/qty;
+            const curr_students = all_figs.slice(prev_i,curr_i)
+            for (let j=0; j<curr_students.length; j++) {
+                const student = curr_students[j];
+                let student_overall = Number(student.dataset.overall);
+                if ((i==0 && student_overall > lower_cutoff) || (i==quants_arr.length-1 && student_overall < upp_cutoff)) {
+                    console.log(student);
+                    continue;
+                } else {
+                    if (i==0) { // bump up to A+
+                        student_overall = lower_cutoff; 
+                    } else if  (i==quants_arr.length-1) {// bump down to C
+                        student_overall = upp_cutoff - distribution_unit; 
+                    } else { // distribution cases
+                        student_overall = upp_cutoff - (j+1) * distribution_unit;
+                    }
+                }
+                const curr_overall = Number(student.dataset.overall)
+                const curr_coding = Number(student.dataset.coding);
+                const curr_parameterisation = Number(student.dataset.parameterisation);
+                const curr_differentiation= Number(student.dataset.differentiation);
+                student.dataset.coding = round_decimal(curr_coding/curr_overall * student_overall, 1);
+                student.dataset.parameterisation = round_decimal(curr_parameterisation/curr_overall * student_overall, 1);
+                student.dataset.differentiation = round_decimal(curr_differentiation/curr_overall * student_overall, 1);
+                student.dataset.overall = round_decimal(student_overall, 1);
+                const prev_grade = student.dataset.grade;
+                const new_grade = GRADES[_score_to_gradeIdx(student_overall)];
+                if (prev_grade != new_grade) {
+                    student.dataset.grade = new_grade;
+                    _show_notif(student.id + ": " + prev_grade + " -> " + new_grade);
+                }
+            }
+            upp_cutoff = lower_cutoff;
+            prev_i = curr_i;
+        }
+    } else {
+        return;
+    }
+    _update_breakdown();
+    _display_filtered();
+}
+
+function round_decimal(number, places) {
+    return Math.round(number*10**places)/10**places;
+}
+
 function _is_quantity_equal() {
     const check_sum = _sum_arr(Array.from(
         document.getElementsByClassName("grades__column__3 default__editable")).map(ele => Number(ele.innerHTML))
@@ -642,16 +720,6 @@ function _is_legal_cutoff_cell(cell) {
     }
     cell.classList.remove("warning");
     return true;
-}
-
-function _get_selected_column() {
-    let ret =  document.querySelector(".selected__column")
-    if (ret == null) {
-        _show_notif("No Column Selected", "warning");
-        return false;
-    } else {
-        return Number(ret.dataset.col);
-    }
 }
 
 function _score_to_gradeIdx(score) {
