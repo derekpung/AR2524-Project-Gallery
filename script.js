@@ -431,32 +431,66 @@ function _create_table(grade_range) {
     }  
     const aside_footer = document.querySelector(".aside__footer");
     aside_footer.appendChild(TBL);
-    const aside_btn_div = document.createElement("div");
-    const table_btn_div = document.createElement("div");
-    const update_btn = _create_btn("Update");
-    const rebuild_btn = _create_btn("Rebuild");
-    const download_btn = _create_btn("&#8675; JSON");
-    aside_footer.appendChild(aside_btn_div);
-    aside_btn_div.appendChild(table_btn_div);
-    aside_btn_div.appendChild(download_btn);
-    table_btn_div.appendChild(update_btn);
-    table_btn_div.appendChild(rebuild_btn);
-    aside_btn_div.classList.add("aside__btn_div");
-    table_btn_div.classList.add("table__btn_div");
 
-    update_btn.classList.add("aside__btn");
-    update_btn.id = "aside__update";
-    update_btn.onclick = function() {update_grade_range();}
+    const update_fn = new GradeFunction("Update");
+    const rebuild_fn = new GradeFunction("Rebuild");
+    const download_fn = new GradeFunction("&#8675; Grades");
+    
+    update_fn.active_btn().id = "aside__update";
+    update_fn.active_btn().onclick = function() {update_grade_range();}
+    update_fn.append_arg(document.createElement("span"), "update_fn__desc").innerHTML = "select column";
 
-    rebuild_btn.classList.add("aside__btn");
-    rebuild_btn.id = "aside__rebuild";
-    rebuild_btn.onclick = function() {
-        rebuild_grades();
+    rebuild_fn.active_btn().id = "aside__rebuild";
+    rebuild_fn.active_btn().onclick = function() {rebuild_grades();}
+    rebuild_fn.append_arg(_create_input(40), "rebuild_fn__min").classList.add("aside__arg");
+    rebuild_fn.append_arg(document.createElement("span"), "rebuild_fn__desc").innerHTML = "to";
+    rebuild_fn.append_arg(_create_input(85), "rebuild_fn__max").classList.add("aside__arg");
+
+    download_fn.active_btn().id = "aside__dl_json";
+    download_fn.active_btn().onclick = function() {export_json();}
+    download_fn.active_btn().style.margin = "auto";
+    download_fn.active_btn().style.marginTop = "3em";
+}
+
+class GradeFunction {
+    constructor(function_name) {
+        this.__container = document.createElement("div");
+        this.__active_btn = _create_btn(function_name);
+        this.__arg_container = document.createElement("div");
+        this.__container.appendChild(this.__active_btn);
+        this.__container.appendChild(this.__arg_container);
+        this.__active_btn.classList.add("aside__btn");
+        this.__container.className = "grade_fn__container imp_created";
+        this.__arg_container.classList.add("grade_fn__args")
+        document.querySelector(".aside__footer").appendChild(this.__container);
+        this.__arg_children = {};
     }
+    active_btn() {
+        return this.__active_btn;
+    }
+    arg_container() {
+        return this.__arg_container;
+    }
+    append_arg(child_element, id) {
+        child_element.id = id
+        this.__arg_container.appendChild(child_element);
+        this.__arg_children[id] = child_element;
+        return child_element;
+    }
+    get_arg(id) {
+        return this.__arg_children[id];
+    }
+    get_container() {
+        return this.__container;
+    }
+}
 
-    download_btn.classList.add("aside__btn");
-    download_btn.id = "aside__dl_json";
-    download_btn.onclick = function() {export_json()}
+function _create_input(inner_txt) {
+    const ret_input = document.createElement("input");
+    ret_input.value = inner_txt;
+    ret_input.type = "text";
+    ret_input.className = "imp_created";
+    return ret_input;
 }
 
 function _create_btn(inner_span_txt) {
@@ -469,6 +503,7 @@ function _create_btn(inner_span_txt) {
 }
 
 function select_column(col_number) {
+    document.getElementById("update_fn__desc").innerHTML = "by " + document.getElementById("header_" + col_number).innerHTML;
     let col_to_disable;
     switch (col_number) {
         case 2:
@@ -608,6 +643,7 @@ function _descending_overall_sort() {
 }
 
 function rebuild_grades() {
+    if (!_is_legal_min_max() || !_is_legal_cutoff() || !_is_quantity_equal()) {return;}
     // alert and confirm (warning);
     if (confirm("Rebuild redistributes students based on the current ranking in the viewer. All grades will be modified.")) {
         _descending_overall_sort();
@@ -617,7 +653,7 @@ function rebuild_grades() {
         const cutoff_cells = Array.from(document.querySelectorAll(".default__editable.grades__column__2"));
         const cutoff_arr = cutoff_cells.slice(0,cutoff_cells.length).map(ele => Number(ele.innerHTML));
         
-        let upp_cutoff = 100;
+        let upp_cutoff = Number(document.getElementById("rebuild_fn__min").innerHTML);
         let lower_cutoff = 0;
         let prev_i = 0;
         for (let i=0; i<quants_arr.length; i++) {
@@ -625,7 +661,7 @@ function rebuild_grades() {
             const curr_i = prev_i + qty;
             
             if (i==quants_arr.length-1) {
-                lower_cutoff = 40;
+                lower_cutoff = Number(document.getElementById("rebuild_fn__max").innerHTML);
             } else {
                 lower_cutoff = cutoff_arr[i];
             }
@@ -634,17 +670,12 @@ function rebuild_grades() {
             for (let j=0; j<curr_students.length; j++) {
                 const student = curr_students[j];
                 let student_overall = Number(student.dataset.overall);
-                if ((i==0 && student_overall > lower_cutoff) || (i==quants_arr.length-1 && student_overall < upp_cutoff)) {
-                    console.log(student);
-                    continue;
-                } else {
-                    if (i==0) { // bump up to A+
-                        student_overall = lower_cutoff; 
-                    } else if  (i==quants_arr.length-1) {// bump down to C
-                        student_overall = upp_cutoff - distribution_unit; 
-                    } else { // distribution cases
-                        student_overall = upp_cutoff - (j+1) * distribution_unit;
-                    }
+                if (i==0) { // bump up to A+
+                    student_overall = lower_cutoff; 
+                } else if  (i==quants_arr.length-1) {// bump down to C
+                    student_overall = upp_cutoff - distribution_unit; 
+                } else { // distribution cases
+                    student_overall = upp_cutoff - (j+1) * distribution_unit;
                 }
                 const curr_overall = Number(student.dataset.overall)
                 const curr_coding = Number(student.dataset.coding);
@@ -669,6 +700,31 @@ function rebuild_grades() {
     }
     _update_breakdown();
     _display_filtered();
+}
+
+function _is_legal_min_max() {
+    const arg_min_ele = document.getElementById("rebuild_fn__min");
+    const arg_min = Number(arg_min_ele.value);
+    const arg_max_ele = document.getElementById("rebuild_fn__max");
+    const arg_max = Number(arg_max_ele.value);
+    let ret = true;
+    if (arg_min > Number(document.getElementById("C+_2").innerHTML)) {
+        console.log(arg_min);
+        _show_notif("specified minimum is higher than C+ cut-off", "warning");
+        arg_min_ele.classList.add("warning");
+        ret = false;
+    }
+    if (arg_max < Number(document.getElementById("A+_2").innerHTML)) {
+        console.log(arg_max);
+        _show_notif("specified maximum is lower than A+ cut-off", "warning");
+        arg_max_ele.classList.add('warning');
+        ret = false;
+    }
+    if (ret) {
+        arg_min_ele.classList.remove("warning");
+        arg_max_ele.classList.remove("warning");
+    }
+    return ret;
 }
 
 function round_decimal(number, places) {

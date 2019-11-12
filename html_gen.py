@@ -102,7 +102,7 @@ aside_footer.add_child(HtmlEle("span").extend_attr(["id='import__fileName'"]).up
 import_obj = HtmlEle("label").extend_attr(["id='import'", "class='aside__btn'"])
 import_grp_obj.add_child(import_obj)
 import_obj.add_child(HtmlEle("input").extend_attr(["type='file'", "id='selectFiles'", "value='Import'", "style='display: none'", "onchange='load_json()'"]))
-import_obj.add_child(HtmlEle("span").update_text("Grades &#8673;"))
+import_obj.add_child(HtmlEle("span").update_text("&#8673; Grades"))
 
 article_nav = HtmlEle("nav")
 section_obj = HtmlEle("section").extend_attr(["class='article__section'"])

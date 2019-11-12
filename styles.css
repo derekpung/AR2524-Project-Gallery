@@ -75,8 +75,22 @@ article {
     cursor:pointer;
 }
 
-.table__btn_div {
-    margin-bottom: 1em;
+.grade_fn__container {
+    border-top: 2px solid #B3B3B3;
+    padding: 1em 0;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.grade_fn__args {
+    display: inline-block;
+}
+
+.aside__arg {
+    background-color: #E6E6E6;
+    max-width: 2em;
+    border: none;
+    margin: 0 0.5em;
 }
 
 .aside__btn {
@@ -89,6 +103,8 @@ article {
     text-align: center;
     font-size: small;
     box-sizing: border-box;
+    min-width: 30%;
+    max-width: 30%;
 }
 
 .aside__btn:hover {
