@@ -63,10 +63,10 @@ def to_lumi():
         res_dict = json.load(json_f)
     proj_dict = res_dict["projects"]
     ORDER = ["STUDENT_NUMBER", "MARKS", "MODERATION", "REMARKS"]
-    for cat in ["CODING", "PARAMETERISATION", "DIFFERENTIATION"]:
+    for cat in ["CODING", "PARAMETERISATION", "DIFFERENTIATION", "SCORE"]:
         out_lst = []
         for student in proj_dict:
-            out_lst.append([student, proj_dict[student][cat], "", ""])
+            out_lst.append([student, round(float(proj_dict[student][cat]),1), "", ""])
         df = pd.DataFrame(out_lst, columns=ORDER)
         df.to_excel("_%s.xlsx" % cat, index=False)
 
