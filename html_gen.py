@@ -143,7 +143,7 @@ for f_name in mob_dict:
     proj_dict = mob_dict[f_name]
     # link_str = RAW_BASE + re.sub("\s", "%20", re.sub(r"\\", "%2F", proj_dict["mob_path"]))
     link_str = RAW_BASE + re.sub("\s", "%20", re.sub(r"\\", "/", proj_dict["mob_path"]))
-    mob_src = LATEST + base64.b64encode(link_str.encode("utf-8")).decode("utf-8")
+    mob_src = VERSION + base64.b64encode(link_str.encode("utf-8")).decode("utf-8")
     # img_src = GITHUB_BASE + re.sub("\s", "%20", re.sub(r"\\", "/", proj_dict["img_path"]))
     img_src = re.sub(r"\\", "/", proj_dict["img_path"])
     group = proj_dict["group"]
