@@ -139,8 +139,56 @@ with open(MOB_JSON, "r", encoding="utf-8") as json_f:
 
 grp_lst = []
 
+# 6 Jan 2021 update: A-grade project filter
+names = [
+    "SHARLENE SOW YONG JUN",
+    "LIM GUAN JIE OLIVER",
+    "SAW TIAN AIK",
+    "ZHANG JINGHAN",
+    "JASPER PHANG WEE KEAT",
+    "CHUNG ZHIWEI",
+    "MAK JIA JING SHAUN",
+    "NG JING HAO, ALOYSIUS",
+    "RYAN CHIAM YIAK JIN",
+    "TRACY TAI",
+    "ZHOU ZHEFANG",
+    "NGA ZHI YUAN",
+    "TAY YU JIE",
+    "NG HUEI YING",
+    "ISAAC TAN HUNG",
+    "LIU LINXIN",
+    "YAW JESSIE",
+    "LIM SHI-YI MATTHEW",
+    "NABILA FATHARANI AZKA",
+    "LIM WEN JIE",
+    "EVE LEE SHI",
+    "IAN TAY ZHE JUN",
+    "RAYNARD YU JUN KIAT",
+    "SU YUNG EN",
+    "LIM KUN YI JAMES",
+    "CHAN SHAO KAYE",
+    "ZHOU ZIJUN",
+    "DELA CRUZ JOHN ANTHONY BORLONGAN",
+    "KEE CHEOW YAN",
+    "LEE YONG SOON",
+    "HO JUN XUAN, BENEDICT",
+    "FONG SHEAN HUI",
+    "CHEUNG KAI NING",
+    "CHEN BO HAN",
+    "PE CHING YEE (PENG JINGYI)",
+    "NG JIAN YUAN",
+    "CHLOE LAU JIA YEE",
+    "HONG JIT SEAN BRANDON",
+    "GERRELL CHEE YI LUN",
+]
+
 for f_name in mob_dict:
     proj_dict = mob_dict[f_name]
+
+    # A-grade filter
+    if proj_dict["student_name"] not in names:
+        continue
+
     # link_str = RAW_BASE + re.sub("\s", "%20", re.sub(r"\\", "%2F", proj_dict["mob_path"]))
     link_str = RAW_BASE + re.sub("\s", "%20", re.sub(r"\\", "/", proj_dict["mob_path"]))
     mob_src = VERSION + base64.b64encode(link_str.encode("utf-8")).decode("utf-8")

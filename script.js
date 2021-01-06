@@ -18,7 +18,7 @@ const SORT_STATES = ["DESCENDING", "ASCENDING"];
 function filter_group(ele) {
     const id = ele.id;
     if (id[0]=="G") {
-        document.getElementById("TA").innerHTML = "TA: " + TAs[id.substring(0,2)];
+        // document.getElementById("TA").innerHTML = "TA: " + TAs[id.substring(0,2)];
     } else {
         document.getElementById("TA").innerHTML = "";
     }
