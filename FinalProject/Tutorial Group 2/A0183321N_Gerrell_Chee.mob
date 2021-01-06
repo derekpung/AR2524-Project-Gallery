@@ -14,7 +14,7 @@
         "nodes": [
             {
                 "name": "Start",
-                "id": "node_x0effaupzeb",
+                "id": "node_mezkf0havi",
                 "position": {
                     "x": 5220,
                     "y": 4980
@@ -293,7 +293,7 @@
                                 },
                                 "parentNode": {
                                     "name": "Stone base",
-                                    "id": "node_1jgnap50uksj",
+                                    "id": "node_a0xa9nn00hl",
                                     "position": {
                                         "x": 5380,
                                         "y": 4980
@@ -396,7 +396,7 @@
                                                     "name": "origin",
                                                     "value": "XY",
                                                     "linked": false,
-                                                    "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                    "jsValue": "XY",
                                                     "usedVars": [],
                                                     "invalidVar": false
                                                 },
@@ -1569,7 +1569,7 @@
                                                     },
                                                     "parentNode": {
                                                         "name": "Glass cuboid",
-                                                        "id": "node_skaoxaj0x1o",
+                                                        "id": "node_9vpzw57lurt",
                                                         "position": {
                                                             "x": 5540,
                                                             "y": 4980
@@ -2219,7 +2219,7 @@
                                                                         },
                                                                         "parentNode": {
                                                                             "name": "Glass tower",
-                                                                            "id": "node_9w17j3gamcv",
+                                                                            "id": "node_v0xwu7dxbun",
                                                                             "position": {
                                                                                 "x": 5540,
                                                                                 "y": 5120
@@ -5683,10 +5683,12 @@
                                                                                                     "args": [
                                                                                                         {
                                                                                                             "name": "comment",
-                                                                                                            "value": "rectangular polygons"
+                                                                                                            "value": "rectangular polygons",
+                                                                                                            "linked": false
                                                                                                         }
                                                                                                     ],
-                                                                                                    "selected": false
+                                                                                                    "selected": false,
+                                                                                                    "hasError": false
                                                                                                 },
                                                                                                 {
                                                                                                     "type": 8,
@@ -5770,10 +5772,12 @@
                                                                                                     "args": [
                                                                                                         {
                                                                                                             "name": "comment",
-                                                                                                            "value": "rectangle-with-the-corners-removed polygons"
+                                                                                                            "value": "rectangle-with-the-corners-removed polygons",
+                                                                                                            "linked": false
                                                                                                         }
                                                                                                     ],
-                                                                                                    "selected": false
+                                                                                                    "selected": false,
+                                                                                                    "hasError": false
                                                                                                 },
                                                                                                 {
                                                                                                     "type": 8,
@@ -10630,10 +10634,10 @@
                                                                                                             "args": [
                                                                                                                 {
                                                                                                                     "name": "var_name",
-                                                                                                                    "value": "ps_lst",
+                                                                                                                    "value": "ps_cen",
                                                                                                                     "linked": false,
                                                                                                                     "invalidVar": false,
-                                                                                                                    "jsValue": "ps_lst_"
+                                                                                                                    "jsValue": "ps_cen_"
                                                                                                                 },
                                                                                                                 {
                                                                                                                     "name": "__model__",
@@ -10651,7 +10655,7 @@
                                                                                                                 }
                                                                                                             ],
                                                                                                             "selected": false,
-                                                                                                            "variable": "ps_lst",
+                                                                                                            "variable": "ps_cen",
                                                                                                             "hasError": false,
                                                                                                             "selectGeom": false
                                                                                                         },
@@ -10680,13 +10684,13 @@
                                                                                                                 },
                                                                                                                 {
                                                                                                                     "name": "entities",
-                                                                                                                    "value": "[pg_ps[0], ps_lst[0], ps_lst[2]]",
+                                                                                                                    "value": "[pg_ps[0], ps_cen, pg_ps[2]]",
                                                                                                                     "invalidVar": false,
                                                                                                                     "linked": false,
-                                                                                                                    "jsValue": "[pg_ps_[pythonList(0, pg_ps_.length)], ps_lst_[pythonList(0, ps_lst_.length)], ps_lst_[pythonList(2, ps_lst_.length)]]",
+                                                                                                                    "jsValue": "[pg_ps_[pythonList(0, pg_ps_.length)], ps_cen_, pg_ps_[pythonList(2, pg_ps_.length)]]",
                                                                                                                     "usedVars": [
                                                                                                                         "pg_ps",
-                                                                                                                        "ps_lst"
+                                                                                                                        "ps_cen"
                                                                                                                     ]
                                                                                                                 }
                                                                                                             ],
@@ -10720,13 +10724,13 @@
                                                                                                                 },
                                                                                                                 {
                                                                                                                     "name": "entities",
-                                                                                                                    "value": "[pg_ps[1], ps_lst[1], ps_lst[0]]",
+                                                                                                                    "value": "[pg_ps[1], ps_cen, pg_ps[0]]",
                                                                                                                     "invalidVar": false,
                                                                                                                     "linked": false,
-                                                                                                                    "jsValue": "[pg_ps_[pythonList(1, pg_ps_.length)], ps_lst_[pythonList(1, ps_lst_.length)], ps_lst_[pythonList(0, ps_lst_.length)]]",
+                                                                                                                    "jsValue": "[pg_ps_[pythonList(1, pg_ps_.length)], ps_cen_, pg_ps_[pythonList(0, pg_ps_.length)]]",
                                                                                                                     "usedVars": [
                                                                                                                         "pg_ps",
-                                                                                                                        "ps_lst"
+                                                                                                                        "ps_cen"
                                                                                                                     ]
                                                                                                                 }
                                                                                                             ],
@@ -10760,13 +10764,13 @@
                                                                                                                 },
                                                                                                                 {
                                                                                                                     "name": "entities",
-                                                                                                                    "value": "[pg_ps[2], ps_lst[2], ps_lst[1]]",
+                                                                                                                    "value": "[pg_ps[2], ps_cen, pg_ps[1]]",
                                                                                                                     "invalidVar": false,
                                                                                                                     "linked": false,
-                                                                                                                    "jsValue": "[pg_ps_[pythonList(2, pg_ps_.length)], ps_lst_[pythonList(2, ps_lst_.length)], ps_lst_[pythonList(1, ps_lst_.length)]]",
+                                                                                                                    "jsValue": "[pg_ps_[pythonList(2, pg_ps_.length)], ps_cen_, pg_ps_[pythonList(1, pg_ps_.length)]]",
                                                                                                                     "usedVars": [
                                                                                                                         "pg_ps",
-                                                                                                                        "ps_lst"
+                                                                                                                        "ps_cen"
                                                                                                                     ]
                                                                                                                 }
                                                                                                             ],
@@ -10800,12 +10804,13 @@
                                                                                                                 },
                                                                                                                 {
                                                                                                                     "name": "entities",
-                                                                                                                    "value": "[ps_lst[0], ps_lst[1], ps_lst[2]]",
+                                                                                                                    "value": "[pg_ps[2], ps_cen, pg_ps[0]]",
                                                                                                                     "invalidVar": false,
                                                                                                                     "linked": false,
-                                                                                                                    "jsValue": "[ps_lst_[pythonList(0, ps_lst_.length)], ps_lst_[pythonList(1, ps_lst_.length)], ps_lst_[pythonList(2, ps_lst_.length)]]",
+                                                                                                                    "jsValue": "[pg_ps_[pythonList(2, pg_ps_.length)], ps_cen_, pg_ps_[pythonList(0, pg_ps_.length)]]",
                                                                                                                     "usedVars": [
-                                                                                                                        "ps_lst"
+                                                                                                                        "pg_ps",
+                                                                                                                        "ps_cen"
                                                                                                                     ]
                                                                                                                 }
                                                                                                             ],
@@ -13187,7 +13192,7 @@
                                                                                             },
                                                                                             "parentNode": {
                                                                                                 "name": "End",
-                                                                                                "id": "node_5krnegu6l",
+                                                                                                "id": "node_646ol93rysn",
                                                                                                 "position": {
                                                                                                     "x": 5380,
                                                                                                     "y": 5120
@@ -13316,8 +13321,8 @@
         ],
         "functions": [],
         "ordered": true,
-        "last_updated": "2019-10-27T05:45:46.451Z"
+        "last_updated": "2021-01-06T09:21:24.931Z"
     },
     "version": 1,
-    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":false,\"size\":50},\"grid\":{\"show\":false,\"size\":500,\"pos_x\":0,\"pos_y\":0,\"pos_z\":0,\"pos\":{\"x\":0,\"y\":0,\"z\":0}},\"positions\":{\"show\":false,\"size\":2},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":true},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":118.05792861038186,\"y\":2.6327228209612183,\"z\":27.658130160864186},\"pos_x\":118.05792861038186,\"pos_y\":2.6327228209612183,\"pos_z\":27.658130160864186,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#E6E6E6\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.5},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.5},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"azimuth\":90,\"altitude\":45,\"distance\":10,\"type\":\"directional\"},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":8,\"name\":\"Polygons\"},\"tab\":\"0\"},\"version\":\"0.5.11\"}"
+    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":true,\"size\":50},\"grid\":{\"show\":true,\"size\":500},\"positions\":{\"show\":true,\"size\":0.5},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":false},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":-80,\"y\":-80,\"z\":80},\"pos_x\":-80,\"pos_y\":-80,\"pos_z\":80,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#E6E6E6\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.5},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.5},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"shadowSize\":4,\"azimuth\":90,\"altitude\":45,\"distance\":10000},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":5,\"name\":\"Faces\"},\"tab\":\"0\"},\"version\":\"0.5.6\"}"
 }

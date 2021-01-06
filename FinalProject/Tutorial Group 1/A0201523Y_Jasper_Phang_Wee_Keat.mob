@@ -14,7 +14,7 @@
         "nodes": [
             {
                 "name": "Start",
-                "id": "node_jjgkiru3ps",
+                "id": "node_h3yn1cfjuyo",
                 "position": {
                     "x": 5340,
                     "y": 4900
@@ -297,7 +297,7 @@
                                 },
                                 "parentNode": {
                                     "name": "Parameter Control",
-                                    "id": "node_kjkw4f3f67b",
+                                    "id": "node_tatcz6pjoxi",
                                     "position": {
                                         "x": 5340,
                                         "y": 4980
@@ -1392,7 +1392,7 @@
                                                     },
                                                     "parentNode": {
                                                         "name": "Roof",
-                                                        "id": "node_vaag32tfmmp",
+                                                        "id": "node_sso3lwa904",
                                                         "position": {
                                                             "x": 5340,
                                                             "y": 5080
@@ -1710,7 +1710,7 @@
                                                                                 "name": "value",
                                                                                 "value": "sin(i / num_panels[0] * period_x * PI) * @bump_ht[0]",
                                                                                 "linked": false,
-                                                                                "jsValue": "sin(i_ / num_panels_[pythonList(0, num_panels_.length)] * period_x_ * JSON.parse(JSON.stringify(PI))) *  __modules__.attrib.Get(__params__.model, null, 'bump_ht', 0)",
+                                                                                "jsValue": "sin(i_ / num_panels_[pythonList(0, num_panels_.length)] * period_x_ * PI) *  __modules__.attrib.Get(__params__.model, null, 'bump_ht', 0)",
                                                                                 "usedVars": [
                                                                                     "num_panels",
                                                                                     "period_x",
@@ -1957,7 +1957,7 @@
                                                                                 "name": "value",
                                                                                 "value": "sin(i / num_panels[1] * period_y * PI) * @bump_ht[1]",
                                                                                 "linked": false,
-                                                                                "jsValue": "sin(i_ / num_panels_[pythonList(1, num_panels_.length)] * period_y_ * JSON.parse(JSON.stringify(PI))) *  __modules__.attrib.Get(__params__.model, null, 'bump_ht', 1)",
+                                                                                "jsValue": "sin(i_ / num_panels_[pythonList(1, num_panels_.length)] * period_y_ * PI) *  __modules__.attrib.Get(__params__.model, null, 'bump_ht', 1)",
                                                                                 "usedVars": [
                                                                                     "num_panels",
                                                                                     "period_y",
@@ -2109,7 +2109,7 @@
                                                                         "name": "origin",
                                                                         "value": "XY",
                                                                         "linked": false,
-                                                                        "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                                        "jsValue": "XY",
                                                                         "usedVars": [],
                                                                         "invalidVar": false
                                                                     },
@@ -2145,50 +2145,6 @@
                                                                 "selected": false,
                                                                 "hasError": false,
                                                                 "variable": "grid",
-                                                                "selectGeom": false
-                                                            },
-                                                            {
-                                                                "type": 8,
-                                                                "ID": "prod-3jzxwa8u1hb",
-                                                                "enabled": true,
-                                                                "print": false,
-                                                                "meta": {
-                                                                    "module": "modify",
-                                                                    "name": "Move"
-                                                                },
-                                                                "argCount": 4,
-                                                                "args": [
-                                                                    {
-                                                                        "name": "__none__",
-                                                                        "linked": false
-                                                                    },
-                                                                    {
-                                                                        "name": "__model__",
-                                                                        "linked": false
-                                                                    },
-                                                                    {
-                                                                        "name": "entities",
-                                                                        "value": "grid",
-                                                                        "jsValue": "grid_",
-                                                                        "usedVars": [
-                                                                            "grid"
-                                                                        ],
-                                                                        "invalidVar": false,
-                                                                        "linked": false
-                                                                    },
-                                                                    {
-                                                                        "name": "vectors",
-                                                                        "value": "[max_dist[0] / 2, max_dist[1] / 2, 0]",
-                                                                        "linked": false,
-                                                                        "jsValue": "[max_dist_[pythonList(0, max_dist_.length)] / 2, max_dist_[pythonList(1, max_dist_.length)] / 2, 0]",
-                                                                        "usedVars": [
-                                                                            "max_dist"
-                                                                        ],
-                                                                        "invalidVar": false
-                                                                    }
-                                                                ],
-                                                                "selected": false,
-                                                                "hasError": false,
                                                                 "selectGeom": false
                                                             },
                                                             {
@@ -2236,7 +2192,7 @@
                                                                     {
                                                                         "type": 13,
                                                                         "ID": "",
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~17",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~16",
                                                                         "meta": {
                                                                             "name": "",
                                                                             "module": ""
@@ -2251,7 +2207,7 @@
                                                                     },
                                                                     {
                                                                         "type": 0,
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~17",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~16",
                                                                         "ID": "prod-0ccojlvzp8bh",
                                                                         "enabled": true,
                                                                         "print": false,
@@ -2280,7 +2236,7 @@
                                                                     },
                                                                     {
                                                                         "type": 0,
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~17",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~16",
                                                                         "ID": "prod-1zqy6bi09s8",
                                                                         "enabled": true,
                                                                         "print": false,
@@ -2309,7 +2265,7 @@
                                                                     },
                                                                     {
                                                                         "type": 4,
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~17",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~16",
                                                                         "ID": "prod-jhje4q0v7v",
                                                                         "enabled": true,
                                                                         "print": false,
@@ -2338,7 +2294,7 @@
                                                                             {
                                                                                 "type": 13,
                                                                                 "ID": "",
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~17~children~3",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~16~children~3",
                                                                                 "meta": {
                                                                                     "name": "",
                                                                                     "module": ""
@@ -2353,7 +2309,54 @@
                                                                             },
                                                                             {
                                                                                 "type": 8,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~17~children~3",
+                                                                                "ID": "prod-gfs0nsbgd6u",
+                                                                                "enabled": true,
+                                                                                "print": false,
+                                                                                "meta": {
+                                                                                    "module": "modify",
+                                                                                    "name": "Move"
+                                                                                },
+                                                                                "argCount": 4,
+                                                                                "args": [
+                                                                                    {
+                                                                                        "name": "__none__",
+                                                                                        "linked": false
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "__model__",
+                                                                                        "linked": false
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "entities",
+                                                                                        "value": "grid[row][ps]",
+                                                                                        "jsValue": "grid_[pythonList(row_, grid_.length)][pythonList(ps_, grid_[pythonList(row_, grid_.length)].length)]",
+                                                                                        "usedVars": [
+                                                                                            "ps",
+                                                                                            "grid",
+                                                                                            "row"
+                                                                                        ],
+                                                                                        "invalidVar": false,
+                                                                                        "linked": false
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "vectors",
+                                                                                        "value": "[max_dist[0] / 2, max_dist[1] / 2, 0]",
+                                                                                        "linked": false,
+                                                                                        "jsValue": "[max_dist_[pythonList(0, max_dist_.length)] / 2, max_dist_[pythonList(1, max_dist_.length)] / 2, 0]",
+                                                                                        "usedVars": [
+                                                                                            "max_dist"
+                                                                                        ],
+                                                                                        "invalidVar": false
+                                                                                    }
+                                                                                ],
+                                                                                "selected": false,
+                                                                                "hasError": false,
+                                                                                "selectGeom": false,
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~16~children~3"
+                                                                            },
+                                                                            {
+                                                                                "type": 8,
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~16~children~3",
                                                                                 "ID": "prod-6zfg3fabnj5",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -2395,7 +2398,7 @@
                                                                             },
                                                                             {
                                                                                 "type": 8,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~17~children~3",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~16~children~3",
                                                                                 "ID": "prod-fistf1terf7",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -2444,7 +2447,7 @@
                                                                             },
                                                                             {
                                                                                 "type": 8,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~17~children~3",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~16~children~3",
                                                                                 "ID": "prod-jqlaopqhhtc",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -2496,7 +2499,7 @@
                                                                     },
                                                                     {
                                                                         "type": 8,
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~17",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~16",
                                                                         "ID": "prod-qhs7wbo8rh",
                                                                         "enabled": true,
                                                                         "print": false,
@@ -2726,7 +2729,7 @@
                                                                     {
                                                                         "type": 13,
                                                                         "ID": "prod-r1drwwwz87i",
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~23",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~22",
                                                                         "meta": {
                                                                             "name": "",
                                                                             "module": ""
@@ -2741,7 +2744,7 @@
                                                                     },
                                                                     {
                                                                         "type": 14,
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~23",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~22",
                                                                         "ID": "prod-p40fsl7n3q",
                                                                         "enabled": true,
                                                                         "print": false,
@@ -2758,7 +2761,7 @@
                                                                     },
                                                                     {
                                                                         "type": 1,
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~23",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~22",
                                                                         "ID": "prod-4rksd61sm1j",
                                                                         "enabled": true,
                                                                         "print": false,
@@ -2780,7 +2783,7 @@
                                                                             {
                                                                                 "type": 13,
                                                                                 "ID": "prod-96v711ec4bh",
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~23~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~22~children~2",
                                                                                 "meta": {
                                                                                     "name": "",
                                                                                     "module": ""
@@ -2823,7 +2826,7 @@
                                                                                 "variable": "counter",
                                                                                 "hasError": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~23~children~2"
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~22~children~2"
                                                                             }
                                                                         ],
                                                                         "selected": false,
@@ -2832,7 +2835,7 @@
                                                                     },
                                                                     {
                                                                         "type": 14,
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~23",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~22",
                                                                         "ID": "prod-kn4fddc6rrn",
                                                                         "enabled": true,
                                                                         "print": false,
@@ -2849,7 +2852,7 @@
                                                                     },
                                                                     {
                                                                         "type": 1,
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~23",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~22",
                                                                         "ID": "prod-xmmlp1sb2eb",
                                                                         "enabled": true,
                                                                         "print": false,
@@ -2871,7 +2874,7 @@
                                                                             {
                                                                                 "type": 13,
                                                                                 "ID": "prod-vtr10lvhst",
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~23~children~4",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~22~children~4",
                                                                                 "meta": {
                                                                                     "name": "",
                                                                                     "module": ""
@@ -2886,7 +2889,7 @@
                                                                             },
                                                                             {
                                                                                 "type": 0,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~23~children~4",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~22~children~4",
                                                                                 "ID": "prod-wsjmehsn5o",
                                                                                 "enabled": false,
                                                                                 "print": false,
@@ -2919,7 +2922,7 @@
                                                                             },
                                                                             {
                                                                                 "type": 0,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~23~children~4",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~22~children~4",
                                                                                 "ID": "prod-8pzgt4ydrqq",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -2953,7 +2956,7 @@
                                                                             },
                                                                             {
                                                                                 "type": 0,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~23~children~4",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~22~children~4",
                                                                                 "ID": "prod-er62whkx1s8",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -3094,7 +3097,7 @@
                                                                     {
                                                                         "type": 13,
                                                                         "ID": "prod-aayzgmf0pp4",
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26",
                                                                         "meta": {
                                                                             "name": "",
                                                                             "module": ""
@@ -3109,7 +3112,7 @@
                                                                     },
                                                                     {
                                                                         "type": 1,
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26",
                                                                         "ID": "prod-e2o9k0i9um6",
                                                                         "enabled": true,
                                                                         "print": false,
@@ -3130,7 +3133,7 @@
                                                                             {
                                                                                 "type": 13,
                                                                                 "ID": "",
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~1",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~1",
                                                                                 "meta": {
                                                                                     "name": "",
                                                                                     "module": ""
@@ -3204,7 +3207,7 @@
                                                                                 "variable": "roof_extr",
                                                                                 "hasError": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~1"
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~1"
                                                                             },
                                                                             {
                                                                                 "type": 0,
@@ -3236,7 +3239,7 @@
                                                                                 "variable": null,
                                                                                 "hasError": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~1"
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~1"
                                                                             }
                                                                         ],
                                                                         "selected": false,
@@ -3244,7 +3247,7 @@
                                                                     },
                                                                     {
                                                                         "type": 3,
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26",
                                                                         "ID": "prod-q6ypdjezjra",
                                                                         "enabled": true,
                                                                         "print": false,
@@ -3254,7 +3257,7 @@
                                                                             {
                                                                                 "type": 13,
                                                                                 "ID": "",
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~2",
                                                                                 "meta": {
                                                                                     "name": "",
                                                                                     "module": ""
@@ -3269,7 +3272,7 @@
                                                                             },
                                                                             {
                                                                                 "type": 8,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~2",
                                                                                 "ID": "prod-jmrno64fnw",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -3349,7 +3352,7 @@
                                                                                 ],
                                                                                 "selected": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~2",
                                                                                 "variable": "pg_cent",
                                                                                 "hasError": false
                                                                             },
@@ -3383,11 +3386,11 @@
                                                                                 "variable": "vec",
                                                                                 "hasError": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~2"
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~2"
                                                                             },
                                                                             {
                                                                                 "type": 0,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~2",
                                                                                 "ID": "prod-m30d5472c8g",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -3419,7 +3422,7 @@
                                                                             },
                                                                             {
                                                                                 "type": 1,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~2",
                                                                                 "ID": "prod-k537momiqt",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -3440,7 +3443,7 @@
                                                                                     {
                                                                                         "type": 13,
                                                                                         "ID": "prod-dupu1sojojm",
-                                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~2~children~5",
+                                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~2~children~5",
                                                                                         "meta": {
                                                                                             "name": "",
                                                                                             "module": ""
@@ -3455,7 +3458,7 @@
                                                                                     },
                                                                                     {
                                                                                         "type": 0,
-                                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~2~children~5",
+                                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~2~children~5",
                                                                                         "ID": "prod-c3q62qirilf",
                                                                                         "enabled": true,
                                                                                         "print": false,
@@ -3489,7 +3492,7 @@
                                                                             },
                                                                             {
                                                                                 "type": 0,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~2",
                                                                                 "ID": "prod-z7wa11do7x",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -3584,7 +3587,7 @@
                                                                                 "variable": "roof_extr",
                                                                                 "hasError": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~2"
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~2"
                                                                             },
                                                                             {
                                                                                 "type": 0,
@@ -3616,7 +3619,7 @@
                                                                                 "variable": null,
                                                                                 "hasError": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~27~children~2"
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~26~children~2"
                                                                             }
                                                                         ],
                                                                         "hasError": false
@@ -3671,7 +3674,7 @@
                                                                     {
                                                                         "type": 13,
                                                                         "ID": "prod-sn2bgcqfjht",
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28",
                                                                         "meta": {
                                                                             "name": "",
                                                                             "module": ""
@@ -3686,7 +3689,7 @@
                                                                     },
                                                                     {
                                                                         "type": 1,
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28",
                                                                         "ID": "prod-utrc1xbeebg",
                                                                         "enabled": true,
                                                                         "print": false,
@@ -3707,7 +3710,7 @@
                                                                             {
                                                                                 "type": 13,
                                                                                 "ID": "prod-vtcjh7a84ui",
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~1",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~1",
                                                                                 "meta": {
                                                                                     "name": "",
                                                                                     "module": ""
@@ -3781,7 +3784,7 @@
                                                                                 "variable": "skylight_extr",
                                                                                 "hasError": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~1"
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~1"
                                                                             },
                                                                             {
                                                                                 "type": 0,
@@ -3813,7 +3816,7 @@
                                                                                 "variable": null,
                                                                                 "hasError": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~1"
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~1"
                                                                             }
                                                                         ],
                                                                         "selected": false,
@@ -3822,7 +3825,7 @@
                                                                     },
                                                                     {
                                                                         "type": 3,
-                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29",
+                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28",
                                                                         "ID": "prod-v4unju049uj",
                                                                         "enabled": true,
                                                                         "print": false,
@@ -3832,7 +3835,7 @@
                                                                             {
                                                                                 "type": 13,
                                                                                 "ID": "",
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~2",
                                                                                 "meta": {
                                                                                     "name": "",
                                                                                     "module": ""
@@ -3847,7 +3850,7 @@
                                                                             },
                                                                             {
                                                                                 "type": 8,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~2",
                                                                                 "ID": "prod-4a057shkb71",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -3927,7 +3930,7 @@
                                                                                 ],
                                                                                 "selected": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~2",
                                                                                 "variable": "pg_cent",
                                                                                 "hasError": false
                                                                             },
@@ -3961,11 +3964,11 @@
                                                                                 "variable": "vec",
                                                                                 "hasError": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~2"
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~2"
                                                                             },
                                                                             {
                                                                                 "type": 0,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~2",
                                                                                 "ID": "prod-01rpnh15o4xr",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -3997,7 +4000,7 @@
                                                                             },
                                                                             {
                                                                                 "type": 1,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~2",
                                                                                 "ID": "prod-jniznb0r0q",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -4018,7 +4021,7 @@
                                                                                     {
                                                                                         "type": 13,
                                                                                         "ID": "prod-h00oajdtshi",
-                                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~2~children~5",
+                                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~2~children~5",
                                                                                         "meta": {
                                                                                             "name": "",
                                                                                             "module": ""
@@ -4033,7 +4036,7 @@
                                                                                     },
                                                                                     {
                                                                                         "type": 0,
-                                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~2~children~5",
+                                                                                        "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~2~children~5",
                                                                                         "ID": "prod-uhm50n2hjlq",
                                                                                         "enabled": true,
                                                                                         "print": false,
@@ -4067,7 +4070,7 @@
                                                                             },
                                                                             {
                                                                                 "type": 0,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~2",
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~2",
                                                                                 "ID": "prod-n0m3yyq9h5",
                                                                                 "enabled": true,
                                                                                 "print": false,
@@ -4162,7 +4165,7 @@
                                                                                 "variable": "skylight_extr",
                                                                                 "hasError": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~2"
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~2"
                                                                             },
                                                                             {
                                                                                 "type": 0,
@@ -4194,7 +4197,7 @@
                                                                                 "variable": null,
                                                                                 "hasError": false,
                                                                                 "selectGeom": false,
-                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~29~children~2"
+                                                                                "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~procedure~28~children~2"
                                                                             }
                                                                         ],
                                                                         "hasError": false
@@ -4866,7 +4869,7 @@
                                                                         },
                                                                         "parentNode": {
                                                                             "name": "Stringers",
-                                                                            "id": "node_766j38lccp3",
+                                                                            "id": "node_1mc83ep355z",
                                                                             "position": {
                                                                                 "x": 5340,
                                                                                 "y": 5180
@@ -5614,7 +5617,7 @@
                                                                                             },
                                                                                             "parentNode": {
                                                                                                 "name": "Truss",
-                                                                                                "id": "node_nidrfueqfud",
+                                                                                                "id": "node_f8nhiis0zxq",
                                                                                                 "position": {
                                                                                                     "x": 5340,
                                                                                                     "y": 5280
@@ -6860,7 +6863,7 @@
                                                                                                                                 "name": "arc_angle",
                                                                                                                                 "value": "2 * PI",
                                                                                                                                 "linked": false,
-                                                                                                                                "jsValue": "2 * JSON.parse(JSON.stringify(PI))",
+                                                                                                                                "jsValue": "2 * PI",
                                                                                                                                 "usedVars": [],
                                                                                                                                 "invalidVar": false
                                                                                                                             }
@@ -7665,7 +7668,7 @@
                                                                                                                                 "name": "arc_angle",
                                                                                                                                 "value": "2 * PI",
                                                                                                                                 "linked": false,
-                                                                                                                                "jsValue": "2 * JSON.parse(JSON.stringify(PI))",
+                                                                                                                                "jsValue": "2 * PI",
                                                                                                                                 "usedVars": [],
                                                                                                                                 "invalidVar": false
                                                                                                                             }
@@ -8225,7 +8228,7 @@
                                                                                                                                 "name": "arc_angle",
                                                                                                                                 "value": "2 * PI",
                                                                                                                                 "linked": false,
-                                                                                                                                "jsValue": "2 * JSON.parse(JSON.stringify(PI))",
+                                                                                                                                "jsValue": "2 * PI",
                                                                                                                                 "usedVars": [],
                                                                                                                                 "invalidVar": false
                                                                                                                             }
@@ -8785,7 +8788,7 @@
                                                                                                                                 "name": "arc_angle",
                                                                                                                                 "value": "2 * PI",
                                                                                                                                 "linked": false,
-                                                                                                                                "jsValue": "2 * JSON.parse(JSON.stringify(PI))",
+                                                                                                                                "jsValue": "2 * PI",
                                                                                                                                 "usedVars": [],
                                                                                                                                 "invalidVar": false
                                                                                                                             }
@@ -10692,8 +10695,8 @@
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "name": "entities",
-                                                                                                                                "value": "[column_v1, column_v2, column_face]",
-                                                                                                                                "jsValue": "[column_v1_, column_v2_, column_face_]",
+                                                                                                                                "value": "listFlat([column_v1, column_v2, column_face])",
+                                                                                                                                "jsValue": "listFlat([column_v1_, column_v2_, column_face_])",
                                                                                                                                 "usedVars": [
                                                                                                                                     "column_v1",
                                                                                                                                     "column_v2",
@@ -10828,8 +10831,8 @@
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "name": "entities",
-                                                                                                                        "value": "[tube, tube_2, tube_3, truss_1, truss_3]",
-                                                                                                                        "jsValue": "[tube_, tube_2_, tube_3_, truss_1_, truss_3_]",
+                                                                                                                        "value": "listFlat([tube, tube_2, tube_3, truss_1, truss_3])",
+                                                                                                                        "jsValue": "listFlat([tube_, tube_2_, tube_3_, truss_1_, truss_3_])",
                                                                                                                         "invalidVar": false,
                                                                                                                         "linked": false,
                                                                                                                         "usedVars": [
@@ -11114,7 +11117,7 @@
                                                                                                                 },
                                                                                                                 "parentNode": {
                                                                                                                     "name": "Sun",
-                                                                                                                    "id": "node_yziijwsd427",
+                                                                                                                    "id": "node_spiw9lv7obl",
                                                                                                                     "position": {
                                                                                                                         "x": 5340,
                                                                                                                         "y": 5380
@@ -11311,7 +11314,7 @@
                                                                                                                                                 {
                                                                                                                                                     "name": "origin",
                                                                                                                                                     "value": "ZX",
-                                                                                                                                                    "jsValue": "JSON.parse(JSON.stringify(ZX))",
+                                                                                                                                                    "jsValue": "ZX",
                                                                                                                                                     "usedVars": [],
                                                                                                                                                     "invalidVar": false,
                                                                                                                                                     "linked": false
@@ -11335,7 +11338,7 @@
                                                                                                                                                 {
                                                                                                                                                     "name": "arc_angle",
                                                                                                                                                     "value": "PI",
-                                                                                                                                                    "jsValue": "JSON.parse(JSON.stringify(PI))",
+                                                                                                                                                    "jsValue": "PI",
                                                                                                                                                     "usedVars": [],
                                                                                                                                                     "invalidVar": false,
                                                                                                                                                     "linked": false
@@ -11396,7 +11399,7 @@
                                                                                                                                                     "name": "angle",
                                                                                                                                                     "value": "i * PI / 12 * 2",
                                                                                                                                                     "linked": false,
-                                                                                                                                                    "jsValue": "i_ * JSON.parse(JSON.stringify(PI)) / 12 * 2",
+                                                                                                                                                    "jsValue": "i_ * PI / 12 * 2",
                                                                                                                                                     "usedVars": [
                                                                                                                                                         "i"
                                                                                                                                                     ],
@@ -11696,7 +11699,7 @@
                                                                                                                                     },
                                                                                                                                     "parentNode": {
                                                                                                                                         "name": "End",
-                                                                                                                                        "id": "node_nc3x7fmgma",
+                                                                                                                                        "id": "node_lwfe43hpep",
                                                                                                                                         "position": {
                                                                                                                                             "x": 5340,
                                                                                                                                             "y": 5480
@@ -11998,8 +12001,8 @@
         ],
         "functions": [],
         "ordered": true,
-        "last_updated": "2019-10-27T01:17:38.852Z"
+        "last_updated": "2021-01-06T09:27:08.433Z"
     },
     "version": 1,
-    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":false,\"size\":50},\"grid\":{\"show\":false,\"size\":500,\"pos_x\":0,\"pos_y\":0,\"pos_z\":0,\"pos\":{\"x\":0,\"y\":0,\"z\":0}},\"positions\":{\"show\":true,\"size\":0.3},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":true},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":-1.9377199721362572,\"y\":-36.25892512666607,\"z\":15.528217073338912},\"pos_x\":-1.9377199721362572,\"pos_y\":-36.25892512666607,\"pos_z\":15.528217073338912,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#E6E6E6\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.5},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.5},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"azimuth\":90,\"altitude\":45,\"distance\":10,\"type\":\"directional\"},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#ffffff\",\"shininess\":0},\"select\":{\"selector\":{\"id\":8,\"name\":\"Polygons\"},\"tab\":0},\"version\":\"0.5.11\"}"
+    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":true,\"size\":50},\"grid\":{\"show\":true,\"size\":500},\"positions\":{\"show\":true,\"size\":0.5},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":false},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":-80,\"y\":-80,\"z\":80},\"pos_x\":-80,\"pos_y\":-80,\"pos_z\":80,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#E6E6E6\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.5},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.5},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"shadowSize\":4,\"azimuth\":90,\"altitude\":45,\"distance\":10000},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":5,\"name\":\"Faces\"},\"tab\":\"0\"},\"version\":\"0.5.6\"}"
 }

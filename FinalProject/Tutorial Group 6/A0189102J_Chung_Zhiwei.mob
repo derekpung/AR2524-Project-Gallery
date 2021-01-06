@@ -1,5 +1,5 @@
 {
-    "name": "A0189102J_Chung_Zhiwei (6)",
+    "name": "A0189102J_Chung_Zhiwei",
     "author": "new_user",
     "flowchart": {
         "id": "e85116d0-4092-6cd3-298d-0697cece5bfe",
@@ -14,7 +14,7 @@
         "nodes": [
             {
                 "name": "Start",
-                "id": "node_1dgx2irbozk",
+                "id": "node_61bieygnwwr",
                 "position": {
                     "x": 5240,
                     "y": 4880
@@ -393,7 +393,7 @@
                                 },
                                 "parentNode": {
                                     "name": "Terrace",
-                                    "id": "node_uwawsdo3u3c",
+                                    "id": "node_yvzo5pgl45f",
                                     "position": {
                                         "x": 5240,
                                         "y": 5000
@@ -442,7 +442,7 @@
                                                     "name": "origin",
                                                     "value": "XY",
                                                     "linked": false,
-                                                    "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                    "jsValue": "XY",
                                                     "usedVars": [],
                                                     "invalidVar": false
                                                 },
@@ -488,7 +488,7 @@
                                                     "name": "origin",
                                                     "value": "XY",
                                                     "linked": false,
-                                                    "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                    "jsValue": "XY",
                                                     "usedVars": [],
                                                     "invalidVar": false
                                                 },
@@ -1865,8 +1865,8 @@
                                                                 },
                                                                 {
                                                                     "name": "entities",
-                                                                    "value": "even_row_cp",
-                                                                    "jsValue": "even_row_cp_",
+                                                                    "value": "listFlat(even_row_cp)",
+                                                                    "jsValue": "listFlat(even_row_cp_)",
                                                                     "usedVars": [
                                                                         "even_row_cp"
                                                                     ],
@@ -2038,9 +2038,9 @@
                                                                 },
                                                                 {
                                                                     "name": "entities",
-                                                                    "value": "odd_row_cp",
+                                                                    "value": "listFlat(odd_row_cp)",
                                                                     "linked": false,
-                                                                    "jsValue": "odd_row_cp_",
+                                                                    "jsValue": "listFlat(odd_row_cp_)",
                                                                     "usedVars": [
                                                                         "odd_row_cp"
                                                                     ],
@@ -2343,9 +2343,9 @@
                                                         },
                                                         {
                                                             "name": "entities",
-                                                            "value": "total[i]",
+                                                            "value": "listFlat(total[i])",
                                                             "linked": false,
-                                                            "jsValue": "total_[pythonList(i_, total_.length)]",
+                                                            "jsValue": "listFlat(total_[pythonList(i_, total_.length)])",
                                                             "usedVars": [
                                                                 "total",
                                                                 "i"
@@ -2356,7 +2356,7 @@
                                                             "name": "vectors",
                                                             "value": "[0, curve_flexibility * sin((i / len(total)) * PI / curve_type), 0]",
                                                             "linked": false,
-                                                            "jsValue": "[0, curve_flexibility_ * sin((i_ / len(total_)) * JSON.parse(JSON.stringify(PI)) / curve_type_), 0]",
+                                                            "jsValue": "[0, curve_flexibility_ * sin((i_ / len(total_)) * PI / curve_type_), 0]",
                                                             "usedVars": [
                                                                 "curve_flexibility",
                                                                 "curve_type",
@@ -2488,9 +2488,9 @@
                                                                         },
                                                                         {
                                                                             "name": "entities",
-                                                                            "value": "total[i]",
+                                                                            "value": "listFlat(total[i])",
                                                                             "linked": false,
-                                                                            "jsValue": "total_[pythonList(i_, total_.length)]",
+                                                                            "jsValue": "listFlat(total_[pythonList(i_, total_.length)])",
                                                                             "usedVars": [
                                                                                 "total",
                                                                                 "i"
@@ -2501,7 +2501,7 @@
                                                                             "name": "origin",
                                                                             "value": "XY",
                                                                             "linked": false,
-                                                                            "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                                            "jsValue": "XY",
                                                                             "usedVars": [],
                                                                             "invalidVar": false
                                                                         },
@@ -2569,9 +2569,9 @@
                                                                         },
                                                                         {
                                                                             "name": "entities",
-                                                                            "value": "total[i]",
+                                                                            "value": "listFlat(total[i])",
                                                                             "linked": false,
-                                                                            "jsValue": "total_[pythonList(i_, total_.length)]",
+                                                                            "jsValue": "listFlat(total_[pythonList(i_, total_.length)])",
                                                                             "usedVars": [
                                                                                 "total",
                                                                                 "i"
@@ -2765,7 +2765,7 @@
                                                             "name": "value",
                                                             "value": "curve_flexibility * sin((i / len(total)) * PI / curve_type)",
                                                             "linked": false,
-                                                            "jsValue": "curve_flexibility_ * sin((i_ / len(total_)) * JSON.parse(JSON.stringify(PI)) / curve_type_)",
+                                                            "jsValue": "curve_flexibility_ * sin((i_ / len(total_)) * PI / curve_type_)",
                                                             "usedVars": [
                                                                 "curve_flexibility",
                                                                 "curve_type",
@@ -3160,7 +3160,7 @@
                                                     },
                                                     "parentNode": {
                                                         "name": "Opposite\n",
-                                                        "id": "node_cd5csh3b07p",
+                                                        "id": "node_gdy1o4yvrcw",
                                                         "position": {
                                                             "x": 5240,
                                                             "y": 5140
@@ -3479,7 +3479,7 @@
                                                                         },
                                                                         "parentNode": {
                                                                             "name": "Sun\n",
-                                                                            "id": "node_q1c0ywng9me",
+                                                                            "id": "node_gcv6cu1mybl",
                                                                             "position": {
                                                                                 "x": 5240,
                                                                                 "y": 5280
@@ -4104,7 +4104,7 @@
                                                                                             },
                                                                                             "parentNode": {
                                                                                                 "name": "End",
-                                                                                                "id": "node_qgksh2s289k",
+                                                                                                "id": "node_83piudw677i",
                                                                                                 "position": {
                                                                                                     "x": 5240,
                                                                                                     "y": 5400
@@ -4233,8 +4233,8 @@
         ],
         "functions": [],
         "ordered": true,
-        "last_updated": "2019-10-26T21:17:02.609Z"
+        "last_updated": "2021-01-06T08:40:41.851Z"
     },
     "version": 1,
-    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":true,\"size\":50},\"grid\":{\"show\":true,\"size\":500,\"pos_x\":0,\"pos_y\":0,\"pos_z\":0,\"pos\":{\"x\":0,\"y\":0,\"z\":0}},\"positions\":{\"show\":true,\"size\":0.5},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":false},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":-80,\"y\":-80,\"z\":80},\"pos_x\":-80,\"pos_y\":-80,\"pos_z\":80,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#E6E6E6\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.5},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.5},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"azimuth\":90,\"altitude\":45,\"distance\":10,\"type\":\"directional\"},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":5,\"name\":\"Faces\"},\"tab\":\"0\"},\"version\":\"0.5.11\"}"
+    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":true,\"size\":50},\"grid\":{\"show\":true,\"size\":500},\"positions\":{\"show\":true,\"size\":0.5},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":false},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":-80,\"y\":-80,\"z\":80},\"pos_x\":-80,\"pos_y\":-80,\"pos_z\":80,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#E6E6E6\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.5},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.5},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"shadowSize\":4,\"azimuth\":90,\"altitude\":45,\"distance\":10000},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":5,\"name\":\"Faces\"},\"tab\":\"0\"},\"version\":\"0.5.6\"}"
 }

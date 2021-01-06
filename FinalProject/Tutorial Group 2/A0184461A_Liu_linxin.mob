@@ -1,5 +1,5 @@
 {
-    "name": "TAO ZHU YIN YUAN, Carbon-absorbing green tower (agora tower), Taipei, Taiwan ",
+    "name": "A0184461A_Liu_linxin",
     "author": "new_user",
     "flowchart": {
         "id": "8e728faa-b479-60aa-8436-f45b6251077f",
@@ -14,7 +14,7 @@
         "nodes": [
             {
                 "name": "Start",
-                "id": "node_xlustutq75",
+                "id": "node_f85y28eopqu",
                 "position": {
                     "x": 5340,
                     "y": 5000
@@ -293,7 +293,7 @@
                                 },
                                 "parentNode": {
                                     "name": "side wings base",
-                                    "id": "node_gkchyqymwj6",
+                                    "id": "node_uscdmx122hd",
                                     "position": {
                                         "x": 5160,
                                         "y": 5040
@@ -358,7 +358,7 @@
                                                     "name": "origin",
                                                     "linked": false,
                                                     "value": "XY",
-                                                    "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                    "jsValue": "XY",
                                                     "usedVars": [],
                                                     "invalidVar": false
                                                 },
@@ -1100,9 +1100,9 @@
                                                 },
                                                 {
                                                     "name": "origin",
-                                                    "value": "XY",
+                                                    "value": "[0, 0, 0]",
                                                     "linked": false,
-                                                    "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                    "jsValue": "[0, 0, 0]",
                                                     "usedVars": [],
                                                     "invalidVar": false
                                                 },
@@ -1174,7 +1174,7 @@
                                                     },
                                                     "parentNode": {
                                                         "name": "wing floors",
-                                                        "id": "node_hiofv1gcb7u",
+                                                        "id": "node_3s69dtihp9v",
                                                         "position": {
                                                             "x": 5160,
                                                             "y": 5140
@@ -1522,7 +1522,7 @@
                                                                         },
                                                                         "parentNode": {
                                                                             "name": "twist wings",
-                                                                            "id": "node_amacni0crri",
+                                                                            "id": "node_fel76z9ouaj",
                                                                             "position": {
                                                                                 "x": 5160,
                                                                                 "y": 5240
@@ -2689,7 +2689,7 @@
                                                                                             },
                                                                                             "parentNode": {
                                                                                                 "name": "wing facade",
-                                                                                                "id": "node_wbgf7z7tm2",
+                                                                                                "id": "node_n8v9mzqyzyf",
                                                                                                 "position": {
                                                                                                     "x": 5300,
                                                                                                     "y": 5220
@@ -3421,7 +3421,7 @@
                                                                                                                 },
                                                                                                                 "parentNode": {
                                                                                                                     "name": "facade material",
-                                                                                                                    "id": "node_8ua3r3nvjpv",
+                                                                                                                    "id": "node_7bk7gahyvg9",
                                                                                                                     "position": {
                                                                                                                         "x": 5300,
                                                                                                                         "y": 5340
@@ -3843,7 +3843,7 @@
                                                                                                                                                 },
                                                                                                                                                 "parentNode": {
                                                                                                                                                     "name": "core slabs",
-                                                                                                                                                    "id": "node_bd7hhbxav85",
+                                                                                                                                                    "id": "node_qwn7bhogt4k",
                                                                                                                                                     "position": {
                                                                                                                                                         "x": 5460,
                                                                                                                                                         "y": 5300
@@ -4030,7 +4030,7 @@
                                                                                                                                                                                 },
                                                                                                                                                                                 "parentNode": {
                                                                                                                                                                                     "name": "core frame",
-                                                                                                                                                                                    "id": "node_p6r4tc1dg4",
+                                                                                                                                                                                    "id": "node_bg1ydgl3dq4",
                                                                                                                                                                                     "position": {
                                                                                                                                                                                         "x": 5580,
                                                                                                                                                                                         "y": 5180
@@ -4110,7 +4110,8 @@
                                                                                                                                                                                                     "linked": false
                                                                                                                                                                                                 }
                                                                                                                                                                                             ],
-                                                                                                                                                                                            "selected": false
+                                                                                                                                                                                            "selected": false,
+                                                                                                                                                                                            "hasError": false
                                                                                                                                                                                         },
                                                                                                                                                                                         {
                                                                                                                                                                                             "type": 4,
@@ -4528,7 +4529,8 @@
                                                                                                                                                                                                     ],
                                                                                                                                                                                                     "selected": false,
                                                                                                                                                                                                     "selectGeom": false,
-                                                                                                                                                                                                    "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~output~edges~0~target~parentNode~output~edges~0~target~parentNode~output~edges~0~target~parentNode~output~edges~0~target~edges~0~source~parentNode~input~edges~0~source~edges~1~target~parentNode~procedure~8"
+                                                                                                                                                                                                    "parent": "~flowchart~nodes~0~output~edges~0~target~parentNode~output~edges~0~target~parentNode~output~edges~0~target~parentNode~output~edges~0~target~parentNode~output~edges~0~target~parentNode~output~edges~0~target~edges~0~source~parentNode~input~edges~0~source~edges~1~target~parentNode~procedure~8",
+                                                                                                                                                                                                    "hasError": false
                                                                                                                                                                                                 },
                                                                                                                                                                                                 {
                                                                                                                                                                                                     "type": 4,
@@ -4750,10 +4752,12 @@
                                                                                                                                                                                                     "args": [
                                                                                                                                                                                                         {
                                                                                                                                                                                                             "name": "comment",
-                                                                                                                                                                                                            "value": "Connecting the centroids to form the daimond shaped frame"
+                                                                                                                                                                                                            "value": "Connecting the centroids to form the daimond shaped frame",
+                                                                                                                                                                                                            "linked": false
                                                                                                                                                                                                         }
                                                                                                                                                                                                     ],
-                                                                                                                                                                                                    "selected": false
+                                                                                                                                                                                                    "selected": false,
+                                                                                                                                                                                                    "hasError": false
                                                                                                                                                                                                 },
                                                                                                                                                                                                 {
                                                                                                                                                                                                     "type": 8,
@@ -5293,7 +5297,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     "parentNode": {
                                                                                                                                                                                                         "name": "frame structure",
-                                                                                                                                                                                                        "id": "node_fn3p0h51jkm",
+                                                                                                                                                                                                        "id": "node_ul8xrp56oda",
                                                                                                                                                                                                         "position": {
                                                                                                                                                                                                             "x": 5580,
                                                                                                                                                                                                             "y": 5300
@@ -5537,10 +5541,12 @@
                                                                                                                                                                                                                         "args": [
                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                 "name": "comment",
-                                                                                                                                                                                                                                "value": "Create virtual plane for the lofting of the polylines"
+                                                                                                                                                                                                                                "value": "Create virtual plane for the lofting of the polylines",
+                                                                                                                                                                                                                                "linked": false
                                                                                                                                                                                                                             }
                                                                                                                                                                                                                         ],
-                                                                                                                                                                                                                        "selected": false
+                                                                                                                                                                                                                        "selected": false,
+                                                                                                                                                                                                                        "hasError": false
                                                                                                                                                                                                                     },
                                                                                                                                                                                                                     {
                                                                                                                                                                                                                         "type": 8,
@@ -5764,10 +5770,12 @@
                                                                                                                                                                                                                         "args": [
                                                                                                                                                                                                                             {
                                                                                                                                                                                                                                 "name": "comment",
-                                                                                                                                                                                                                                "value": "Creating the solid frames"
+                                                                                                                                                                                                                                "value": "Creating the solid frames",
+                                                                                                                                                                                                                                "linked": false
                                                                                                                                                                                                                             }
                                                                                                                                                                                                                         ],
-                                                                                                                                                                                                                        "selected": false
+                                                                                                                                                                                                                        "selected": false,
+                                                                                                                                                                                                                        "hasError": false
                                                                                                                                                                                                                     },
                                                                                                                                                                                                                     {
                                                                                                                                                                                                                         "type": 8,
@@ -6061,7 +6069,7 @@
                                                                                                                                                                     },
                                                                                                                                                                     "parentNode": {
                                                                                                                                                                         "name": "core floors",
-                                                                                                                                                                        "id": "node_1qdtpx3fl03",
+                                                                                                                                                                        "id": "node_mrd99fkt598",
                                                                                                                                                                         "position": {
                                                                                                                                                                             "x": 5460,
                                                                                                                                                                             "y": 5180
@@ -6399,7 +6407,7 @@
                                                                                                                                                                                         },
                                                                                                                                                                                         "parentNode": {
                                                                                                                                                                                             "name": "core base",
-                                                                                                                                                                                            "id": "node_zdzanibtee",
+                                                                                                                                                                                            "id": "node_00muc4juullgb",
                                                                                                                                                                                             "position": {
                                                                                                                                                                                                 "x": 5460,
                                                                                                                                                                                                 "y": 5080
@@ -6464,7 +6472,7 @@
                                                                                                                                                                                                             "name": "origin",
                                                                                                                                                                                                             "value": "XY",
                                                                                                                                                                                                             "linked": false,
-                                                                                                                                                                                                            "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                                                                                                                                                                            "jsValue": "XY",
                                                                                                                                                                                                             "usedVars": [],
                                                                                                                                                                                                             "invalidVar": false
                                                                                                                                                                                                         },
@@ -6491,7 +6499,7 @@
                                                                                                                                                                                                             "value": "PI * 2",
                                                                                                                                                                                                             "linked": false,
                                                                                                                                                                                                             "invalidVar": false,
-                                                                                                                                                                                                            "jsValue": "JSON.parse(JSON.stringify(PI)) * 2",
+                                                                                                                                                                                                            "jsValue": "PI * 2",
                                                                                                                                                                                                             "usedVars": []
                                                                                                                                                                                                         }
                                                                                                                                                                                                     ],
@@ -6608,7 +6616,7 @@
                                                                                                                                                 },
                                                                                                                                                 "parentNode": {
                                                                                                                                                     "name": "thicken slabs",
-                                                                                                                                                    "id": "node_r3ylwmhfap",
+                                                                                                                                                    "id": "node_7gdrto7io8t",
                                                                                                                                                     "position": {
                                                                                                                                                         "x": 5180,
                                                                                                                                                         "y": 5440
@@ -6801,7 +6809,7 @@
                                                                                                                                                                                 },
                                                                                                                                                                                 "parentNode": {
                                                                                                                                                                                     "name": "green balcony",
-                                                                                                                                                                                    "id": "node_7iy9dr5vl8o",
+                                                                                                                                                                                    "id": "node_vmh4lqxwefl",
                                                                                                                                                                                     "position": {
                                                                                                                                                                                         "x": 4980,
                                                                                                                                                                                         "y": 5160
@@ -7534,7 +7542,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     "parentNode": {
                                                                                                                                                                                                         "name": "set colour",
-                                                                                                                                                                                                        "id": "node_s6dj6tz8k8e",
+                                                                                                                                                                                                        "id": "node_xjtfqx9kdt",
                                                                                                                                                                                                         "position": {
                                                                                                                                                                                                             "x": 4940,
                                                                                                                                                                                                             "y": 5580
@@ -7769,7 +7777,7 @@
                                                                                                                                                                                                     },
                                                                                                                                                                                                     "parentNode": {
                                                                                                                                                                                                         "name": "railings",
-                                                                                                                                                                                                        "id": "node_x6xpvx7v0ml",
+                                                                                                                                                                                                        "id": "node_ptwo7tvupl",
                                                                                                                                                                                                         "position": {
                                                                                                                                                                                                             "x": 4880,
                                                                                                                                                                                                             "y": 5280
@@ -8365,7 +8373,7 @@
                                                                                                                                                                                                                         },
                                                                                                                                                                                                                         "parentNode": {
                                                                                                                                                                                                                             "name": "railings material",
-                                                                                                                                                                                                                            "id": "node_l6tu6s6jr1",
+                                                                                                                                                                                                                            "id": "node_hmrqw2i9t3i",
                                                                                                                                                                                                                             "position": {
                                                                                                                                                                                                                                 "x": 4880,
                                                                                                                                                                                                                                 "y": 5420
@@ -8600,7 +8608,7 @@
                                                                                                                                                                     },
                                                                                                                                                                     "parentNode": {
                                                                                                                                                                         "name": "wing slabs",
-                                                                                                                                                                        "id": "node_eycwo7l5jl8",
+                                                                                                                                                                        "id": "node_ls98dn9hf7c",
                                                                                                                                                                         "position": {
                                                                                                                                                                             "x": 5180,
                                                                                                                                                                             "y": 5340
@@ -8889,7 +8897,7 @@
                                                                                                                                                 },
                                                                                                                                                 "parentNode": {
                                                                                                                                                     "name": "roof slab",
-                                                                                                                                                    "id": "node_dgjvwv780yf",
+                                                                                                                                                    "id": "node_gp2ojz5okdm",
                                                                                                                                                     "position": {
                                                                                                                                                         "x": 5060,
                                                                                                                                                         "y": 5340
@@ -9390,7 +9398,7 @@
                                                                                                                                     },
                                                                                                                                     "parentNode": {
                                                                                                                                         "name": "End",
-                                                                                                                                        "id": "node_4khyulthp1n",
+                                                                                                                                        "id": "node_xkbhiifawnp",
                                                                                                                                         "position": {
                                                                                                                                             "x": 5280,
                                                                                                                                             "y": 5580
@@ -9582,8 +9590,8 @@
         ],
         "functions": [],
         "ordered": true,
-        "last_updated": "2019-10-27T07:00:13.875Z"
+        "last_updated": "2021-01-06T04:59:14.439Z"
     },
     "version": 1,
-    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":true,\"size\":50},\"grid\":{\"show\":true,\"size\":500,\"pos_x\":0,\"pos_y\":0,\"pos_z\":0,\"pos\":{\"x\":0,\"y\":0,\"z\":0}},\"positions\":{\"show\":true,\"size\":0.5},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":false},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":-367.935277616152,\"y\":-464.2623993820381,\"z\":256.5988759894175},\"pos_x\":-367.935277616152,\"pos_y\":-464.2623993820381,\"pos_z\":256.5988759894175,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#E6E6E6\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.5},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.5},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"azimuth\":90,\"altitude\":45,\"distance\":10,\"type\":\"directional\"},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":3,\"name\":\"Edges\"},\"tab\":\"0\"},\"version\":\"0.5.11\"}"
+    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":true,\"size\":50},\"grid\":{\"show\":true,\"size\":500},\"positions\":{\"show\":true,\"size\":0.5},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":false},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":-80,\"y\":-80,\"z\":80},\"pos_x\":-80,\"pos_y\":-80,\"pos_z\":80,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#E6E6E6\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.5},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.5},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"shadowSize\":4,\"azimuth\":90,\"altitude\":45,\"distance\":10000},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":5,\"name\":\"Faces\"},\"tab\":\"0\"},\"version\":\"0.5.6\"}"
 }

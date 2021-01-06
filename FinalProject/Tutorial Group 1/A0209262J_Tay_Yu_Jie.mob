@@ -1,5 +1,5 @@
 {
-    "name": "FINAL MOB FILE",
+    "name": "A0209262J_Tay_Yu_Jie",
     "author": "new_user",
     "flowchart": {
         "id": "46519114-c066-0eee-a13d-01324603d94d",
@@ -14,7 +14,7 @@
         "nodes": [
             {
                 "name": "Start",
-                "id": "node_n2q4bg9otc9",
+                "id": "node_0c3riknoam3d",
                 "position": {
                     "x": 5340,
                     "y": 4980
@@ -295,7 +295,7 @@
                                 },
                                 "parentNode": {
                                     "name": "Windhover Hall",
-                                    "id": "node_m9olgc2ecfd",
+                                    "id": "node_7nlopr5x25l",
                                     "position": {
                                         "x": 5340,
                                         "y": 5120
@@ -352,7 +352,7 @@
                                                     "name": "value",
                                                     "value": "1 * PI",
                                                     "linked": false,
-                                                    "jsValue": "1 * JSON.parse(JSON.stringify(PI))",
+                                                    "jsValue": "1 * PI",
                                                     "usedVars": [],
                                                     "invalidVar": false
                                                 }
@@ -747,7 +747,7 @@
                                                     "name": "origin",
                                                     "value": "XY",
                                                     "linked": false,
-                                                    "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                    "jsValue": "XY",
                                                     "usedVars": [],
                                                     "invalidVar": false
                                                 },
@@ -763,7 +763,7 @@
                                                     "name": "angle",
                                                     "value": "PI",
                                                     "linked": false,
-                                                    "jsValue": "JSON.parse(JSON.stringify(PI))",
+                                                    "jsValue": "PI",
                                                     "usedVars": [],
                                                     "invalidVar": false
                                                 }
@@ -923,7 +923,7 @@
                                                     "name": "origin",
                                                     "value": "XY",
                                                     "linked": false,
-                                                    "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                    "jsValue": "XY",
                                                     "usedVars": [],
                                                     "invalidVar": false
                                                 },
@@ -1427,7 +1427,7 @@
                                                     },
                                                     "parentNode": {
                                                         "name": "Triangular Prism",
-                                                        "id": "node_nk6fxhz9xym",
+                                                        "id": "node_ojq93cbimv",
                                                         "position": {
                                                             "x": 5340,
                                                             "y": 5240
@@ -1674,7 +1674,7 @@
                                                                                 "name": "value",
                                                                                 "value": "sin(i / triangular_prism_mullion_div * PI) * base_max_dist / 2.5",
                                                                                 "linked": false,
-                                                                                "jsValue": "sin(i_ / triangular_prism_mullion_div_ * JSON.parse(JSON.stringify(PI))) * base_max_dist_ / 2.5",
+                                                                                "jsValue": "sin(i_ / triangular_prism_mullion_div_ * PI) * base_max_dist_ / 2.5",
                                                                                 "usedVars": [
                                                                                     "triangular_prism_mullion_div",
                                                                                     "base_max_dist",
@@ -3071,8 +3071,8 @@
                                                                     },
                                                                     {
                                                                         "name": "entities",
-                                                                        "value": "mullions_glass_copy",
-                                                                        "jsValue": "mullions_glass_copy_",
+                                                                        "value": "listFlat(mullions_glass_copy)",
+                                                                        "jsValue": "listFlat(mullions_glass_copy_)",
                                                                         "usedVars": [
                                                                             "mullions_glass_copy"
                                                                         ],
@@ -3162,9 +3162,9 @@
                                                                     },
                                                                     {
                                                                         "name": "entities",
-                                                                        "value": "[mullions_glass_copy]",
+                                                                        "value": "listFlat([mullions_glass_copy])",
                                                                         "linked": false,
-                                                                        "jsValue": "[mullions_glass_copy_]",
+                                                                        "jsValue": "listFlat([mullions_glass_copy_])",
                                                                         "usedVars": [
                                                                             "mullions_glass_copy"
                                                                         ],
@@ -3283,9 +3283,9 @@
                                                                     },
                                                                     {
                                                                         "name": "entities",
-                                                                        "value": "mullions_lofted_copy",
+                                                                        "value": "listFlat(mullions_lofted_copy)",
                                                                         "linked": false,
-                                                                        "jsValue": "mullions_lofted_copy_",
+                                                                        "jsValue": "listFlat(mullions_lofted_copy_)",
                                                                         "invalidVar": false,
                                                                         "usedVars": [
                                                                             "mullions_lofted_copy"
@@ -3485,7 +3485,7 @@
                                                                         },
                                                                         "parentNode": {
                                                                             "name": "Spine",
-                                                                            "id": "node_kxt7swtydzk",
+                                                                            "id": "node_scgcouyyj6g",
                                                                             "position": {
                                                                                 "x": 5340,
                                                                                 "y": 5360
@@ -4233,7 +4233,7 @@
                                                                                             },
                                                                                             "parentNode": {
                                                                                                 "name": "Fins",
-                                                                                                "id": "node_gk4df82etyh",
+                                                                                                "id": "node_5nv826jhr5",
                                                                                                 "position": {
                                                                                                     "x": 5500,
                                                                                                     "y": 5360
@@ -4462,7 +4462,7 @@
                                                                                                                         "name": "value",
                                                                                                                         "value": "sin(i / triangular_prism_mullion_div * PI * num_periods) * base_max_dist / 2.5",
                                                                                                                         "linked": false,
-                                                                                                                        "jsValue": "sin(i_ / triangular_prism_mullion_div_ * JSON.parse(JSON.stringify(PI)) * num_periods_) * base_max_dist_ / 2.5",
+                                                                                                                        "jsValue": "sin(i_ / triangular_prism_mullion_div_ * PI * num_periods_) * base_max_dist_ / 2.5",
                                                                                                                         "usedVars": [
                                                                                                                             "num_periods",
                                                                                                                             "triangular_prism_mullion_div",
@@ -5588,9 +5588,9 @@
                                                                                                             },
                                                                                                             {
                                                                                                                 "name": "entities",
-                                                                                                                "value": "mullions_lofted_copy",
+                                                                                                                "value": "listFlat(mullions_lofted_copy)",
                                                                                                                 "linked": false,
-                                                                                                                "jsValue": "mullions_lofted_copy_",
+                                                                                                                "jsValue": "listFlat(mullions_lofted_copy_)",
                                                                                                                 "invalidVar": false,
                                                                                                                 "usedVars": [
                                                                                                                     "mullions_lofted_copy"
@@ -5708,7 +5708,7 @@
                                                                                                                             },
                                                                                                                             "parentNode": {
                                                                                                                                 "name": "Gallery Deck",
-                                                                                                                                "id": "node_ao957i3m0a",
+                                                                                                                                "id": "node_j5z88rypelr",
                                                                                                                                 "position": {
                                                                                                                                     "x": 5500,
                                                                                                                                     "y": 5120
@@ -5870,7 +5870,7 @@
                                                                                                                                                         "name": "value",
                                                                                                                                                         "value": "sin(i / 10 * PI) * 40",
                                                                                                                                                         "linked": false,
-                                                                                                                                                        "jsValue": "sin(i_ / 10 * JSON.parse(JSON.stringify(PI))) * 40",
+                                                                                                                                                        "jsValue": "sin(i_ / 10 * PI) * 40",
                                                                                                                                                         "usedVars": [
                                                                                                                                                             "i"
                                                                                                                                                         ],
@@ -6228,7 +6228,7 @@
                                                                                                                                                 "name": "origin",
                                                                                                                                                 "value": "YX",
                                                                                                                                                 "linked": false,
-                                                                                                                                                "jsValue": "JSON.parse(JSON.stringify(YX))",
+                                                                                                                                                "jsValue": "YX",
                                                                                                                                                 "usedVars": [],
                                                                                                                                                 "invalidVar": false
                                                                                                                                             },
@@ -6244,7 +6244,7 @@
                                                                                                                                                 "name": "angle",
                                                                                                                                                 "value": "PI",
                                                                                                                                                 "linked": false,
-                                                                                                                                                "jsValue": "JSON.parse(JSON.stringify(PI))",
+                                                                                                                                                "jsValue": "PI",
                                                                                                                                                 "usedVars": [],
                                                                                                                                                 "invalidVar": false
                                                                                                                                             }
@@ -7250,7 +7250,7 @@
                                                                                                                             },
                                                                                                                             "parentNode": {
                                                                                                                                 "name": "Stick",
-                                                                                                                                "id": "node_hkrwzxiizft",
+                                                                                                                                "id": "node_jrg9l11rpdn",
                                                                                                                                 "position": {
                                                                                                                                     "x": 5660,
                                                                                                                                     "y": 5120
@@ -7699,7 +7699,7 @@
                                                                                                                 },
                                                                                                                 "parentNode": {
                                                                                                                     "name": "End",
-                                                                                                                    "id": "node_co724bfloe5",
+                                                                                                                    "id": "node_hpyotpr2r8v",
                                                                                                                     "position": {
                                                                                                                         "x": 5380,
                                                                                                                         "y": 5500
@@ -7852,8 +7852,8 @@
         ],
         "functions": [],
         "ordered": true,
-        "last_updated": "2019-10-27T09:44:58.051Z"
+        "last_updated": "2021-01-06T09:48:51.652Z"
     },
     "version": 1,
-    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":false,\"size\":50},\"grid\":{\"show\":false,\"size\":500,\"pos_x\":0,\"pos_y\":0,\"pos_z\":0,\"pos\":{\"x\":0,\"y\":0,\"z\":0}},\"positions\":{\"show\":true,\"size\":0.5},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":false},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":274.4661126548103,\"y\":276.8770615251332,\"z\":176.5665769138489},\"pos_x\":274.4661126548103,\"pos_y\":276.8770615251332,\"pos_z\":176.5665769138489,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#E6E6E6\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.3},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.3},\"directional_light\":{\"show\":true,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":false,\"azimuth\":185,\"altitude\":71,\"distance\":819,\"type\":\"directional\"},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":0,\"name\":\"Positions\"},\"tab\":\"0\"},\"version\":\"0.5.11\"}"
+    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":true,\"size\":50},\"grid\":{\"show\":true,\"size\":500},\"positions\":{\"show\":true,\"size\":0.5},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":false},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":-80,\"y\":-80,\"z\":80},\"pos_x\":-80,\"pos_y\":-80,\"pos_z\":80,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#E6E6E6\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.5},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.5},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"shadowSize\":4,\"azimuth\":90,\"altitude\":45,\"distance\":10000},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":5,\"name\":\"Faces\"},\"tab\":\"0\"},\"version\":\"0.5.6\"}"
 }
