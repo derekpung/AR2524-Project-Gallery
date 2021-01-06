@@ -1,5 +1,5 @@
 {
-    "name": "final_project",
+    "name": "A0209230U_Dela%20Cruz%20John%20Anthony",
     "author": "new_user",
     "flowchart": {
         "id": "44670347-ff79-b402-8c3b-5e13ff5262f7",
@@ -14,7 +14,7 @@
         "nodes": [
             {
                 "name": "Start",
-                "id": "node_omv3gt1p8tr",
+                "id": "node_mm85ovq1z4",
                 "position": {
                     "x": 5280,
                     "y": 4820
@@ -295,7 +295,7 @@
                                 },
                                 "parentNode": {
                                     "name": "floor plates",
-                                    "id": "node_bc73d3wy5p7",
+                                    "id": "node_snkqjsyufvo",
                                     "position": {
                                         "x": 5280,
                                         "y": 4940
@@ -361,7 +361,7 @@
                                                     "name": "origin",
                                                     "value": "XY",
                                                     "linked": false,
-                                                    "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                    "jsValue": "XY",
                                                     "usedVars": [],
                                                     "invalidVar": false
                                                 },
@@ -1836,7 +1836,7 @@
                                                     },
                                                     "parentNode": {
                                                         "name": "balustrades",
-                                                        "id": "node_oc5dk1rzxiq",
+                                                        "id": "node_dhq1fq85qzw",
                                                         "position": {
                                                             "x": 5420,
                                                             "y": 4940
@@ -2450,7 +2450,7 @@
                                                                         },
                                                                         "parentNode": {
                                                                             "name": "facade",
-                                                                            "id": "node_zdwkwomc9d",
+                                                                            "id": "node_wc6y0tfr828",
                                                                             "position": {
                                                                                 "x": 5420,
                                                                                 "y": 5060
@@ -3027,7 +3027,7 @@
                                                                                             },
                                                                                             "parentNode": {
                                                                                                 "name": "windows\n",
-                                                                                                "id": "node_6rzn4kyy9rt",
+                                                                                                "id": "node_ug3e2he603f",
                                                                                                 "position": {
                                                                                                     "x": 5560,
                                                                                                     "y": 5060
@@ -4379,7 +4379,7 @@
                                                                                                                 },
                                                                                                                 "parentNode": {
                                                                                                                     "name": "columns",
-                                                                                                                    "id": "node_7dmk2nqn9so",
+                                                                                                                    "id": "node_e0h8hglbqhl",
                                                                                                                     "position": {
                                                                                                                         "x": 5560,
                                                                                                                         "y": 5180
@@ -4915,8 +4915,8 @@
                                                                                                                                 },
                                                                                                                                 {
                                                                                                                                     "name": "entities",
-                                                                                                                                    "value": "grid_ps",
-                                                                                                                                    "jsValue": "grid_ps_",
+                                                                                                                                    "value": "listFlat(grid_ps)",
+                                                                                                                                    "jsValue": "listFlat(grid_ps_)",
                                                                                                                                     "usedVars": [
                                                                                                                                         "grid_ps"
                                                                                                                                     ],
@@ -4959,9 +4959,9 @@
                                                                                                                                 },
                                                                                                                                 {
                                                                                                                                     "name": "entities",
-                                                                                                                                    "value": "grid_ps",
+                                                                                                                                    "value": "listFlat(grid_ps)",
                                                                                                                                     "linked": false,
-                                                                                                                                    "jsValue": "grid_ps_",
+                                                                                                                                    "jsValue": "listFlat(grid_ps_)",
                                                                                                                                     "usedVars": [
                                                                                                                                         "grid_ps"
                                                                                                                                     ],
@@ -4971,7 +4971,7 @@
                                                                                                                                     "name": "origin",
                                                                                                                                     "value": "XY",
                                                                                                                                     "linked": false,
-                                                                                                                                    "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                                                                                                    "jsValue": "XY",
                                                                                                                                     "usedVars": [],
                                                                                                                                     "invalidVar": false
                                                                                                                                 },
@@ -5135,7 +5135,7 @@
                                                                                                                                 {
                                                                                                                                     "name": "origin",
                                                                                                                                     "value": "XY",
-                                                                                                                                    "jsValue": "JSON.parse(JSON.stringify(XY))",
+                                                                                                                                    "jsValue": "XY",
                                                                                                                                     "usedVars": [],
                                                                                                                                     "invalidVar": false,
                                                                                                                                     "linked": false
@@ -5767,7 +5767,7 @@
                                                                                                                                     },
                                                                                                                                     "parentNode": {
                                                                                                                                         "name": "slab thk",
-                                                                                                                                        "id": "node_xt0i4ujpim",
+                                                                                                                                        "id": "node_98r16qowifu",
                                                                                                                                         "position": {
                                                                                                                                             "x": 5560,
                                                                                                                                             "y": 5300
@@ -6052,7 +6052,7 @@
                                                                                                                                                         },
                                                                                                                                                         "parentNode": {
                                                                                                                                                             "name": "render",
-                                                                                                                                                            "id": "node_1135d49a2xsr",
+                                                                                                                                                            "id": "node_xmgkxaj3cxq",
                                                                                                                                                             "position": {
                                                                                                                                                                 "x": 5720,
                                                                                                                                                                 "y": 5300
@@ -6541,7 +6541,7 @@
                                                                                                                                                                             },
                                                                                                                                                                             "parentNode": {
                                                                                                                                                                                 "name": "End",
-                                                                                                                                                                                "id": "node_tov60pf3cks",
+                                                                                                                                                                                "id": "node_e2jhdtn9x6v",
                                                                                                                                                                                 "position": {
                                                                                                                                                                                     "x": 5720,
                                                                                                                                                                                     "y": 5400
@@ -6726,8 +6726,8 @@
         ],
         "functions": [],
         "ordered": true,
-        "last_updated": "2019-10-25T18:20:42.420Z"
+        "last_updated": "2021-01-06T08:55:00.038Z"
     },
     "version": 1,
-    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":false,\"size\":50},\"grid\":{\"show\":false,\"size\":500,\"pos_x\":0,\"pos_y\":0,\"pos_z\":0,\"pos\":{\"x\":0,\"y\":0,\"z\":0}},\"positions\":{\"show\":false,\"size\":0.5},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":false},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":54.53218951983342,\"y\":-46.507636650841924,\"z\":49.70834636616695},\"pos_x\":54.53218951983342,\"pos_y\":-46.507636650841924,\"pos_z\":49.70834636616695,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#E6E6E6\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.5},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.5},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"azimuth\":90,\"altitude\":45,\"distance\":10,\"type\":\"directional\"},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":8,\"name\":\"Polygons\"},\"tab\":\"0\"},\"version\":\"0.5.10\"}"
+    "settings": "{\"normals\":{\"show\":false,\"size\":5},\"axes\":{\"show\":true,\"size\":50},\"grid\":{\"show\":true,\"size\":500},\"positions\":{\"show\":true,\"size\":0.5},\"tjs_summary\":{\"show\":false},\"gi_summary\":{\"show\":false},\"wireframe\":{\"show\":false},\"camera\":{\"pos\":{\"x\":-80,\"y\":-80,\"z\":80},\"pos_x\":-80,\"pos_y\":-80,\"pos_z\":80,\"target\":{\"x\":0,\"y\":0,\"z\":0}},\"colors\":{\"viewer_bg\":\"#E6E6E6\",\"position\":\"#000000\",\"position_s\":\"#0033FF\",\"vertex_s\":\"#FFCC00\",\"face_f\":\"#FFFFFF\",\"face_f_s\":\"#4949BD\",\"face_b\":\"#DDDDDD\",\"face_b_s\":\"#00006D\"},\"ambient_light\":{\"show\":true,\"color\":\"#FFFFFF\",\"intensity\":0.5},\"hemisphere_light\":{\"show\":true,\"helper\":false,\"skyColor\":\"#FFFFFF\",\"groundColor\":\"#FFFFFF\",\"intensity\":0.5},\"directional_light\":{\"show\":false,\"helper\":false,\"color\":\"#FFFFFF\",\"intensity\":1,\"shadow\":true,\"shadowSize\":4,\"azimuth\":90,\"altitude\":45,\"distance\":10000},\"ground\":{\"show\":false,\"width\":1000,\"length\":1000,\"height\":-0.5,\"color\":\"#FFFFFF\",\"shininess\":0},\"select\":{\"selector\":{\"id\":5,\"name\":\"Faces\"},\"tab\":\"0\"},\"version\":\"0.5.6\"}"
 }

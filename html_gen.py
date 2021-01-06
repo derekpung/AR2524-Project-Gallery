@@ -173,7 +173,7 @@ names = [
     # "LEE YONG SOON",
     "HO JUN XUAN, BENEDICT",
     "FONG SHEAN HUI",
-    "CHEUNG KAI NING",
+    # "CHEUNG KAI NING",
     "CHEN BO HAN",
     # "PE CHING YEE (PENG JINGYI)",
     # "NG JIAN YUAN",
